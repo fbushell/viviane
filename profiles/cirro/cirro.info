@@ -1,0 +1,15 @@
+name = Cirro
+description = Install Cirro Core distribution
+version = VERSION
+core = 7.x
+dependencies[] = block
+dependencies[] = color
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = dblog
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = devel
