@@ -70,7 +70,7 @@ function cirro_install() {
   filter_format_save($full_html_format);
 
   // Enable some standard blocks.
-  $default_theme = variable_get('theme_default', 'climBootstrap');
+  $default_theme = variable_get('theme_default', 'clim');
   $admin_theme = 'climAdmin';
   $blocks = array(
     array(
@@ -157,8 +157,8 @@ function cirro_install() {
   variable_set('node_admin_theme', '1');
   
 	// Enable and set default theme
-	theme_enable(array('climBootstrap'));
-	variable_set('theme_default', 'climBootstrap');
+	theme_enable(array('clim'));
+	variable_set('theme_default', 'clim');
 	
 	// Kill bartik
 	theme_disable(array('bartik'));

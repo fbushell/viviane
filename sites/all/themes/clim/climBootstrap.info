@@ -1,0 +1,28 @@
+name = climBootstrap
+description = cirro flexible starter theme for Drupal 7
+screenshot = screenshot.gif
+core = "7.x"
+project = "climBootstrap"
+engine = phptemplate
+
+regions[header] = Header
+regions[content] = Content
+regions[footer] = Footer
+
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = search
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
+stylesheets[all][] = css/main.css
+stylesheets[all][] = css/responsive.css
+
+settings[cirro_tabs] = 1
+settings[cirro_breadcrumb_separator] = »
+settings[wireframe_mode] = 0
+settings[clear_registry] = 0

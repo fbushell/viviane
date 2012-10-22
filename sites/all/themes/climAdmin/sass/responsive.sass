@@ -1,0 +1,212 @@
+// REPEAT VARIABLES & MIXINS
+// ----------------------------------------------------------------------------
+// Required since we compile the responsive stuff separately
+
+@import "variables"
+
+// Modify this for custom colors, font-sizes, etc
+@import "mixins"
+
+// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
+// ----------------------------------------------------------------------------
+
+@media (max-width: 767px)
+  // Padding to set content in a bit
+  body
+    padding-left: 20px
+    padding-right: 20px
+  .navbar-fixed-top
+    margin-left: -20px
+    margin-right: -20px
+
+// GRID & CONTAINERS
+// ----------------------------------------------------------------------------
+  // Remove width from containers
+  .container
+    width: auto
+  // Fluid rows
+  .row-fluid
+    width: 100%
+  // Undo negative margin on rows
+  .row
+    margin-left: 0
+  // Make all columns even
+  .row > [class*="span"],
+  .row-fluid > [class*="span"]
+    float: none
+    display: block
+    width: auto
+    margin: 0
+
+// THUMBNAILS
+// ----------------------------------------------------------------------------
+  .thumbnails [class*="span"]
+    width: auto
+    
+// FORM FIELDS
+// ----------------------------------------------------------------------------
+  // Make span* classes full width
+  input[class*="span"],
+  select[class*="span"],
+  textarea[class*="span"],
+  .uneditable-input
+    +input-block-level
+  // But don't let it screw up prepend/append inputs
+  .input-prepend input[class*="span"],
+  .input-append input[class*="span"]
+    width: auto
+
+// PORTRAIT TABLET TO DEFAULT DESKTOP
+// ----------------------------------------------------------------------------
+
+@media (min-width: 768px) and (max-width: 979px)
+  // Fixed grid
+  +grid-core-generate(42px, 20px)
+  // Fluid grid
+  +grid-fluid-generate(5.801%, 2.762%)
+  // Input grid
+  +grid-input-generate(42px, 20px)
+
+// TABLETS AND BELOW
+// ----------------------------------------------------------------------------
+@media (max-width: 979px)
+  // UNFIX THE TOPBAR
+  // ----------------
+  // Remove any padding from the body
+  body
+    padding-top: 0
+  // Unfix the navbar
+  .navbar-fixed-top
+    position: static
+    margin-bottom: $baseLineHeight
+  .navbar-fixed-top .navbar-inner
+    padding: 5px
+  .navbar .container
+    width: auto
+    padding: 0
+  // Account for brand name
+  .navbar .brand
+    padding-left: 10px
+    padding-right: 10px
+    margin: 0 0 0 -5px
+  // Nav collapse clears brand
+  .navbar .nav-collapse
+    clear: left
+  // Block-level the nav
+  .navbar .nav
+    float: none
+    margin: 0 0 $baseLineHeight / 2
+  .navbar .nav > li
+    float: none
+  .navbar .nav > li > a
+    margin-bottom: 2px
+  .navbar .nav > .divider-vertical
+    display: none
+  .navbar .nav .nav-header
+    color: $navbarText
+    text-shadow: none
+  // Nav and dropdown links in navbar
+  .navbar .nav > li > a,
+  .navbar .dropdown-menu a
+    padding: 6px 15px
+    font-weight: bold
+    color: $navbarLinkColor
+    +border-radius(3px)
+  .navbar .dropdown-menu li + li a
+    margin-bottom: 2px
+  .navbar .nav > li > a:hover,
+  .navbar .dropdown-menu a:hover
+    background-color: $navbarBackground
+  // Dropdowns in the navbar
+  .navbar .dropdown-menu
+    position: static
+    top: auto
+    left: auto
+    float: none
+    display: block
+    max-width: none
+    margin: 0 15px
+    padding: 0
+    background-color: transparent
+    border: none
+    +border-radius(0)
+    +box-shadow(none)
+  .navbar .dropdown-menu:before,
+  .navbar .dropdown-menu:after
+    display: none
+  .navbar .dropdown-menu .divider
+    display: none
+  // Forms in navbar
+  .navbar-form,
+  .navbar-search
+    float: none
+    padding: $baseLineHeight / 2 15px
+    margin: $baseLineHeight / 2 0
+    border-top: 1px solid $navbarBackground
+    border-bottom: 1px solid $navbarBackground
+    $shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1)
+    +box-shadow($shadow)
+  // Pull right (secondary) nav content
+  .navbar .nav.pull-right
+    float: none
+    margin-left: 0
+  // Static navbar
+  .navbar-static .navbar-inner
+    padding-left: 10px
+    padding-right: 10px
+  // Navbar button
+  .btn-navbar
+    display: block
+  // Hide everything in the navbar save .brand and toggle button */
+  .nav-collapse
+    overflow: hidden
+    height: 0
+
+
+// 1200 and below
+// ----------------------------------------------------------------------------
+@media (max-width: 1200px)
+  .table th, 
+  .table td, 
+  table th, 
+  table td
+    font-size: 10px
+
+  .page-admin-claro-analyte
+    td select.class,
+    td select.polarity,
+      width: 92px
+      font-size: 10px
+    td select.lloq,
+    td select.uloq,
+    td input.ert,
+    td input.rt_thresh,
+    td input.purity_thresh,
+    td select.epi_threshold
+      width: 55px
+      font-size: 10px
+
+// DEFAULT DESKTOP
+// ----------------------------------------------------------------------------
+
+@media (min-width: 980px)
+  .nav-collapse.collapse
+    height: auto !important
+    overflow: visible !important
+
+
+// LARGE DESKTOP & UP
+// ----------------------------------------------------------------------------
+
+@media (min-width: 1200px)
+  // Fixed grid
+  +grid-core-generate(70px, 30px)
+  // Fluid grid
+  +grid-fluid-generate(5.983%, 2.564%)
+  // Input grid
+  +grid-input-generate(70px, 30px)
+  // Thumbnails
+  .thumbnails
+    margin-left: -30px
+  .thumbnails > li
+    margin-left: 30px
