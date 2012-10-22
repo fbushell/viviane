@@ -1,3 +1,3 @@
-[submodule "cirro_core"]
-	path = cirro_core
+[submodule "sites/all/modules/cirro_core"]
+	path = sites/all/modules/cirro_core
 	url = git@github.com:cirroweb/cirro_core.git
