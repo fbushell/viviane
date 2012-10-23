@@ -1,6 +1,6 @@
 <?php
 // Form override fo theme settings
-function climBootstrap_form_system_theme_settings_alter(&$form, $form_state) {
+function clim_form_system_theme_settings_alter(&$form, $form_state) {
 
   $form['options_settings'] = array(
     '#type' => 'fieldset',
