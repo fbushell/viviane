@@ -1,3 +1,4 @@
+/*
 Cirro.ajax({
 	$errorPlacement: jQuery( "div#content" ),
 	data: {
@@ -23,3 +24,4 @@ Cirro.ajax({
 
 	},
 });
+*/
