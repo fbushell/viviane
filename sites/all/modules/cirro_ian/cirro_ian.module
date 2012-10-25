@@ -34,11 +34,6 @@ function cirro_ian_admin_page() {
 	$module_path = drupal_get_path('module', 'cirro_ian');
 	$js_path = '';
 
-	// Add Cirro AJAX to the page
-	$cirro_js_path = drupal_get_path('module', 'cirro_js');
-	$js_path = "$cirro_js_path/js/Cirro.ajax.js";
-	drupal_add_js($js_path, array('weight' => 30));
-
 	// Add JS to the page
 	$js_path = "$module_path/js/cirro_ian.js";
 	drupal_add_js($js_path, array('scope' => 'footer'));
