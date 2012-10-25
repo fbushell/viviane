@@ -34,6 +34,14 @@ function cirro_ian_admin_page() {
 	$module_path = drupal_get_path('module', 'cirro_ian');
 	$js_path = '';
 
+	$html .= "
+		<div class=\"row\">
+			<div class=\"span6\">
+				<textarea class=\"no-wysiwyg\"></textarea>
+			</div>
+		</div>
+	";
+
 	// Add JS to the page
 	$js_path = "$module_path/js/cirro_ian.js";
 	drupal_add_js($js_path, array('scope' => 'footer'));
