@@ -14,6 +14,7 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = devel
 dependencies[] = toolbar
+dependencies[] = image
 dependencies[] = cirro_core
 dependencies[] = cirro_js
 dependencies[] = cirro_dash
