@@ -1585,7 +1585,7 @@ a.label:hover, a.badge:hover { color: white; text-decoration: none; cursor: poin
 
 .clearfix { overflow: hidden; }
 
-.underline { border-bottom: 4px solid black; padding: 0 0 10px 0; }
+.underline { border-bottom: 1px solid black; padding: 0 0 10px 0; }
 
 .loading-gif { height: 100%; width: 100%; background: url(../images/loading.gif) no-repeat center 100px; position: absolute; top: 0; left: 0; z-index: 9000; }
 
