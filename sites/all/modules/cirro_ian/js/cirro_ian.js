@@ -1,4 +1,6 @@
+/*
 Cirro.ajax({
+	$errorPlacement: jQuery( "div#content" ),
 	data: {
 		callback: "valid_ajax_callback_cjax",
 		test: "testing valid callback",
@@ -11,6 +13,7 @@ Cirro.ajax({
 });
 
 Cirro.ajax({
+	$errorPlacement: jQuery( "div#content" ),
 	data: {
 		callback: "invalid_ajax_callback",
 		test: "testing invalid callback",
@@ -21,3 +24,4 @@ Cirro.ajax({
 
 	},
 });
+*/
