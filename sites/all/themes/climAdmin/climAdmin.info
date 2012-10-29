@@ -3,7 +3,7 @@ description = cirro admin
 screenshot = screenshot.gif
 core = "7.x"
 version = 1.0
-project = "climBootstrap"
+project = "climAdmin"
 
 regions[content] = Content
 regions[help] = Help

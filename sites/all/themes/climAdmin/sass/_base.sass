@@ -1,4 +1,4 @@
- 
+
 
 
 
@@ -9,13 +9,122 @@
 //   \ \ \_\ \ \ \_\ \   \ \ \`\ \ \ \_\ \ \ \ \     \ \ \L\ \ \ \_\ \ \_\ \__\ \ \ 
 //    \ \____/\ \_____\   \ \_\ \_\ \_____\ \ \_\     \ \____/\ \____/ /\_____\\ \_\
 //     \/___/  \/_____/    \/_/\/_/\/_____/  \/_/      \/___/  \/___/  \/_____/ \/_/
-                                                                                 
+																																								
 
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section
+	display: block
 
+audio, canvas, video
+	display: inline-block
+	*display: inline
+	*zoom: 1
 
+audio:not([controls])
+	display: none
 
-// Main Stuff
-// ----------------------------------------------------------------------------
+html
+	font-size: 100%
+	-webkit-text-size-adjust: 100%
+	-ms-text-size-adjust: 100%
+
+a
+	&:focus
+		outline: thin dotted #333
+		outline: 5px auto -webkit-focus-ring-color
+		outline-offset: -2px
+	&:hover, &:active
+		outline: 0
+		text-decoration: none
+
+sub
+	position: relative
+	font-size: 75%
+	line-height: 0
+	vertical-align: baseline
+
+sup
+	position: relative
+	font-size: 75%
+	line-height: 0
+	vertical-align: baseline
+	top: -0.5em
+
+sub
+	bottom: -0.25em
+
+img
+	width: auto\9
+	height: auto
+	max-width: 100%
+	vertical-align: middle
+	border: 0
+	-ms-interpolation-mode: bicubic
+
+#map_canvas img
+	max-width: none
+
+button, input, select, textarea
+	margin: 0
+	font-size: 100%
+	vertical-align: middle
+
+html.js input.form-autocomplete 
+	background-image: none
+
+button, input
+	*overflow: visible
+	line-height: normal
+
+button::-moz-focus-inner, input::-moz-focus-inner
+	padding: 0
+	border: 0
+
+button
+	cursor: pointer
+	-webkit-appearance: button
+
+input
+	&[type="button"], &[type="reset"], &[type="submit"]
+		cursor: pointer
+		-webkit-appearance: button
+	&[type="search"]
+		-webkit-box-sizing: content-box
+		-moz-box-sizing: content-box
+		box-sizing: content-box
+		-webkit-appearance: textfield
+		&::-webkit-search-decoration, &::-webkit-search-cancel-button
+			-webkit-appearance: none
+
+textarea
+	overflow: auto
+	vertical-align: top
+
+.clearfix
+	*zoom: 1
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
+
+.hide-text
+	font: 0 / 0 a
+	color: transparent
+	text-shadow: none
+	background-color: transparent
+	border: 0
+
+.input-block-level
+	display: block
+	width: 100%
+	min-height: 30px
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
 
 body
 	margin: 0
@@ -25,1585 +134,736 @@ body
 	color: $textColor
 	background-color: $bodyBackground
 
-// Images
-img
-	max-width: 100%
-
-// LINKS
-// -----
-
 a
 	color: $linkColor
 	text-decoration: none
+	font-weight: 300
+	&:hover
+		color: $linkColorHover
+		text-decoration: none
 
-a:hover 
-	color: $linkColorHover
-	text-decoration: none
+.img-rounded
+	-webkit-border-radius: 6px
+	-moz-border-radius: 6px
+	border-radius: 6px
 
+.img-polaroid
+	padding: 4px
+	background-color: #fff
+	border: 1px solid #ccc
+	border: 1px solid rgba(0, 0, 0, 0.2)
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1)
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1)
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1)
 
-// Layouts
-// Fixed-width and fluid (with sidebar) layouts
-// ----------------------------------------------------------------------------
+.img-circle
+	-webkit-border-radius: 500px
+	-moz-border-radius: 500px
+	border-radius: 500px
 
-// Container (centered, fixed-width layouts)
-.container
-	@include container-fixed()
-	padding: $containerPadding
+.row
+	margin-left: -20px
+	*zoom: 1
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
 
-// Fluid layouts (left aligned, with sidebar, min- & max-width content)
-.container-fluid 
-	padding-left: $gridGutterWidth
-	padding-right: $gridGutterWidth
-	@include clearfix()
+[class*="span"]
+	float: left
+	min-height: 1px
+	margin-left: 20px
 
-section
-	padding-top: 20px
-
-// Fixed (940px)
-@include grid-core-generate($gridColumnWidth, $gridGutterWidth)
-
-// Fluid (940px)
-@include grid-fluid-generate($fluidGridColumnWidth, $fluidGridGutterWidth)
-
-.span12 
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container, .span12
 	width: 940px
 
-.span11 
+.span11
 	width: 860px
 
-.span10 
+.span10
 	width: 780px
 
-.span9 
+.span9
 	width: 700px
 
-.span8 
+.span8
 	width: 620px
 
-.span7 
+.span7
 	width: 540px
 
-.span6 
+.span6
 	width: 460px
 
-.span5 
+.span5
 	width: 380px
 
-.span4 
+.span4
 	width: 300px
 
-.span3 
+.span3
 	width: 220px
 
-.span2 
+.span2
 	width: 140px
 
-.span1 
+.span1
 	width: 60px
 
-.offset12 
+.offset12
 	margin-left: 980px
 
-.offset11 
+.offset11
 	margin-left: 900px
 
-.offset10 
+.offset10
 	margin-left: 820px
 
-.offset9 
+.offset9
 	margin-left: 740px
 
-.offset8 
+.offset8
 	margin-left: 660px
 
-.offset7 
+.offset7
 	margin-left: 580px
 
-.offset6 
+.offset6
 	margin-left: 500px
 
-.offset5 
+.offset5
 	margin-left: 420px
 
-.offset4 
+.offset4
 	margin-left: 340px
 
-.offset3 
+.offset3
 	margin-left: 260px
 
-.offset2 
+.offset2
 	margin-left: 180px
 
-.offset1 
+.offset1
 	margin-left: 100px
 
-.row-fluid 
+.row-fluid
 	width: 100%
 	*zoom: 1
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
+	[class*="span"]
+		display: block
+		float: left
+		width: 100%
+		min-height: 30px
+		margin-left: 2.127659574468085%
+		*margin-left: 2.074468085106383%
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+		&:first-child
+			margin-left: 0
+	.span12
+		width: 100%
+		*width: 99.94680851063829%
+	.span11
+		width: 91.48936170212765%
+		*width: 91.43617021276594%
+	.span10
+		width: 82.97872340425532%
+		*width: 82.92553191489361%
+	.span9
+		width: 74.46808510638297%
+		*width: 74.41489361702126%
+	.span8
+		width: 65.95744680851064%
+		*width: 65.90425531914893%
+	.span7
+		width: 57.44680851063829%
+		*width: 57.39361702127659%
+	.span6
+		width: 48.93617021276595%
+		*width: 48.88297872340425%
+	.span5
+		width: 40.42553191489362%
+		*width: 40.37234042553192%
+	.span4
+		width: 31.914893617021278%
+		*width: 31.861702127659576%
+	.span3
+		width: 23.404255319148934%
+		*width: 23.351063829787233%
+	.span2
+		width: 14.893617021276595%
+		*width: 14.840425531914894%
+	.span1
+		width: 6.382978723404255%
+		*width: 6.329787234042553%
+	.offset12
+		margin-left: 104.25531914893617%
+		*margin-left: 104.14893617021275%
+		&:first-child
+			margin-left: 102.12765957446808%
+			*margin-left: 102.02127659574467%
+	.offset11
+		margin-left: 95.74468085106382%
+		*margin-left: 95.6382978723404%
+		&:first-child
+			margin-left: 93.61702127659574%
+			*margin-left: 93.51063829787232%
+	.offset10
+		margin-left: 87.23404255319149%
+		*margin-left: 87.12765957446807%
+		&:first-child
+			margin-left: 85.1063829787234%
+			*margin-left: 84.99999999999999%
+	.offset9
+		margin-left: 78.72340425531914%
+		*margin-left: 78.61702127659572%
+		&:first-child
+			margin-left: 76.59574468085106%
+			*margin-left: 76.48936170212764%
+	.offset8
+		margin-left: 70.2127659574468%
+		*margin-left: 70.10638297872339%
+		&:first-child
+			margin-left: 68.08510638297872%
+			*margin-left: 67.9787234042553%
+	.offset7
+		margin-left: 61.70212765957446%
+		*margin-left: 61.59574468085106%
+		&:first-child
+			margin-left: 59.574468085106375%
+			*margin-left: 59.46808510638297%
+	.offset6
+		margin-left: 53.191489361702125%
+		*margin-left: 53.085106382978715%
+		&:first-child
+			margin-left: 51.063829787234035%
+			*margin-left: 50.95744680851063%
+	.offset5
+		margin-left: 44.68085106382979%
+		*margin-left: 44.57446808510638%
+		&:first-child
+			margin-left: 42.5531914893617%
+			*margin-left: 42.4468085106383%
+	.offset4
+		margin-left: 36.170212765957444%
+		*margin-left: 36.06382978723405%
+		&:first-child
+			margin-left: 34.04255319148936%
+			*margin-left: 33.93617021276596%
+	.offset3
+		margin-left: 27.659574468085104%
+		*margin-left: 27.5531914893617%
+		&:first-child
+			margin-left: 25.53191489361702%
+			*margin-left: 25.425531914893618%
+	.offset2
+		margin-left: 19.148936170212764%
+		*margin-left: 19.04255319148936%
+		&:first-child
+			margin-left: 17.02127659574468%
+			*margin-left: 16.914893617021278%
+	.offset1
+		margin-left: 10.638297872340425%
+		*margin-left: 10.53191489361702%
+		&:first-child
+			margin-left: 8.51063829787234%
+			*margin-left: 8.404255319148938%
 
-.row-fluid:before,
-.row-fluid:after 
-	display: table
-	content: ""
+[class*="span"].hide, .row-fluid [class*="span"].hide
+	display: none
 
-.row-fluid:after 
-	clear: both
-
-.row-fluid > [class*="span"] 
-	float: left
-	margin-left: 2.127659574%
-
-.row-fluid > [class*="span"]:first-child 
-	margin-left: 0
-
-.row-fluid > .span12 
-	width: 99.99999998999999%
-
-.row-fluid > .span11 
-	width: 91.489361693%
-
-.row-fluid > .span10 
-	width: 82.97872339599999%
-
-.row-fluid > .span9 
-	width: 74.468085099%
-
-.row-fluid > .span8 
-	width: 65.95744680199999%
-
-.row-fluid > .span7 
-	width: 57.446808505%
-
-.row-fluid > .span6 
-	width: 48.93617020799999%
-
-.row-fluid > .span5 
-	width: 40.425531911%
-
-.row-fluid > .span4 
-	width: 31.914893614%
-
-.row-fluid > .span3 
-	width: 23.404255317%
-
-.row-fluid > .span2
-	width: 14.89361702%
-
-.row-fluid > .span1
-	width: 6.382978723%
-
-
-// Alignment
-// Used to align elements, ie floats, text-align, etc
-// ----------------------------------------------------------------------------
-
-.left
-	float: left
-
-.right
+[class*="span"].pull-right, .row-fluid [class*="span"].pull-right
 	float: right
 
-.text-right
-	text-align: right
+.container
+	margin-right: auto
+	margin-left: auto
+	padding: $containerPadding
+	*zoom: 1
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
 
-.text-left
-	text-align: left
+.container-fluid
+	padding: $fluidContainerPadding
+	*zoom: 1
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
 
-// Used to adjust alignment of text in tables
-.table
-	td, 
-	tr
-		&.text-right
-			text-align: right
-
-.table
-	td, 
-	tr
-		&.text-left
-			text-align: left
-
-// Typography
-// Headings, body text, lists, code, and more for a versatile and durable typography system
-// ----------------------------------------------------------------------------
-
-// BODY TEXT
-// ---------
 p
-	margin: 0 0 $baseLineHeight / 2
-	font-family: $baseFontFamily
-	font-size: $baseFontSize
-	line-height: $baseLineHeight
-	small
-		font-size: $baseFontSize - 2
-		color: $grayLight
+	margin: 0 0 10px
 
 .lead
-	margin-bottom: $baseLineHeight
-	font-size: 20px
+	margin-bottom: 20px
+	font-size: 21px
 	font-weight: 200
-	line-height: $baseLineHeight * 1.5
+	line-height: 30px
 
-// HEADINGS
-// --------
+small
+	font-size: 85%
 
-h1, h2, h3, h4, h5, h6
-	margin: 0
-	font-family: $headingsFontFamily
-	font-weight: $headingsFontWeight
-	color: $headingsColor
-	text-rendering: optimizelegibility
-	// Fix the character spacing for headings
-	small
-		font-weight: normal
-		color: $grayLight
-
-h1
-	font-size: 30px
-	line-height: $baseLineHeight * 2
-	small
-		font-size: 18px
-
-h2
-	font-size: 24px
-	line-height: $baseLineHeight * 2
-	small
-		font-size: 18px
-
-h3
-	line-height: $baseLineHeight * 1.5
-	font-size: 18px
-	small
-		font-size: 14px
-
-h4, h5, h6
-	line-height: $baseLineHeight
-
-h4
-	font-size: 14px
-	small
-		font-size: 12px
-
-h5
-	font-size: 12px
-
-h6
-	font-size: 11px
-	color: $grayLight
-	text-transform: uppercase
-
-// Page header
-.page-header
-	padding-bottom: $baseLineHeight - 1
-	margin: $baseLineHeight 0
-	border-bottom: 1px solid $grayLighter
-
-.page-header h1
-	line-height: 1
-
-// LISTS
-// -----
-
-// Unordered and Ordered lists
-ul, ol
-	padding: 0
-	//margin: 0 0 $baseLineHeight / 2 25px
-	margin: 0
-
-ul ul,
-ul ol,
-ol ol,
-ol ul
-	margin-bottom: 0
-
-ul
-	//list-style: disc
-	list-style: none
-
-ol
-	list-style: decimal
-
-li
-	line-height: $baseLineHeight
-	list-style: none
-
-ul li.leaf
-	list-style: none
-	list-style-image: none
-	border-bottom: 1px solid #CCC
-	padding: 10px 0
-	margin: 0 0 7px 0
-	a
-		font-weight: bold
-
-ul.unstyled,
-ol.unstyled
-	margin-left: 0
-	list-style: none
-
-// Description Lists
-dl
-	margin-bottom: $baseLineHeight
-
-dt,
-dd
-	line-height: $baseLineHeight
-
-dt
-	font-weight: bold
-	line-height: $baseLineHeight - 1
-	// fix jank Helvetica Neue font bug
-
-dd
-	margin-left: $baseLineHeight / 2
-
-// Horizontal layout (like forms)
-.dl-horizontal
-	dt
-		float: left
-		clear: left
-		width: 120px
-		text-align: right
-	dd
-		margin-left: 130px
-
-// MISC
-// ----
-
-// Horizontal rules
-hr
-	margin: $baseLineHeight 0
-	border: 0
-	border-top: 1px solid $hrBorder
-	border-bottom: 1px solid $white
-
-// Emphasis
 strong
 	font-weight: bold
 
 em
 	font-style: italic
 
-.muted
-	color: $grayLight
-
-// Abbreviations and acronyms
-abbr[title]
-	border-bottom: 1px dotted #ddd
-	cursor: help
-
-abbr.initialism
-	font-size: 90%
-	text-transform: uppercase
-
-// Blockquotes
-blockquote
-	padding: 0 0 0 15px
-	margin: 0 0 $baseLineHeight
-	border-left: 5px solid $grayLighter
-	p
-		margin-bottom: 0
-		+font-shorthand(16px, 300, $baseLineHeight * 1.25)
-	small
-		display: block
-		line-height: $baseLineHeight
-		color: $grayLight
-		&:before
-			content: '\2014 \00A0'
-	// Float right with text-align: right
-	&.pull-right
-		float: right
-		padding-left: 0
-		padding-right: 15px
-		border-left: 0
-		border-right: 5px solid $grayLighter
-		p,
-		small
-			text-align: right
-
-// Quotes
-
-q:before,
-q:after,
-blockquote:before, 
-blockquote:after
-	content: ""
-
-// Addresses
-address
-	display: block
-	margin-bottom: $baseLineHeight
-	line-height: $baseLineHeight
-	font-style: normal
-
-// Misc
-small
-	font-size: 100%
-
 cite
 	font-style: normal
 
+.muted
+	color: $grayLight
 
-// CLOSE ICONS
-// -----------
+.text-warning
+	color: $orange
 
-.close 
-	float: right
-	font-size: 20px
-	font-weight: bold
-	line-height: $baseLineHeight
-	color: $black
-	text-shadow: 0 1px 0 rgba(255,255,255,1)
-	@include opacity(20)
-	&:hover 
-		color: $black
-		text-decoration: none
-		@include opacity(40)
-		cursor: pointer
+.text-error
+	color: $red
 
+.text-info
+	color: $blue
 
+.text-success
+	color: $green
 
-// COMPONENT ANIMATIONS
-// ----------------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6
+	margin: 10px 0
+	font-family: $headingsFontFamily
+	font-weight: $headingsFontWeight
+	line-height: 1
+	color: $headingsColor
+	text-rendering: optimizelegibility
 
-.fade
-	@include transition(opacity .15s linear)
-	opacity: 0
-	&.in 
-		opacity: 1
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small
+	font-weight: normal
+	line-height: 1
+	color: $headingsSmallColor
 
-.collapse 
-	@include transition(height .35s ease)
-	position: relative
-	overflow: hidden
-	height: 0
-	&.in 
-		height: auto
+h1
+	font-size: 27px
+	line-height: 34px
 
+h2
+	font-size: 21px
+	line-height: 27.3px
 
-// PAGE HEADERS
-// ----------------------------------------------------------------------------
+h3
+	font-size: 18px
+	line-height: 23.3px
+
+h4
+	font-size: 18px
+	line-height: 20px
+
+h5
+	font-size: 14px
+	line-height: 20px
+
+h6
+	font-size: 12px
+	line-height: 20px
+
+h1 small
+	font-size: 24px
+
+h2 small
+	font-size: 18px
+
+h3 small, h4 small
+	font-size: 14px
 
 .page-header
-	padding-bottom: 5px
-	margin: 0 0 30px 0
-	border-bottom: 1px solid #ccc
-	+box-shadow(white 0 1px 0)
+	padding-bottom: 9px
+	margin: 20px 0 30px
+	border-bottom: 1px solid $grayLighter
 
-.page-header h1 
-	line-height: 1
+ul, ol
+	padding: 0
+	margin: 0 0 10px 25px
 
-.page-header h1.title
-	padding-bottom: 17px
-	margin: 10px 0
-
-#header
-	border-bottom: 1px solid #ccc
-	padding: 0 0 15px 0
-
-// HERO UNIT
-// ----------------------------------------------------------------------------
-
-.hero-unit
-	padding: 60px
-	margin-bottom: 30px
-	background-color: $heroUnitBackground
-	@include border-radius(6px)
-	h1
+ul
+	ul, ol
 		margin-bottom: 0
-		font-size: 60px
-		line-height: 1
-		color: $heroUnitHeadingColor
-		letter-spacing: -1px
-	p 
-		font-size: 18px
-		font-weight: 200
-		line-height: $baseLineHeight * 1.5
-		color: $heroUnitLeadColor
-	
-// THUMBNAILS
-// ----------------------------------------------------------------------------
 
-.thumbnails
-	margin-left: -$gridGutterWidth
-	list-style: none
-	@include clearfix()
+ol
+	ol, ul
+		margin-bottom: 0
 
-.thumbnails > li 
-	float: left
-	margin: 0 0 $baseLineHeight $gridGutterWidth
+li
+	line-height: 20px
 
-.thumbnail 
-	display: block
-	padding: 4px
-	line-height: 1
-	border: 1px solid #ddd
-	@include border-radius(4px)
-	@include box-shadow(0 1px 1px rgba(0,0,0,.075))
-
-// Add a hover state for linked versions only
-a.thumbnail:hover 
-	border-color: $linkColor
-	@include box-shadow(0 1px 4px rgba(0,105,214,.25))
-
-// Images and captions
-.thumbnail > img 
-	display: block
-	max-width: 100%
-	margin-left: auto
-	margin-right: auto
-
-.thumbnail .caption 
-	padding: 9px
-
-// WELLS
-// ----------------------------------------------------------------------------
-
-.well
-	min-height: 20px
-	padding: 19px
-	margin-bottom: 20px
-	background-color: rgba(0,0,0,.03)
-	border-bottom: 1px solid white
-	border-right: 1px solid white
-	@include border-radius(4px)
-	@include box-shadow(inset 0 1px 2px $grayLight)
-	blockquote 
-		border-color: #ddd
-		border-color: rgba(0,0,0,.15)
-	&.well-large
-		padding: 24px
-		@include border-radius(6px)
-	&.well-small 
-		padding: 9px
-		@include border-radius(3px)
-	&.scroll
-		overflow: scroll
-	&.note
-		height: 200px
-
-.well-white
-	min-height: 20px
-	padding: 19px
-	margin-bottom: 20px
-	background-color: $white
-	border: 1px solid #eee
-	border: 1px solid rgba(0,0,0,.05)
-	@include border-radius(4px)
-	@include box-shadow(inset 0 1px 1px $grayLight)
-	blockquote 
-		border-color: #ddd
-		border-color: rgba(0,0,0,.15)
-	&.well-large
-		padding: 24px
-		@include border-radius(6px)
-	&.well-small 
-		padding: 9px
-		@include border-radius(3px)
-
-.box
-	min-height: 20px
-	padding: 19px
-	margin-bottom: 20px
-	background-color: #e6e6e6
-	border: 1px solid #eee
-	border: 1px solid rgba(0,0,0,.1)
-	@include border-radius(4px)
-	blockquote 
-		border-color: #ddd
-		border-color: rgba(0,0,0,.15)
-	&.box-large
-		padding: 24px
-		@include border-radius(6px)
-	&.box-small 
-		padding: 9px
-		@include border-radius(3px)
-
-.box-white
-	min-height: 20px
-	padding: 19px
-	margin-bottom: 20px
-	background-color: $white
-	border: 1px solid #ddd
-	border: 1px solid rgba(0,0,0,.15)
-	@include border-radius(4px)
-	&.box-large
-		padding: 24px
-		@include border-radius(6px)
-	&.box-small 
-		padding: 9px
-		@include border-radius(3px)
-
-// SLATES
-// ----------------------------------------------------------------------------
-
-.slate
-	min-height: 20px
-	padding: 19px
-	margin: 0 2px 20px 0
-	background-color: $white
-	@include border-radius(4px)
-	@include box-shadow(0 1px 2px $grayLight)
-	blockquote 
-		border-color: #ddd
-		border-color: rgba(0,0,0,.15)
-
-// Sizes
-.slate-large
-	padding: 24px
-	@include border-radius(6px)
-
-.slate-small 
-	padding: 9px
-	@include border-radius(3px)
-
-
-// ADMIN TABS
-// ----------------------------------------------------------------------------
-
-ul.primary
-	border-bottom: none
+ul.unstyled, ol.unstyled
 	margin-left: 0
 	list-style: none
-	text-align: center
-	@include clearfix()
-	li 
-		display: inline
-		a
-			display: inline-block
-			padding: 5px 14px
-			background-color: #fff
-			border: 1px solid #ddd
-			@include border-radius(15px)
-			&:hover 
-				text-decoration: none
-				background-color: #f5f5f5
-				border: 1px solid #ccc
-			&.active
-				border: 1px solid #ccc
-				background-color: #f5f5f5
 
-ul.secondary
-	border-bottom: none
-	margin: 20px 0
-	padding: 0
-	ul.secondary
-		border-bottom: none
-		margin-left: 0
-		list-style: none
-		text-align: left
-		@include clearfix()
-		li 
-			display: inline
-			border: none
-			padding: 0 1em 0 0
-			a
-				display: inline-block
-				padding: 1px 10px
-				background-color: #fff
-				border: 1px solid #ddd
-				font-size: 11px
-				@include border-radius(15px)
-				&:hover 
-					text-decoration: none
-					background-color: #f5f5f5
-					border: 1px solid #ccc
-				&.active
-					border: 1px solid #ccc
-					background-color: #f5f5f5
+dl
+	margin-bottom: 20px
 
-ul.action-links
-	margin: 1em 0
-	padding: 0 20px 0 0
-	list-style-type: none
-	overflow: hidden
+dt, dd
+	line-height: 20px
 
-ul.action-links li
-	float: left
-	margin: 0 1em 0 0
-	border: 1px solid #ccc
-	padding: 1px 10px
-	+border-radius(20px)
-	font-size: 11px
-	&:hover
-		border: 1px solid #aaa
-
-ul.action-links a
-	padding-left: 15px
-	background: transparent url(../images/add.png) no-repeat 0 center
-	line-height: 18px
+dt
 	font-weight: bold
-	position: relative
 
-.item-list ul li
-	margin: 0
+dd
+	margin-left: 10px
 
+.dl-horizontal
+	*zoom: 1
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
+	dt
+		float: left
+		width: 160px
+		overflow: hidden
+		clear: left
+		text-align: right
+		text-overflow: ellipsis
+		white-space: nowrap
+	dd
+		margin-left: 180px
 
-// FORMS
-// Base styles for various input types, form layouts, and states
-// ----------------------------------------------------------------------------
-
-
-// GENERAL
-// Make all forms have space below them
-form
-	margin: 0 0 $baseLineHeight
-
-fieldset 
-	padding: 0
-	margin: 0
+hr
+	margin: 20px 0
 	border: 0
+	border-top: 1px solid $grayLighter
+	border-bottom: 1px solid #ffffff
+
+abbr
+	&[title]
+		cursor: help
+		border-bottom: 1px dotted $grayLight
+	&.initialism
+		font-size: 90%
+		text-transform: uppercase
+
+blockquote
+	padding: 0 0 0 15px
+	margin: 0 0 20px
+	border-left: 5px solid $grayLighter
+	p
+		margin-bottom: 0
+		font-size: 16px
+		font-weight: 300
+		line-height: 25px
+	small
+		display: block
+		line-height: 20px
+		color: $grayLight
+		&:before
+			content: '\2014 \00A0'
+	&.pull-right
+		float: right
+		padding-right: 15px
+		padding-left: 0
+		border-right: 5px solid $grayLighter
+		border-left: 0
+		p
+			text-align: right
+		small
+			text-align: right
+			&:before
+				content: ''
+			&:after
+				content: '\00A0 \2014'
+
+q
+	&:before, &:after
+		content: ""
+
+blockquote
+	&:before, &:after
+		content: ""
+
+address
+	display: block
+	margin-bottom: 20px
+	font-style: normal
+	line-height: 20px
+
+code, pre
+	padding: 0 3px 2px
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace
+	font-size: 12px
+	color: #333333
+	-webkit-border-radius: 3px
+	-moz-border-radius: 3px
+	border-radius: 3px
+
+code
+	padding: 2px 4px
+	color: #d14
+	background-color: #f7f7f9
+	border: 1px solid #e1e1e8
+
+pre
+	display: block
+	padding: 9.5px
+	margin: 0 0 10px
+	font-size: 13px
+	line-height: 20px
+	word-break: break-all
+	word-wrap: break-word
+	white-space: pre
+	white-space: pre-wrap
+	background-color: #f5f5f5
+	border: 1px solid #ccc
+	border: 1px solid rgba(0, 0, 0, 0.15)
+	-webkit-border-radius: 4px
+	-moz-border-radius: 4px
+	border-radius: 4px
+	&.prettyprint
+		margin-bottom: 20px
+	code
+		padding: 0
+		color: inherit
+		background-color: transparent
+		border: 0
+
+.pre-scrollable
+	max-height: 340px
+	overflow-y: scroll
 
 form
-	fieldset
-	& table
-		margin: 40px 0 0 0
-
-.page-admin-modules
-	fieldset
-		div.fieldset-wrapper
-			position: relative
-			top: -15px
+	margin: 0 0 20px
 
 fieldset
-	div.fieldset-wrapper
-		position: relative
-		top: 20px
-
-fieldset.form-wrapper
-	margin: 30px 0 0 0
-	&.collapsible
-		margin: 0
+	padding: 0
+	margin: 0
+	border: 0
 
 html.js fieldset.collapsed
-	height: 50px
+	height: auto
 
-fieldset.collapsible
-	overflow: hidden
-	padding: 0 0 30px 0
-	&.collapsed
-		padding: 0
-
-// Groups of fields with labels on top (legends)
-legend 
+legend
 	display: block
 	width: 100%
-	padding: 0
-	margin-bottom: $baseLineHeight * 1.5
-	font-size: $baseFontSize * 1.1
-	line-height: $baseLineHeight * 2
-	color: $grayDark
+	padding: 0 0 5px 0
+	margin-bottom: 10px
+	font-size: 21px
+	color: #333333
 	border: 0
-	border-bottom: 1px solid #ccc
-	font-weight: bold
-	small 
-		font-size: $baseLineHeight * .75
+	font-weight: 300
+	border-bottom: 1px solid #e5e5e5
+	small
+		font-size: 15px
 		color: $grayLight
 
-// Set font for forms
-label,
-input,
-button,
-select,
-textarea
-	@include font-shorthand() // Set size, weight, line-height here
+input, button, textarea
+	font-size: 14px
+	font-weight: normal
+	line-height: 20px
 
-input,
-button,
-select,
-textarea
-	font-family: $baseFontFamily // And only set font-family here for those that need it (note the missing label element)
+input, button, select, textarea
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 
-// Identify controls by their labels
 label
 	display: block
 	margin-bottom: 5px
-	color: $grayDark
 
-// Inputs, Textareas, Selects
-input,
-textarea,
-select,
-.uneditable-input 
+.exposed-filters .form-item label,
+.exposed-filters .form-item select
+	width: 220px
+
+.filter-wrapper .form-item
+	padding: 0	
+
+.form-type-select,
+.filter-wrapper .form-item
+	label
+		position: relative !important
+		width: 220px	
+		display: block
+	select
+		width: 220px	
+
+select
+	padding: 7px
+	margin: 0
+	background: url(../images/down_arrow.png) white no-repeat 96% center
+	border: none
+	outline: none
 	display: inline-block
-	width: 210px
-	height: $baseLineHeight
-	padding: 4px
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none
+	cursor: pointer
+	+border-radius(2px)
+	&:hover
+		border: 1px solid #333
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+	select
+		padding-right: 18px
+
+label
+	position: relative
+	
+
+textarea
+	display: inline-block
+	height: 20px
 	margin-bottom: 9px
-	font-size: $baseFontSize
-	line-height: $baseLineHeight
-	color: $gray
-	border: 1px solid $inputBorder
-	@include border-radius(3px)
+	font-size: 13px
+	font-weight: 300
+	line-height: 20px
+	-webkit-border-radius: 2px
+	-moz-border-radius: 2px
+	border-radius: 2px
+
+input
+	&[type="text"], &[type="password"], &[type="datetime"], &[type="datetime-local"], &[type="date"], &[type="month"], &[type="time"], &[type="week"], &[type="number"], &[type="email"], &[type="url"], &[type="search"], &[type="tel"], &[type="color"]
+		display: inline-block
+		height: 20px
+		margin-bottom: 9px
+		font-size: 13px
+		font-weight: 300
+		line-height: 20px
+		-webkit-border-radius: 2px
+		-moz-border-radius: 2px
+		border-radius: 2px
+		max-width: 530px
+		width: 100%
+		padding: 4px 6px !important
+
+.uneditable-input
+	display: inline-block
+	height: 20px
+	margin-bottom: 9px
+	font-size: 13px
+	font-weight: 300
+	line-height: 20px
+	color: #555555
+	-webkit-border-radius: 2px
+	-moz-border-radius: 2px
+	border-radius: 2px
+
+.uneditable-input
+	max-width: 530px
+	width: 100%
+	padding: 4px 6px !important
+
+label
+	padding: 0
+	max-width: 530px
+
+
+textarea, .form-textarea-wrapper textarea,
+	max-width: 544px
+	width: 100%
+	padding: 4px 6px !important
+
+textarea
+	height: auto
+	background-color: #ffffff
+	border: 1px solid #cccccc
+
+input
+	&[type="text"], &[type="password"], &[type="datetime"], &[type="datetime-local"], &[type="date"], &[type="month"], &[type="time"], &[type="week"], &[type="number"], &[type="email"], &[type="url"], &[type="search"], &[type="tel"], &[type="color"]
+		background-color: #ffffff
+		border: 1px solid #cccccc
+
+.uneditable-input
+	background-color: #ffffff
+	border: 1px solid #cccccc
+
+textarea:focus
+	border-color: $blue
+	outline: 0
+
+
+input
+	&[type="text"]:focus, &[type="password"]:focus, &[type="datetime"]:focus, &[type="datetime-local"]:focus, &[type="date"]:focus, &[type="month"]:focus, &[type="time"]:focus, &[type="week"]:focus, &[type="number"]:focus, &[type="email"]:focus, &[type="url"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="color"]:focus
+		border-color: $blue
+		outline: 0
+
+.uneditable-input:focus
+	border-color: $blue
+	outline: 0
+
+input
+	&[type="radio"], &[type="checkbox"]
+		margin: 4px 0 0
+		margin-top: 1px \9
+		*margin-top: 0
+		line-height: normal
+		cursor: pointer
+	&[type="file"], &[type="image"], &[type="submit"], &[type="reset"], &[type="button"], &[type="radio"], &[type="checkbox"]
+		width: auto
+
+input[type="file"]
+	height: 30px
+	// In IE7, the height of the select element cannot be changed by height, only font-size
+	*margin-top: 4px
+	// For IE7, add top margin to align select with labels
+	line-height: 30px
+
+select
+	width: 220px
+	background-color: #ffffff
+	border: 1px solid #cccccc
+	&[multiple], &[size]
+		height: auto
+
+
+input
+	&[type="file"]:focus, &[type="radio"]:focus, &[type="checkbox"]:focus
+
+.uneditable-input, .uneditable-textarea
+	color: $grayLight
+	cursor: not-allowed
+	background-color: #fcfcfc
+	border-color: #cccccc
+
+.uneditable-input
+	overflow: hidden
+	white-space: nowrap
 
 .uneditable-textarea
 	width: auto
 	height: auto
 
-// Inputs within a label
-label input,
-label textarea,
-label select 
-	display: block
-
-// Mini reset for unique input types
-input[type="image"],
-input[type="checkbox"],
-input[type="radio"]
-	width: auto
-	height: auto
-	padding: 0
-	margin: 3px 0
-	*margin-top: 0 /* IE7 */
-	line-height: normal
-	cursor: pointer
-	@include border-radius(0)
-	border: 0 \9 /* IE9 and down */
-
-input[type="image"]
-	border: 0
-
-// Reset the file input to browser defaults
-input[type="file"]
-	width: auto
-	padding: initial
-	line-height: initial
-	border: initial
-	background-color: $inputBackground
-	background-color: initial
-	@include box-shadow(none)
-
-
-// Help out input buttons
-input[type="button"],
-input[type="reset"],
-input[type="submit"]
-	width: auto
-	height: auto
-
-// Set the height of select and file controls to match text inputs
-select,
-input[type="file"]
-	height: 28px /* In IE7, the height of the select element cannot be changed by height, only font-size */
-	*margin-top: 4px /* For IE7, add top margin to align select with labels */
-	line-height: 28px
-
-// Reset line-height for IE
-input[type="file"] 
-	line-height: 18px \9
-
-// Chrome on Linux and Mobile Safari need background-color
-select 
-	width: 220px// default input width + 10px of padding that doesn't get applied
-	background-color: $inputBackground
-
-// Make multiple select elements height not fixed
-select[multiple],
-select[size] 
-	height: auto
-
-// Remove shadow from image inputs
-input[type="image"] 
-	@include box-shadow(none)
-
-// Make textarea height behave
-textarea 
-	height: auto
-
-// Hidden inputs
-input[type="hidden"] 
-	display: none
-
-
-// CHECKBOXES & RADIOS
-// ----------------------------------------------------------------------------
-
-// Indent the labels to position radios/checkboxes as hanging
-.radio,
-.checkbox 
-	padding-left: 18px
-
-.radio input[type="radio"],
-.checkbox input[type="checkbox"] 
-	float: left
-	margin-left: -18px
-
-
-// Move the options list down to align with labels
-.controls > .radio:first-child,
-.controls > .checkbox:first-child 
-	padding-top: 5px // has to be padding because margin collaspes
-
-// Radios and checkboxes on same line
-// TODO v3: Convert .inline to .control-inline
-.radio.inline,
-.checkbox.inline 
-	display: inline-block
-	padding-top: 5px
-	margin-bottom: 0
-	vertical-align: middle
-
-.radio.inline + .radio.inline,
-.checkbox.inline + .checkbox.inline 
-	margin-left: 10px // space out consecutive inline controls
-
-
-// FOCUS STATE
-// ----------------------------------------------------------------------------
-
-input,
-textarea,
-	@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075))
-	$transition: border linear .2s, box-shadow linear .2s
-	@include transition($transition)
-
-input:focus,
-textarea:focus 
-	border-color: rgba(82,168,236,.8)
-	$shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)
-	@include box-shadow($shadow)
-	outline: 0
-	outline: thin dotted \9 /* IE6-9 */
-
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus,
-input[type="password"], 
-input[type="search"]:focus
-select:focus 
-	@include box-shadow(none) // override for file inputs
-	@include tab-focus()
-
-input:-webkit-autofill
-	background: white !important
-
-// INPUT SIZES
-// ----------------------------------------------------------------------------
-
-// General classes for quick sizes
-.input-mini
-	width: 60px
-
-.input-small
-	width: 90px
-
-.input-medium
-	width: 150px
-
-.input-large
-	width: 210px
-
-.input-xlarge
-	width: 270px
-
-.input-xxlarge
-	width: 530px
-
-// Grid style input sizes
-input[class*="span"],
-select[class*="span"],
-textarea[class*="span"],
-.uneditable-input
-	float: none
-	margin-left: 0
-
-
-// GRID SIZING FOR INPUTS
-// ----------------------------------------------------------------------------
-
-@include grid-input-generate($gridColumnWidth, $gridGutterWidth)
-
-
-// DISABLED STATE
-// ----------------------------------------------------------------------------
-
-// Disabled and read-only inputs
-input[disabled],
-select[disabled],
-textarea[disabled],
-input[readonly],
-select[readonly],
-textarea[readonly]
-	background-color: $inputDisabledBackground
-	border-color: #ddd
-	cursor: not-allowed
-
-
-// FORM FIELD FEEDBACK STATES
-// ----------------------------------------------------------------------------
-
-// Warning
-.control-group.warning
-	@include formFieldState($warningText, $warningText, $warningBackground)
-
-// Error
-.control-group.error 
-	@include formFieldState($errorText, $errorText, $errorBackground)
-
-// Success
-.control-group.success 
-	@include formFieldState($successText, $successText, $successBackground)
-
-
-// HTML5 invalid states
-// Shares styles with the .control-group.error above
-input:focus:required:invalid,
-textarea:focus:required:invalid,
-select:focus:required:invalid
-	color: #b94a48
-	border-color: #ee5f5b
-	&:focus
-		border-color: darken(#ee5f5b, 10%)
-		@include box-shadow(0 0 6px lighten(#ee5f5b, 20%))
-
-
-// FORM ACTIONS
-// ----------------------------------------------------------------------------
-
-.form-actions
-	padding: ($baseLineHeight - 1) 0 $baseLineHeight
-	// margin-top: $baseLineHeight
-	// margin-bottom: $baseLineHeight
-	// background-color: $grayLighter
-	//border-top: 1px solid #ddd
-	@include clearfix() // Adding clearfix to allow for .pull-right button containers
-
-// For text that needs to appear as an input but should not be an input
-.uneditable-input
-	display: block
-	background-color: $inputBackground
-	border-color: #eee
-	@include box-shadow(inset 0 1px 2px rgba(0,0,0,.025))
-	cursor: not-allowed
-
-// Placeholder text gets special styles; can't be bundled together though for some reason
-@include placeholder($grayLight)
-
-
-input#edit-title-label
-	height: 30px
-
-// HELP TEXT
-// ----------------------------------------------------------------------------
-
-.help-block,
-.help-inline 
-	color: $gray // lighten the text some for contrast
-
-
-.help-block 
-	display: block // account for any element using help-block
-	margin-bottom: $baseLineHeight / 2
-
-
-.help-inline
-	display: inline-block
-	@include ie7-inline-block()
-	vertical-align: middle
-	padding-left: 5px
-
-
-// INPUT GROUPS
-// ----------------------------------------------------------------------------
-
-// Allow us to put symbols and text within the input field for a cleaner look
-.input-prepend,
-.input-append 
-	margin-bottom: 5px
-	input,
-	select,
-	.uneditable-input
-		*margin-left: 0
-		@include border-radius(0 3px 3px 0)
-		&:focus 
-			position: relative
-			z-index: 2
-	.uneditable-input 
-		border-left-color: #ccc
-	.add-on
-		display: inline-block
-		width: auto
-		min-width: 16px
-		height: $baseLineHeight
-		padding: 4px 5px
-		font-weight: normal
-		line-height: $baseLineHeight
-		text-align: center
-		text-shadow: 0 1px 0 $white
-		vertical-align: middle
-		background-color: $grayLighter
-		border: 1px solid #ccc
-	.add-on,
-	.btn
-		@include border-radius(3px 0 0 3px)
-	.active
-		background-color: lighten($green, 30)
-		border-color: $green
+input:-moz-placeholder, textarea:-moz-placeholder, input:-ms-input-placeholder, textarea:-ms-input-placeholder, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
+	color: $grayLight
 	
-
-.input-prepend
-	.add-on,
-	.btn
-		margin-right: -1px
-.input-append 
-	input,
-	select,
-	.uneditable-input
-		@include border-radius(3px 0 0 3px)
-	.uneditable-input 
-		border-left-color: #eee
-		border-right-color: #ccc
-	.add-on,
-	.btn
-		margin-left: -1px
-		@include border-radius(0 3px 3px 0)
-
-// Remove all border-radius for inputs with both prepend and append
-.input-prepend.input-append
-	input,
-	select,
-	.uneditable-input 
-		@include border-radius(0)
-	.add-on:first-child,
-	.btn:first-child
-		margin-right: -1px
-		@include border-radius(3px 0 0 3px)
-	.add-on:last-child,
-	.btn:last-child 
-		margin-left: -1px
-		@include border-radius(0 3px 3px 0)
-
-
-// SEARCH FORM
-// ----------------------------------------------------------------------------
-
-.search-query 
-	padding-left: 14px
-	padding-right: 14px
-	margin-bottom: 0 // remove the default margin on all inputs
-	@include border-radius(14px)
-
-
-// HORIZONTAL & VERTICAL FORMS
-// ----------------------------------------------------------------------------
-
-// Common properties
-// ----------------------------------------------------------------------------
-
-.form-search,
-.form-inline,
-.form-horizontal
-	input,
-	textarea,
-	select,
-	.help-inline,
-	.uneditable-input,
-	.input-prepend,
-	.input-append 
-		display: inline-block
-		margin-bottom: 0
-	.hide
-		display: none
-
-.form-search label,
-.form-inline label 
-	display: inline-block
-
-// Remove margin for input-prepend/-append
-.form-search .input-append,
-.form-inline .input-append,
-.form-search .input-prepend,
-.form-inline .input-prepend 
-	margin-bottom: 0
-
-// Inline checkbox/radio labels (remove padding on left)
-.form-search .radio,
-.form-search .checkbox,
-.form-inline .radio,
-.form-inline .checkbox 
-	padding-left: 0
-	margin-bottom: 0
-	vertical-align: middle
-
-// Remove float and margin, set to inline-block
-.form-search .radio input[type="radio"],
-.form-search .checkbox input[type="checkbox"],
-.form-inline .radio input[type="radio"],
-.form-inline .checkbox input[type="checkbox"]
-	float: left
-	margin-left: 0
-	margin-right: 3px
-
-// Margin to space out fieldsets
-.control-group 
-	margin-bottom: $baseLineHeight / 2
-
-// Legend collapses margin, so next element is responsible for spacing
-legend + .control-group 
-	margin-top: $baseLineHeight
-	-webkit-margin-top-collapse: separate
-
-// Horizontal-specific styles
-// ----------------------------------------------------------------------------
-
-.form-horizontal 
-	.control-group 
-		margin-bottom: $baseLineHeight
-		@include clearfix()
-	.control-label 
-		float: left
-		width: 140px
-		padding-top: 5px
-		text-align: right
-	.controls
-		margin-left: 160px
-		*display: inline-block
-		*margin-left: 0
-		*padding-left: 20px
-	.help-block 
-		margin-top: $baseLineHeight / 2
-		margin-bottom: 0
-	.form-actions 
-		padding-left: 160px
-
-
-// BUTTON STYLES
-// ----------------------------------------------------------------------------
-
-// Button Core
-.btn,
-input[type="submit"],
-.button,
-button
-	display: inline-block
-	@include ie7-inline-block()
-	position: relative
-	padding: 5px 15px 5px
-	margin-bottom: 0 // For input.btn
-	font-size: $baseFontSize
-	line-height: $baseLineHeight
-	color: $grayDark
-	text-align: center
-	text-shadow: 0 1px 1px rgba(255,255,255,.75)
-	vertical-align: middle
-	@include buttonBackground($btnBackground, $btnBackgroundHighlight)
-	border: 1px solid $btnBorder
-	border-bottom-color: darken($btnBorder, 10%)
-	@include border-radius(15px)
-	$shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)
-	@include box-shadow($shadow)
-	cursor: pointer
-	@include ie7-restore-left-whitespace()
-	&:hover
-		color: $grayDark
-		text-decoration: none
-		background-color: darken($white, 10%)
-		background-position: 0 -15px
-		@include transition(background-position .1s linear)
-	&:focus 
-		@include tab-focus()
-	&.active,
-	&:active 
-		background-image: none
-		$shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)
-		@include box-shadow($shadow)
-		background-color: darken($white, 10%)
-		background-color: darken($white, 15%) #{"\9"}
-		outline: 0
-	&.disabled,
-	&[disabled] 
-		cursor: default
-		background-image: none
-		background-color: darken($white, 10%)
-		@include opacity(65)
-		@include box-shadow(none)
-
-
-
-// Button Sizes
-// ----------------------------------------------------------------------------
-
-// Large
-.btn-large,
-input[value="Save"]
-	padding: 9px 20px
-	font-size: $baseFontSize + 2px
-	line-height: normal
-	@include border-radius(20px)
-
-.btn-large [class^="icon-"] 
-	margin-top: 1px
-
-// Small
-.btn-small 
-	padding: 5px 9px
-	font-size: $baseFontSize - 2px
-	line-height: $baseLineHeight - 2px
-
-.btn-small [class^="icon-"] 
-	margin-top: -1px
-
-// Mini
-.btn-mini
-	padding: 2px 6px
-	font-size: $baseFontSize - 2px
-	line-height: $baseLineHeight - 4px
-
-
-// Alternate buttons
-// ----------------------------------------------------------------------------
-
-// Set text color
-.btn-primary,
-.btn-primary:hover,
-.btn-warning,
-.btn-warning:hover,
-.btn-danger,
-.btn-danger:hover,
-.btn-success,
-.btn-success:hover,
-.btn-info,
-.btn-info:hover,
-.btn-inverse,
-.btn-inverse:hover,
-input[value="Save"],
-input[value="Save"]:hover,
-input[value="Save configuration"],
-input[value="Save configuration"]:hover,
-input[value="Save blocks"],
-input[value="Save blocks"]:hover,
-input[value="Cancel"],
-input[value="Cancel"]:hover,
-input[value="Delete"],
-input[value="Delete"]:hover,
-input[value="Uninstall"],
-input[value="Uninstall"]:hover
-	text-shadow: 0 -1px 0 rgba(0,0,0,.25)
-	color: $white
-
-// Provide *some* extra contrast for those who can get it
-.btn-primary.active,
-.btn-warning.active,
-.btn-danger.active,
-.btn-success.active,
-.btn-info.active,
-.btn-inverse.active,
-	color: rgba(255,255,255,.75)
-
-// Set the backgrounds
-.btn-primary,
-input[value="Save"],
-input[value="Save configuration"],
-input[value="Save blocks"]
-	@include buttonBackground($btnPrimaryBackground, $btnPrimaryBackgroundHighlight)
-
-// Warning appears are orange
-.btn-warning 
-	@include buttonBackground($btnWarningBackground, $btnWarningBackgroundHighlight)
-
-// Danger and error appear as red
-.btn-danger,
-input[value="Cancel"],
-input[value="Delete"],
-input[value="Uninstall"]
-	@include buttonBackground($btnDangerBackground, $btnDangerBackgroundHighlight)
-
-// Success appears as green
-.btn-success
-	@include buttonBackground($btnSuccessBackground, $btnSuccessBackgroundHighlight)
-
-// Info appears as a neutral blue
-.btn-info 
-	@include buttonBackground($btnInfoBackground, $btnInfoBackgroundHighlight)
-
-// Inverse appears as dark gray
-.btn-inverse 
-	@include buttonBackground($btnInverseBackground, $btnInverseBackgroundHighlight)
-
-
-
-// Cross-browser Jank
-// ----------------------------------------------------------------------------
-
-button.btn,
-input[type="submit"].btn
-	&::-moz-focus-inner 
-		padding: 0
-		border: 0
-	*padding-top: 2px
-	*padding-bottom: 2px
-	&.btn-large
-		*padding-top: 7px
-		*padding-bottom: 7px
-	&.btn-small
-		*padding-top: 3px
-		*padding-bottom: 3px
-	&.btn-mini 
-		*padding-top: 1px
-		*padding-bottom: 1px
-
-
-// BUTTON GROUPS
-// ----------------------------------------------------------------------------
-
-// Make the div behave like a button
-.btn-group
-	position: relative
-	@include clearfix() // clears the floated buttons
-	@include ie7-restore-left-whitespace()
-
-// Space out series of button groups
-.btn-group + .btn-group
-	margin-left: 5px
-
-// Optional: Group multiple button groups together for a toolbar
-.btn-toolbar
-	margin-top: $baseLineHeight / 2
-	margin-bottom: $baseLineHeight / 2
-	.btn-group 
-		display: inline-block
-		@include ie7-inline-block()
- 
-
-// Float them, remove border radius, then re-add to first and last elements
-.btn-group .btn 
-	position: relative
-	float: left
-	margin-left: -3px
-	@include border-radius(0)
-
-// Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
-.btn-group .btn:first-child 
-	margin-left: 0
-	-webkit-border-top-left-radius: 4px
-	-moz-border-radius-topleft: 4px
-	border-top-left-radius: 4px
-	-webkit-border-bottom-left-radius: 4px
-	-moz-border-radius-bottomleft: 4px
-	border-bottom-left-radius: 4px
-
-.btn-group .btn:last-child,
-.btn-group .dropdown-toggle 
-	-webkit-border-top-right-radius: 4px
-	-moz-border-radius-topright: 4px
-	border-top-right-radius: 4px
-	-webkit-border-bottom-right-radius: 4px
-	-moz-border-radius-bottomright: 4px
-	border-bottom-right-radius: 4px
-
-// Reset corners for large buttons
-.btn-group .btn.large:first-child 
-	margin-left: 0
-	-webkit-border-top-left-radius: 6px
-	-moz-border-radius-topleft: 6px
-	border-top-left-radius: 6px
-	-webkit-border-bottom-left-radius: 6px
-	-moz-border-radius-bottomleft: 6px
-	border-bottom-left-radius: 6px
-
-.btn-group .btn.large:last-child,
-.btn-group .large.dropdown-toggle 
-	-webkit-border-top-right-radius: 6px
-	-moz-border-radius-topright: 6px
-	border-top-right-radius: 6px
-	-webkit-border-bottom-right-radius: 6px
-	-moz-border-radius-bottomright: 6px
-	border-bottom-right-radius: 6px
-
-// On hover/focus/active, bring the proper btn to front
-.btn-group .btn:hover,
-.btn-group .btn:focus,
-.btn-group .btn:active,
-.btn-group .btn.active 
-	z-index: 2
-
-// On active and open, don't show outline
-.btn-group .dropdown-toggle:active,
-.btn-group.open .dropdown-toggle 
-	outline: 0
-
-
-// Split button dropdowns
-// ----------------------------------------------------------------------------
-
-// Give the line between buttons some depth
-.btn-group .dropdown-toggle
-	padding-left: 8px
-	padding-right: 8px
-	$shadow: inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)
-	@include box-shadow($shadow)
-	*padding-top: 3px
-	*padding-bottom: 3px
-
-.btn-group .btn-mini.dropdown-toggle 
-	padding-left: 5px
-	padding-right: 5px
-	*padding-top: 1px
-	*padding-bottom: 1px
-
-.btn-group .btn-small.dropdown-toggle 
-	*padding-top: 4px
-	*padding-bottom: 4px
-
-.btn-group .btn-large.dropdown-toggle 
-	padding-left: 12px
-	padding-right: 12px
-
-.btn-group.open
-	// IE7's z-index only goes to the nearest positioned ancestor, which would
-	// make the menu appear below buttons that appeared later on the page
-	*z-index: $zindexDropdown
-	.dropdown-menu 
-		display: block
-		margin-top: 1px
-		@include border-radius(5px)
-	.dropdown-toggle
-		background-image: none
-		$shadow: inset 0 1px 6px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)
-		@include box-shadow($shadow)
-
-// Reposition the caret
-.btn .caret 
-	margin-top: 7px
-	margin-left: 0
-
-.btn:hover .caret,
-.open.btn-group .caret
-	@include opacity(100)
-
-// Carets in other button sizes
-.btn-mini .caret 
-	margin-top: 5px
-
-.btn-small .caret 
-	margin-top: 6px
-
-.btn-large .caret
-	margin-top: 6px
-	border-left:	 5px solid transparent
-	border-right: 5px solid transparent
-	border-top:	 5px solid $black
-
-// Account for other colors
-.btn-primary,
-.btn-warning,
-.btn-danger,
-.btn-info,
-.btn-success,
-.btn-inverse
-	.caret
-		border-top-color: $white
-		border-bottom-color: $white
-		@include opacity(75)
-
-// User Login
-
-#login-wrapper
-	margin: 180px 0 0 90px
-	width: 80%
-
-
 // CHECK BOXES AND RADIO BUTTONS
 // ----------------------------------------------------------------------------
+
 input[type='radio']
 	width: 15px
 	height: 15px
@@ -1615,16 +875,6 @@ input[type='radio']
 	outline: none
 	vertical-align: middle
 	background-color: #fff
-	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4f6f8), color-stop(100%, #e6e7e9))
-	background: -webkit-linear-gradient(#f4f6f8,#e6e7e9)
-	background: -moz-linear-gradient(#f4f6f8,#e6e7e9)
-	background: -o-linear-gradient(#f4f6f8,#e6e7e9)
-	background: -ms-linear-gradient(#f4f6f8,#e6e7e9)
-	background: linear-gradient(#f4f6f8,#e6e7e9)
-	-moz-box-shadow: rgba(0,0,0,0.37) 0px 1px 1px,rgba(0,0,0,0.25) 0px 0 1px,inset #fff 0px 2px 0,inset rgba(255,255,255,0.65) 0px 0 1px,inset rgba(0,0,0,0.05) 0px -2px 0
-	-webkit-box-shadow: rgba(0,0,0,0.37) 0px 1px 1px,rgba(0,0,0,0.25) 0px 0 1px,inset #fff 0px 2px 0,inset rgba(255,255,255,0.65) 0px 0 1px,inset rgba(0,0,0,0.05) 0px -2px 0
-	-o-box-shadow: rgba(0,0,0,0.37) 0px 1px 1px,rgba(0,0,0,0.25) 0px 0 1px,inset #fff 0px 2px 0,inset rgba(255,255,255,0.65) 0px 0 1px,inset rgba(0,0,0,0.05) 0px -2px 0
-	box-shadow: rgba(0,0,0,0.37) 0px 1px 1px,rgba(0,0,0,0.25) 0px 0 1px,inset #fff 0px 2px 0,inset rgba(255,255,255,0.65) 0px 0 1px,inset rgba(0,0,0,0.05) 0px -2px 0
 	+border-radius(15px)
 	-moz-appearance: none
 	-webkit-appearance: none
@@ -1632,27 +882,16 @@ input[type='radio']
 
 
 input[type="checkbox"]
-	width: 20px
-	height: 20px
+	width: 22px
+	height: 22px
 	padding: 0
 	margin-right: 4px
 	margin-top: -2px
 	margin-left: 2px
-	border: none
+	border: 1px solid #CCC
 	outline: none
 	vertical-align: middle
-	background-color: #fff
-	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4f6f8), color-stop(100%, #e6e7e9))
-	background: -webkit-linear-gradient(#f4f6f8,#e6e7e9)
-	background: -moz-linear-gradient(#f4f6f8,#e6e7e9)
-	background: -o-linear-gradient(#f4f6f8,#e6e7e9)
-	background: -ms-linear-gradient(#f4f6f8,#e6e7e9)
-	background: linear-gradient(#f4f6f8,#e6e7e9)
-	-moz-box-shadow: rgba(0,0,0,0.37) 0px 1px 1px,rgba(0,0,0,0.25) 0px 0 1px,inset #fff 0px 2px 0,inset rgba(255,255,255,0.65) 0px 0 1px,inset rgba(0,0,0,0.05) 0px -2px 0
-	-webkit-box-shadow: rgba(0,0,0,0.37) 0px 1px 1px,rgba(0,0,0,0.25) 0px 0 1px,inset #fff 0px 2px 0,inset rgba(255,255,255,0.65) 0px 0 1px,inset rgba(0,0,0,0.05) 0px -2px 0
-	-o-box-shadow: rgba(0,0,0,0.37) 0px 1px 1px,rgba(0,0,0,0.25) 0px 0 1px,inset #fff 0px 2px 0,inset rgba(255,255,255,0.65) 0px 0 1px,inset rgba(0,0,0,0.05) 0px -2px 0
-	box-shadow: rgba(0,0,0,0.37) 0px 1px 1px,rgba(0,0,0,0.25) 0px 0 1px,inset #fff 0px 2px 0,inset rgba(255,255,255,0.65) 0px 0 1px,inset rgba(0,0,0,0.05) 0px -2px 0
-	+border-radius(4px)
+	background-color: transparent
 	-moz-appearance: none
 	-webkit-appearance: none
 	appearance: none
@@ -1683,40 +922,13 @@ input[type="radio"]:checked
 	-o-box-shadow: rgba(255,255,255,0.9) 0px 1px 1px,inset rgba(0,0,0,0.5) 0px 2px 5px,inset rgba(0,0,0,0.4) 0px 0 1px,inset rgba(0,0,0,0.3) 0px 1px 0
 	box-shadow: rgba(255,255,255,0.9) 0px 1px 1px,inset rgba(0,0,0,0.5) 0px 2px 5px,inset rgba(0,0,0,0.4) 0px 0 1px,inset rgba(0,0,0,0.3) 0px 1px 0
 
-
-
 input[type="radio"]:checked:before
 	margin: 4px 0 0 4px
 	content: " "
 	width: 7px
 	height: 7px
-	+border-radius(11px)
-	background-position: 0 0
-	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4f6f8), color-stop(100%, #e6e7e9))
-	background: -webkit-linear-gradient(#f4f6f8,#e6e7e9)
-	background: -moz-linear-gradient(#f4f6f8,#e6e7e9)
-	background: -o-linear-gradient(#f4f6f8,#e6e7e9)
-	background: -ms-linear-gradient(#f4f6f8,#e6e7e9)
-	background: linear-gradient(#f4f6f8,#e6e7e9)
-	-moz-box-shadow: rgba(0,0,0,0.37) 0px 1px 1px,rgba(0,0,0,0.25) 0px 0 1px,inset #fff 0px 2px 0,inset rgba(255,255,255,0.65) 0px 0 1px,inset rgba(0,0,0,0.05) 0px -2px 0
-	-webkit-box-shadow: rgba(0,0,0,0.37) 0px 1px 1px,rgba(0,0,0,0.25) 0px 0 1px,inset #fff 0px 2px 0,inset rgba(255,255,255,0.65) 0px 0 1px,inset rgba(0,0,0,0.05) 0px -2px 0
-	-o-box-shadow: rgba(0,0,0,0.37) 0px 1px 1px,rgba(0,0,0,0.25) 0px 0 1px,inset #fff 0px 2px 0,inset rgba(255,255,255,0.65) 0px 0 1px,inset rgba(0,0,0,0.05) 0px -2px 0
-	box-shadow: rgba(0,0,0,0.37) 0px 1px 1px,rgba(0,0,0,0.25) 0px 0 1px,inset #fff 0px 2px 0,inset rgba(255,255,255,0.65) 0px 0 1px,inset rgba(0,0,0,0.05) 0px -2px 0
-
-
-
-
-input[type="checkbox"]:active:not(:disabled)
-	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e6e7e9), color-stop(100%, #f4f6f8))
-	background: -webkit-linear-gradient(#e6e7e9,#f4f6f8)
-	background: -moz-linear-gradient(#e6e7e9,#f4f6f8)
-	background: -o-linear-gradient(#e6e7e9,#f4f6f8)
-	background: -ms-linear-gradient(#e6e7e9,#f4f6f8)
-	background: linear-gradient(#e6e7e9,#f4f6f8)
-	-moz-box-shadow: rgba(255,255,255,0.9) 0px 1px 1px,inset rgba(0,0,0,0.5) 0px 2px 5px,inset rgba(0,0,0,0.4) 0px 0 1px,inset rgba(0,0,0,0.3) 0px 1px 0
-	-webkit-box-shadow: rgba(255,255,255,0.9) 0px 1px 1px,inset rgba(0,0,0,0.5) 0px 2px 5px,inset rgba(0,0,0,0.4) 0px 0 1px,inset rgba(0,0,0,0.3) 0px 1px 0
-	-o-box-shadow: rgba(255,255,255,0.9) 0px 1px 1px,inset rgba(0,0,0,0.5) 0px 2px 5px,inset rgba(0,0,0,0.4) 0px 0 1px,inset rgba(0,0,0,0.3) 0px 1px 0
-	box-shadow: rgba(255,255,255,0.9) 0px 1px 1px,inset rgba(0,0,0,0.5) 0px 2px 5px,inset rgba(0,0,0,0.4) 0px 0 1px,inset rgba(0,0,0,0.3) 0px 1px 0
+	background: white
+	+border-radius(7px)
 
 input[type="checkbox"]:before
 	position: absolute
@@ -1728,1611 +940,725 @@ input[type="checkbox"]:checked:before
 	width: 16px
 	height: 13px
 	background-position: 0 0
+	
+input[type="checkbox"]:checked
+	background-color: white
 
 .form-checkboxes .form-item, .form-radios .form-item
 	margin-top: 20px
 	margin-bottom: 20px
 
+// Indent the labels to position radios/checkboxes as hanging
+.radio,
+.checkbox 
+	padding-left: 5px
 
-// ANIMATIONS
-// ----------
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] 
+	float: left
 
-// Webkit
-@-webkit-keyframes progress-bar-stripes 
-	from  
-		background-position: 0 0
-	to 
-		background-position: 40px 0
+// Move the options list down to align with labels
+.controls > .radio:first-child,
+.controls > .checkbox:first-child 
+	padding-top: 5px // has to be padding because margin collaspes
 
+// Radios and checkboxes on same line
+// TODO v3: Convert .inline to .control-inline
+.radio.inline,
+.checkbox.inline 
+	display: inline-block
+	padding-top: 5px
+	margin-bottom: 0
+	vertical-align: middle
 
-// Firefox
-@-moz-keyframes progress-bar-stripes
-	from
-		background-position: 0 0
-	to
-		background-position: 40px 0
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline 
+	margin-left: 10px // space out consecutive inline controls
 
-// IE9
-@-ms-keyframes progress-bar-stripes 
-	from
-		background-position: 0 0
-	to
-		background-position: 40px 0
+.radio, .checkbox
+	min-height: 18px
+	padding-left: 5px
 
-// Spec
-@keyframes progress-bar-stripes
-	from
-		background-position: 0 0
-	to
-		background-position: 40px 0
+.controls >
+	.radio:first-child, .checkbox:first-child
+		padding-top: 5px
 
+.radio.inline, .checkbox.inline
+	display: inline-block
+	padding-top: 5px
+	margin-bottom: 0
+	vertical-align: middle
 
-// THE BARS
-// --------
+.radio.inline + .radio.inline, .checkbox.inline + .checkbox.inline
+	margin-left: 10px
 
-// Outer container
-.progress
-	overflow: hidden
-	height: 18px
-	margin-bottom: 18px
-	@include gradient-vertical(#f5f5f5, #f9f9f9)
-	@include box-shadow(inset 0 1px 2px rgba(0,0,0,.1))
-	@include border-radius(4px)
+.input-mini
+	width: 60px
 
-// Bar of progress
-.progress .bar
-	width: 0%
-	height: 18px
-	color: $white
-	font-size: 12px
-	margin: 0
+.input-small
+	width: 90px
+
+.input-medium
+	width: 150px
+
+.input-large
+	width: 210px
+
+.input-xlarge
+	width: 270px
+
+.input-xxlarge
+	width: 530px
+
+input[class*="span"], select[class*="span"], textarea[class*="span"], .uneditable-input[class*="span"]
+	float: none
+	margin-left: 0
+
+.row-fluid
+	input[class*="span"], select[class*="span"], textarea[class*="span"], .uneditable-input[class*="span"]
+		float: none
+		margin-left: 0
+
+.input-append
+	input[class*="span"], .uneditable-input[class*="span"]
+		display: inline-block
+
+.input-prepend
+	input[class*="span"], .uneditable-input[class*="span"]
+		display: inline-block
+
+.row-fluid
+	input[class*="span"], select[class*="span"], textarea[class*="span"], .uneditable-input[class*="span"], .input-prepend [class*="span"], .input-append [class*="span"]
+		display: inline-block
+
+input, textarea, .uneditable-input
+	margin-left: 0
+
+.controls-row [class*="span"] + [class*="span"]
+	margin-left: 20px
+
+input.span12, textarea.span12, .uneditable-input.span12
+	width: 926px
+
+input.span11, textarea.span11, .uneditable-input.span11
+	width: 846px
+
+input.span10, textarea.span10, .uneditable-input.span10
+	width: 766px
+
+input.span9, textarea.span9, .uneditable-input.span9
+	width: 686px
+
+input.span8, textarea.span8, .uneditable-input.span8
+	width: 606px
+
+input.span7, textarea.span7, .uneditable-input.span7
+	width: 526px
+
+input.span6, textarea.span6, .uneditable-input.span6
+	width: 446px
+
+input.span5, textarea.span5, .uneditable-input.span5
+	width: 366px
+
+input.span4, textarea.span4, .uneditable-input.span4
+	width: 286px
+
+input.span3, textarea.span3, .uneditable-input.span3
+	width: 206px
+
+input.span2, textarea.span2, .uneditable-input.span2
+	width: 126px
+
+input.span1, textarea.span1, .uneditable-input.span1
+	width: 46px
+
+.controls-row
+	*zoom: 1
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
+	[class*="span"]
+		float: left
+
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly]
+	cursor: not-allowed
+	background-color: $grayLighter
+
+input
+	&[type="radio"][disabled], &[type="checkbox"][disabled], &[type="radio"][readonly], &[type="checkbox"][readonly]
+		background-color: transparent
+
+.control-group
+	&.warning
+		> label, .help-block, .help-inline, .checkbox, .radio, input, select, textarea
+			color: $orange
+		input, select, textarea
+			border-color: $orange
+			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+			-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+		input:focus, select:focus, textarea:focus
+			border-color: #a47e3c
+			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e
+			-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e
+		.input-prepend .add-on, .input-append .add-on
+			color: $orange
+			background-color: #fcf8e3
+			border-color: $orange
+	&.error
+		> label, .help-block, .help-inline, .checkbox, .radio, input, select, textarea
+			color: $red
+		input, select, textarea
+			border-color: $red
+			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+			-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+		input:focus, select:focus, textarea:focus
+			border-color: #953b39
+			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392
+			-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392
+		.input-prepend .add-on, .input-append .add-on
+			color: $red
+			background-color: #f2dede
+			border-color: $red
+	&.success
+		> label, .help-block, .help-inline, .checkbox, .radio, input, select, textarea
+			color: $green
+		input, select, textarea
+			border-color: $green
+			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+			-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+		input:focus, select:focus, textarea:focus
+			border-color: #356635
+			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b
+			-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b
+		.input-prepend .add-on, .input-append .add-on
+			color: $green
+			background-color: #dff0d8
+			border-color: $green
+	&.info
+		> label, .help-block, .help-inline, .checkbox, .radio, input, select, textarea
+			color: $blue
+		input, select, textarea
+			border-color: $blue
+			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+			-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+		input:focus, select:focus, textarea:focus
+			border-color: #2d6987
+			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7ab5d3
+			-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7ab5d3
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7ab5d3
+		.input-prepend .add-on, .input-append .add-on
+			color: $blue
+			background-color: #d9edf7
+			border-color: $blue
+
+input:focus:required:invalid, textarea:focus:required:invalid, select:focus:required:invalid
+	color: $red
+	border-color: #ee5f5b
+
+input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, select:focus:required:invalid:focus
+	border-color: #e9322d
+	-webkit-box-shadow: 0 0 6px #f8b9b7
+	-moz-box-shadow: 0 0 6px #f8b9b7
+	box-shadow: 0 0 6px #f8b9b7
+
+.form-actions
+	padding: 19px 0 20px
+	margin-top: 20px
+	margin-bottom: 20px
+	*zoom: 1
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
+
+.help-block, .help-inline
+	color: #595959
+
+.help-block
+	display: block
+	margin-bottom: 10px
+
+.help-inline
+	display: inline-block
+	*display: inline
+	padding-left: 5px
+	vertical-align: middle
+	*zoom: 1
+
+.input-append, .input-prepend
+	margin-bottom: 5px
+	font-size: 0
+	white-space: nowrap
+
+.input-append input, .input-prepend input, .input-append select, .input-prepend select, .input-append .uneditable-input, .input-prepend .uneditable-input
+	position: relative
+	margin-bottom: 0
+	*margin-left: 0
+	font-size: 14px
+	vertical-align: top
+	-webkit-border-radius: 0 3px 3px 0
+	-moz-border-radius: 0 3px 3px 0
+	border-radius: 0 3px 3px 0
+
+.input-append input:focus, .input-prepend input:focus, .input-append select:focus, .input-prepend select:focus, .input-append .uneditable-input:focus, .input-prepend .uneditable-input:focus
+	z-index: 2
+
+.input-append .add-on, .input-prepend .add-on
+	display: inline-block
+	width: auto
+	height: 20px
+	min-width: 16px
+	padding: 4px 5px
+	font-size: 14px
+	font-weight: normal
+	line-height: 20px
 	text-align: center
-	text-shadow: 0 -1px 0 rgba(0,0,0,.25)
-	@include gradient-vertical(#149bdf, #0480be)
-	@include box-shadow(inset 0 -1px 0 rgba(0,0,0,.15))
-	@include box-sizing(border-box)
-	@include transition(width .6s ease)
+	text-shadow: 0 1px 0 #ffffff
+	background-color: $grayLighter
+	border: 1px solid #ccc
 
-// Striped bars
-.progress-striped .bar
-	@include gradient-striped(#149bdf)
-	@include background-size(40px 40px)
+.input-append .add-on, .input-prepend .add-on, .input-append .btn, .input-prepend .btn
+	vertical-align: top
+	-webkit-border-radius: 0
+	-moz-border-radius: 0
+	border-radius: 0
 
-// Call animation for the active one
-.progress.active .bar 
-	-webkit-animation: progress-bar-stripes 1s linear infinite
-	-moz-animation: progress-bar-stripes 1s linear infinite
-	animation: progress-bar-stripes 1s linear infinite
+.input-append .active
+	background-color: #a9dba9
+	border-color: #46a546
 
-// COLORS
-// ------
+.input-prepend
+	.active
+		background-color: #a9dba9
+		border-color: #46a546
+	.add-on, .btn
+		margin-right: -1px
+	.add-on:first-child, .btn:first-child
+		-webkit-border-radius: 3px 0 0 3px
+		-moz-border-radius: 3px 0 0 3px
+		border-radius: 3px 0 0 3px
 
-// Danger (red)
-.progress-danger .bar
-	@include gradient-vertical(#ee5f5b, #c43c35)
+.input-append
+	input, select, .uneditable-input
+		-webkit-border-radius: 3px 0 0 3px
+		-moz-border-radius: 3px 0 0 3px
+		border-radius: 3px 0 0 3px
+	.add-on, .btn
+		margin-left: -1px
+	.add-on:last-child, .btn:last-child
+		-webkit-border-radius: 0 3px 3px 0
+		-moz-border-radius: 0 3px 3px 0
+		border-radius: 0 3px 3px 0
 
-.progress-danger.progress-striped .bar 
-	@include gradient-striped(#ee5f5b)
+.input-prepend.input-append
+	input, select, .uneditable-input
+		-webkit-border-radius: 0
+		-moz-border-radius: 0
+		border-radius: 0
+	.add-on:first-child, .btn:first-child
+		margin-right: -1px
+		-webkit-border-radius: 3px 0 0 3px
+		-moz-border-radius: 3px 0 0 3px
+		border-radius: 3px 0 0 3px
+	.add-on:last-child, .btn:last-child
+		margin-left: -1px
+		-webkit-border-radius: 0 3px 3px 0
+		-moz-border-radius: 0 3px 3px 0
+		border-radius: 0 3px 3px 0
 
-// Success (green)
-.progress-success .bar 
-	@include gradient-vertical(#62c462, #57a957)
+input.search-query
+	padding-right: 14px
+	padding-right: 4px \9
+	padding-left: 14px
+	padding-left: 4px \9
+	// IE7-8 doesn't have border-radius, so don't indent the padding
+	margin-bottom: 0
+	-webkit-border-radius: 15px
+	-moz-border-radius: 15px
+	border-radius: 15px
 
-.progress-success.progress-striped .bar 
-	@include gradient-striped(#62c462)
+// Allow for input prepend/append in search forms
 
-// Info (teal)
-.progress-info .bar
-	@include gradient-vertical(#5bc0de, #339bb9)
+.form-search
+	.input-append .search-query, .input-prepend .search-query
+		-webkit-border-radius: 0
+		-moz-border-radius: 0
+		border-radius: 0
+	.input-append
+		.search-query
+			-webkit-border-radius: 14px 0 0 14px
+			-moz-border-radius: 14px 0 0 14px
+			border-radius: 14px 0 0 14px
+		.btn
+			-webkit-border-radius: 0 14px 14px 0
+			-moz-border-radius: 0 14px 14px 0
+			border-radius: 0 14px 14px 0
+	.input-prepend
+		.search-query
+			-webkit-border-radius: 0 14px 14px 0
+			-moz-border-radius: 0 14px 14px 0
+			border-radius: 0 14px 14px 0
+		.btn
+			-webkit-border-radius: 14px 0 0 14px
+			-moz-border-radius: 14px 0 0 14px
+			border-radius: 14px 0 0 14px
+	input
+		display: inline-block
+		*display: inline
+		margin-bottom: 0
+		vertical-align: middle
+		*zoom: 1
 
-.progress-info.progress-striped .bar 
-	@include gradient-striped(#5bc0de)
+.form-inline input, .form-horizontal input, .form-search textarea, .form-inline textarea, .form-horizontal textarea, .form-search select, .form-inline select, .form-horizontal select, .form-search .help-inline, .form-inline .help-inline, .form-horizontal .help-inline, .form-search .uneditable-input, .form-inline .uneditable-input, .form-horizontal .uneditable-input, .form-search .input-prepend, .form-inline .input-prepend, .form-horizontal .input-prepend, .form-search .input-append, .form-inline .input-append, .form-horizontal .input-append
+	display: inline-block
+	*display: inline
+	margin-bottom: 0
+	vertical-align: middle
+	*zoom: 1
 
-// Warning (orange)
-.progress-warning .bar 
-	@include gradient-vertical(lighten($orange, 15%), $orange)
+.form-search .hide, .form-inline .hide, .form-horizontal .hide
+	display: none
 
-.progress-warning.progress-striped .bar 
-	@include gradient-striped(lighten($orange, 15%))
+.form-search label, .form-inline label, .form-search .btn-group, .form-inline .btn-group
+	display: inline-block
 
+.form-search .input-append, .form-inline .input-append, .form-search .input-prepend, .form-inline .input-prepend
+	margin-bottom: 0
 
+.form-search
+	.radio, .checkbox
+		padding-left: 0
+		margin-bottom: 0
+		vertical-align: middle
 
-//
-// TABLES
-// Tables for, you guessed it, tabular data
-// ----------------------------------------------------------------------------
+.form-inline
+	.radio, .checkbox
+		padding-left: 0
+		margin-bottom: 0
+		vertical-align: middle
 
+.form-search
+	.radio input[type="radio"], .checkbox input[type="checkbox"]
+		float: left
+		margin-right: 3px
+		margin-left: 0
 
-// BASELINE STYLES
-// ----------------------------------------------------------------------------
+.form-inline
+	.radio input[type="radio"], .checkbox input[type="checkbox"]
+		float: left
+		margin-right: 3px
+		margin-left: 0
+
+.control-group
+	margin-bottom: 10px
+
+legend + .control-group
+	margin-top: 20px
+	-webkit-margin-top-collapse: separate
+
+.form-horizontal
+	.control-group
+		margin-bottom: 20px
+		*zoom: 1
+		&:before
+			display: table
+			line-height: 0
+			content: ""
+		&:after
+			display: table
+			line-height: 0
+			content: ""
+			clear: both
+	.control-label
+		float: left
+		width: 160px
+		padding-top: 5px
+		text-align: right
+	.controls
+		*display: inline-block
+		*padding-left: 20px
+		margin-left: 180px
+		*margin-left: 0
+		&:first-child
+			*padding-left: 180px
+	.help-block
+		margin-bottom: 0
+	input + .help-block, select + .help-block, textarea + .help-block
+		margin-top: 10px
+	.form-actions
+		padding-left: 180px
+
+table
+	max-width: 100%
+	background-color: transparent
+	border-collapse: collapse
+	border-spacing: 0
 
 .table,
 table
 	width: 100%
-	margin-bottom: $baseLineHeight
-	
-.table,
-table
-	thead
-		//background: $textColor
-		color: white
-		a
-			color: white
-
-.table thead th,
-table thead th
-	vertical-align: bottom
-	background: $grayLight
-	
-.table th,
-.table td,
-table th,
-table td
-	padding: 8px
-	line-height: $baseLineHeight
-	text-align: left
-	vertical-align: top
-	border-top: 1px solid $tableBorder
-	
-.table th,
-table th
-	font-weight: bold
-
-table tbody tr.region-title:nth-child(odd) td, 
-table tbody tr.region-title:nth-child(odd) th
-	background-color: $neonYellow
-
-table tbody tr.region-title
-	background-color: $neonYellow
-
-.table colgroup + thead tr:first-child th,
-.table colgroup + thead tr:first-child td,
-.table thead:first-child tr:first-child th,
-.table thead:first-child tr:first-child td,
-table colgroup + thead tr:first-child th,
-table colgroup + thead tr:first-child td,
-table thead:first-child tr:first-child th,
-table thead:first-child tr:first-child td 
-	border-top: 0
-
-.table tbody + tbody,
-table tbody + tbody
-	border-top: 2px solid $tableBorder
-
-table
-	th.checkbox,
-	th.radio
-		padding-left: 11px
-	div.form-type-checkbox
-		input[type="checkbox"],
-		input[type="radio"]
-			margin: 0
-
-.admin-table-sort
-	position: relative
-	bottom: -1px
-	right: -6px
-
-// Sticky Header
-.sticky-header
-	z-index: 200
-	
-// Update Table
-
-table.update, 
-.update table.version
-	border: 1px solid #CCC
-	tr
-		td
-			border: none
-
-table.update tbody tr:nth-child(odd) td, 
-table.update tbody tr:nth-child(odd) th
-	background-color: transparent !important
-
-.update table.version tr, .update table.version td
-	padding: 15px
-
-// CONDENSED TABLE W/ HALF PADDING
-// ----------------------------------------------------------------------------
+	margin-bottom: 20px
+	margin-top: 50px
+	th, td
+		padding: 8px
+		line-height: 20px
+		text-align: left
+		vertical-align: top
+		border-top: 1px solid #CCC
+	th
+		font-weight: bold
+		a 
+			font-weight: bold
+	thead th
+		vertical-align: bottom
+	caption + thead tr:first-child
+		th, td
+			border-top: 0
+	colgroup + thead tr:first-child
+		th, td
+			border-top: 0
+	thead:first-child tr:first-child
+		th, td
+			border-top: 0
+	tbody + tbody
+		border-top: 2px solid #CCC
 
 .table-condensed
-	th,
-	td
+	th, td
 		padding: 4px 5px
+		
+table tr
+	&.even
+		background-color: white
+	&.odd
+		background-color: white
 
+tr.region-title
+	background: #EEE
 
-// BORDERED VERSION
-// ----------------------------------------------------------------------------
+table tr.drag td
+	background: white !important
+
+table tr.drag-previous td
+	background: $pink !important
 
 .table-bordered,
 table
-	border: 1px solid $tableBorder
+	border: 1px solid #CCC
+	border-collapse: separate
+	*border-collapse: collapse
 	border-left: 0
-	border-collapse: separate // Done so we can round those corners!
-	*border-collapse: collapsed // IE7 can't round corners anyway
-	@include border-radius(4px)
-	th,
-	td 
-		border-left: 1px solid $tableBorder
+	th, td
+		border-left: 1px solid #CCC
+	caption +
+		thead tr:first-child th
+			border-top: 0
+		tbody tr:first-child
+			th, td
+				border-top: 0
+	colgroup +
+		thead tr:first-child th
+			border-top: 0
+		tbody tr:first-child
+			th, td
+				border-top: 0
+	thead:first-child tr:first-child th
+		border-top: 0
+	tbody:first-child tr:first-child
+		th, td
+			border-top: 0
 
-// Prevent a double border
-.table-bordered thead tr:first-child th,
-.table-bordered tbody:first-child tr:first-child th,
-.table-bordered tbody:first-child tr:first-child td,
-table thead tr:first-child th,
-table tbody:first-child tr:first-child th,
-table tbody:first-child tr:first-child td
-	border-top: 0
+.table-striped tbody tr:nth-child(odd),
+table-striped tbody tr:nth-child(odd)
+	td, th
+		background-color: $tableStriping
 
-// For first th or td in the first row in the first thead or tbody
-.table-bordered thead:first-child tr:first-child th:first-child,
-.table-bordered tbody:first-child tr:first-child td:first-child,
-table thead:first-child tr:first-child th:first-child,
-table tbody:first-child tr:first-child td:first-child
-	@include border-radius(4px 0 0 0)
-
-.table-bordered thead:first-child tr:first-child th:last-child,
-.table-bordered tbody:first-child tr:first-child td:last-child,
-table thead:first-child tr:first-child th:last-child,
-table tbody:first-child tr:first-child td:last-child
-	@include border-radius(0 4px 0 0) 
-
-// For first th or td in the first row in the first thead or tbody
-.table-bordered thead:last-child tr:last-child th:first-child,
-.table-bordered tbody:last-child tr:last-child td:first-child,
-table thead:last-child tr:last-child th:first-child,
-table tbody:last-child tr:last-child td:first-child
-	@include border-radius(0 0 0 4px)
-
-.table-bordered thead:last-child tr:last-child th:last-child,
-.table-bordered tbody:last-child tr:last-child td:last-child,
-table thead:last-child tr:last-child th:last-child,
-table tbody:last-child tr:last-child td:last-child
-	@include border-radius(0 0 4px 0)
-
-
-// ZEBRA-STRIPING
-// ----------------------------------------------------------------------------
-
-// Default zebra-stripe styles (alternating gray and transparent backgrounds)
-.table-striped
-	tbody
-		tr:nth-child(odd) td,
-		tr:nth-child(odd) th
-			background-color: $tableBackgroundAccent
-
-table
-	tbody
-		tr:nth-child(odd) td,
-		tr:nth-child(odd) th
-			background-color: $tableBackgroundAccent
-
-
-// HOVER EFFECT
-// ----------------------------------------------------------------------------
-// Placed here since it has to come after the potential zebra striping
-.table 
-	tbody tr:hover td,
-	tbody tr:hover th 
+.table-hover tbody tr:hover
+	td, th
 		background-color: $tableBackgroundHover
 
+table [class*=span], .row-fluid table [class*=span]
+	display: table-cell
+	float: none
+	margin-left: 0
 
-// TABLE CELL SIZING
-// ----------------------------------------------------------------------------
-
-// Change the columns
+.table,
 table
-	.span1		 
-		@include tableColumns(1)
+	.span1
+		float: none
+		width: 44px
+		margin-left: 0
 	.span2
-		@include tableColumns(2)
+		float: none
+		width: 124px
+		margin-left: 0
 	.span3
-		@include tableColumns(3)
+		float: none
+		width: 204px
+		margin-left: 0
 	.span4
-		@include tableColumns(4)
+		float: none
+		width: 284px
+		margin-left: 0
 	.span5
-		@include tableColumns(5)
+		float: none
+		width: 364px
+		margin-left: 0
 	.span6
-		@include tableColumns(6)
+		float: none
+		width: 444px
+		margin-left: 0
 	.span7
-		@include tableColumns(7)
+		float: none
+		width: 524px
+		margin-left: 0
 	.span8
-		@include tableColumns(8)
+		float: none
+		width: 604px
+		margin-left: 0
 	.span9
-		@include tableColumns(9)
+		float: none
+		width: 684px
+		margin-left: 0
 	.span10
-		@include tableColumns(10)
+		float: none
+		width: 764px
+		margin-left: 0
 	.span11
-		@include tableColumns(11)
+		float: none
+		width: 844px
+		margin-left: 0
 	.span12
-		@include tableColumns(12)
+		float: none
+		width: 924px
+		margin-left: 0
 	.span13
-		@include tableColumns(13)
+		float: none
+		width: 1004px
+		margin-left: 0
 	.span14
-		@include tableColumns(14)
+		float: none
+		width: 1084px
+		margin-left: 0
 	.span15
-		@include tableColumns(15)
+		float: none
+		width: 1164px
+		margin-left: 0
 	.span16
-		@include tableColumns(16)
+		float: none
+		width: 1244px
+		margin-left: 0
 	.span17
-		@include tableColumns(17)
+		float: none
+		width: 1324px
+		margin-left: 0
 	.span18
-		@include tableColumns(18)
+		float: none
+		width: 1404px
+		margin-left: 0
 	.span19
-		@include tableColumns(19)
+		float: none
+		width: 1484px
+		margin-left: 0
 	.span20
-		@include tableColumns(20)
+		float: none
+		width: 1564px
+		margin-left: 0
 	.span21
-		@include tableColumns(21)
+		float: none
+		width: 1644px
+		margin-left: 0
 	.span22
-		@include tableColumns(22)
+		float: none
+		width: 1724px
+		margin-left: 0
 	.span23
-		@include tableColumns(23)
+		float: none
+		width: 1804px
+		margin-left: 0
 	.span24
-		@include tableColumns(24)
-
-
-// ALERT STYLES
-// ----------------------------------------------------------------------------
-// Base alert styles
-.alert,
-div.messages
-	padding: 8px 35px 8px 14px
-	margin-bottom: $baseLineHeight
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
-	background-color: $warningBackground
-	border: 1px solid $warningBorder
-	+border-radius(4px)
-	color: $warningText
-	background-image: none
-
-.alert-heading
-	color: inherit
-
-// Adjust close link position
-.alert .close
-	position: relative
-	top: -2px
-	right: -21px
-	line-height: 18px
-
-// Alternate styles
-// ----------------------------------------------------------------------------
-
-.alert-success,
-div.messages.status
-	background-color: $successBackground
-	border-color: $successBorder
-	color: $successText
-
-.alert-danger,
-.alert-error,
-div.messages.error
-	background-color: $errorBackground
-	border-color: $errorBorder
-	color: $errorText
-
-.alert-info
-	background-color: $infoBackground
-	border-color: $infoBorder
-	color: $infoText
-
-// Block alerts
-// ----------------------------------------------------------------------------
-.alert-block
-	padding-top: 14px
-	padding-bottom: 14px
-
-.alert-block > p,
-.alert-block > ul
-	margin-bottom: 0
-
-.alert-block p + p
-	margin-top: 5px
-
-// BREADCRUMBS
-// ----------------------------------------------------------------------------
-
-.breadcrumb 
-
-	margin: 0 0 5px 0
-	list-style: none
-	li 
-		display: inline-block
-		@include ie7-inline-block()
-		text-shadow: 0 1px 0 $white
-	.divider 
-		padding: 0 5px
-		color: $grayLight
-	.active a 
-		color: $grayDark
-  
-
-// BADGES
-// ----------------------------------------------------------------------------
-
-// Base
-.badge 
-	padding: 1px 9px 2px
-	font-size: $baseFontSize
-	font-weight: bold
-	white-space: nowrap
-	color: $white
-	background-color: $grayLight
-	@include border-radius(9px)
-	&:hover 
-		color: $white
-		text-decoration: none
-		cursor: default
-
-.page-run-results
-	.badge,
-	.badge-hollow
-		font-size: 11px
-
-.badge-hollow
-	padding: 0 10px 0
-	font-size: $baseFontSize
-	font-weight: bold
-	color: $textColor
-	background: url(../images/bg.png) scroll $bodyBackground
-	white-space: nowrap
-	@include border-radius(10px)
-	border: 2px solid #333
-	&:hover
-		color: $textColor
-
-.badge-hollow-important
-	padding: 0 10px 0
-	border: 2px solid $errorText
-	background: transparent
-	color: $textColor
-	font-weight: normal
-	&:hover
-		color: $textColor
-
-// Colors
-.badge-important 
-	background-color: $errorText
-	// &:hover      
-	// 	background-color: darken($errorText, 10%)
-
-.badge-warning         
-	background-color: $orange
-	//&:hover   
-	//background-color: darken($orange, 10%)
-
-.badge-success         
-	background-color: $successText
-	// &:hover   
-	// 	background-color: darken($successText, 10%)
-
-.badge-info     
-	background-color: $infoText
-	// &:hover     	
-	// 	background-color: darken($infoText, 10%)
-
-.badge-inverse  
-	background-color: $grayDark
-	// &:hover  
-	// 	background-color: darken($grayDark, 10%)
-
-
-// LABELS
-// ----------------------------------------------------------------------------
-
-// Base
-.label
-	padding: 1px 4px 2px
-	font-size: $baseFontSize * .846
-	font-weight: bold
-	line-height: 13px // ensure proper line-height if floated
-	color: $white
-	vertical-align: middle
-	white-space: nowrap
-	text-shadow: 0 -1px 0 rgba(0,0,0,.25)
-	background-color: $grayLight
-	position: relative
-	top: -3px
-	@include border-radius(3px)
-	&:hover 
-		color: $white
-		text-decoration: none
-
-// Colors
-.label-important	
-	background-color: $errorText
-	// &:hover
-	// 	background-color: darken($errorText, 10%)
-
-.label-warning		 
-	background-color: $orange
-	// &:hover 
-	// 	background-color: darken($orange, 10%)
-
-.label-success	 
-	background-color: $successText
-	// &:hover
-	// 	background-color: darken($successText, 10%)
-
-.label-info					 
-	background-color: $infoText
-	// &:hover	 
-	// 	background-color: darken($infoText, 10%)
-
-.label-inverse	
-	background-color: $grayDark
-	// &:hover
-	// 	background-color: darken($grayDark, 10%)
-
-
-// ACCORDION
-// ----------------------------------------------------------------------------
-
-
-// Parent container
-.accordion 
-	margin-bottom: $baseLineHeight
-
-// Group == heading + body
-.accordion-group 
-	margin-bottom: 2px
-	border: 1px solid #e5e5e5
-	@include border-radius(4px)
-
-.accordion-heading 
-	border-bottom: 0
-
-.accordion-heading .accordion-toggle 
-	display: block
-	padding: 8px 15px
-
-// Inner needs the styles because you can't animate properly with any styles on the element
-.accordion-inner 
-	padding: 9px 15px
-	border-top: 1px solid #e5e5e5
-
-// PAGER
-// ----------------------------------------------------------------------------
-
-.pager 
-	margin-left: 0
-	margin-bottom: $baseLineHeight
-	list-style: none
-	text-align: center
-	@include clearfix()
-	li 
-		display: inline
-	a
-		display: inline-block
-		padding: 5px 14px
-		background-color: #fff
-		border: 1px solid #ddd
-		@include border-radius(15px)
-		&:hover 
-			text-decoration: none
-			background-color: #f5f5f5
-
-.pager .next a 
-	float: right
-
-.pager .previous a 
-	float: left
-
-.pager .disabled a,
-.pager .disabled a:hover 
-	color: $grayLight
-	background-color: #fff
-	cursor: default
-
-// PAGINATION
-// ----------------------------------------------------------------------------
-
-.pagination 
-	height: $baseLineHeight * 2
-	margin: $baseLineHeight 0
- 
-.pagination ul 
-	display: inline-block
-	@include ie7-inline-block()
-	margin-left: 0
-	margin-bottom: 0
-	@include border-radius(3px)
-	@include box-shadow(0 1px 2px rgba(0,0,0,.05))
-
-.pagination li 
-	display: inline
-  
-.pagination a 
-	float: left
-	padding: 0 14px
-	line-height: ($baseLineHeight * 2) - 2
-	text-decoration: none
-	border: 1px solid #ddd
-	border-left-width: 0
-
-.pagination a:hover,
-.pagination .active a 
-	background-color: #f5f5f5
-
-.pagination .active a 
-	color: $grayLight
-	cursor: default
-
-.pagination .disabled span,
-.pagination .disabled a,
-.pagination .disabled a:hover 
-	color: $grayLight
-	background-color: transparent
-	cursor: default
-
-.pagination li:first-child a 
-	border-left-width: 1px
-	@include border-radius(3px 0 0 3px)
-
-.pagination li:last-child a 
-	@include border-radius(0 3px 3px 0)
-
-// Centered
-.pagination-centered 
-	text-align: center
-
-.pagination-right 
-	text-align: right
-
-// POPOVERS
-// ----------------------------------------------------------------------------
-
-.popover 
-	position: absolute
-	top: 0
-	left: 0
-	z-index: $zindexPopover
-	display: none
-	padding: 5px
-	&.top 
-		margin-top: -5px
-	&.right
-		margin-left: 5px
-	&.bottom
-		margin-top: 5px
-	&.left   
-		margin-left: -5px
-	&.top .arrow   
-		@include popoverArrow-top()
-	&.right .arrow 
-		@include popoverArrow-right()
-	&.bottom .arrow 
-		@include popoverArrow-bottom()
-	&.left .arrow   
-		@include popoverArrow-left()
-	.arrow 
-		position: absolute
-		width: 0
-		height: 0
-
-.popover-inner
-	padding: 3px
-	width: 280px
-	overflow: hidden
-	background: $black // has to be full background declaration for IE fallback
-	background: rgba(0,0,0,.8)
-	@include border-radius(6px)
-	@include box-shadow(0 3px 7px rgba(0,0,0,0.3))
-
-.popover-title 
-	padding: 9px 15px
-	line-height: 1
-	background-color: #f5f5f5
-	border-bottom: 1px solid #eee
-	@include border-radius(3px 3px 0 0)
-
-.popover-content 
-	padding: 14px
-	background-color: $white
-	@include border-radius(0 0 3px 3px)
-	@include background-clip(padding-box)
-	p, ul, ol 
-		margin-bottom: 0
-
-
-
-// NAVIGATIONS
-// ----------------------------------------------------------------------------
-
-// BASE CLASS
-.nav
-	margin-left: 0
-	margin-bottom: $baseLineHeight
-	list-style: none
-
-// Make links block level
-.nav > li > a
-	display: block
-
-.nav > li > a:hover
-	text-decoration: none
-	background-color: $grayLighter
-
-// Nav headers (for dropdowns and lists)
-.nav .nav-header
-	display: block
-	padding: 3px 15px
-	font-size: 11px
-	font-weight: bold
-	line-height: $baseLineHeight
-	color: $grayLight
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
-	text-transform: uppercase
-
-// Space them out when they follow another list item (link)
-.nav li + .nav-header
-	margin-top: 9px
-
-
-// NAV LIST
-// ----------------------------------------------------------------------------
-
-.nav-list
-	padding-left: 15px
-	padding-right: 15px
-	margin-bottom: 0
-
-.nav-list > li > a,
-.nav-list .nav-header
-	margin-left: -15px
-	margin-right: -15px
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
-
-.nav-list > li > a
-	padding: 3px 15px
-
-.nav-list > .active > a,
-.nav-list > .active > a:hover
-	color: $white
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2)
-	background-color: $linkColor
-
-.nav-list [class^="icon-"]
-	margin-right: 2px
-
-// Dividers (basically an hr) within the dropdown
-.nav-list .divider
-	+nav-divider
-
-
-// TABS AND PILLS
-// ----------------------------------------------------------------------------
-
-// Common styles
-.nav-tabs,
-.nav-pills
-	+clearfix
-
-.nav-tabs > li,
-.nav-pills > li
-	float: left
-
-.nav-tabs > li > a,
-.nav-pills > li > a
-	padding-right: 12px
-	padding-left: 12px
-	margin-right: 2px
-	line-height: 14px
-	// keeps the overall height an even number
-
-
-
-//  Drupal Overrides
-// ----------------------------------------------------------------------------
-
-#first-time
-	display: none
-
-span.element-invisible, 
-h2.element-invisible
-	display: none
-
-::selection
-	background: yellow
-
-::-moz-selection
-	background: yellow
-
-// TABS
-// ----------------------------------------------------------------------------
-
-// Drupal Admin Tabs overide
-// .tabs
-// 	border-bottom: none
-// 	ul.primary
-// 		border-bottom: 1px solid #ddd
-// 		padding: 0
-// 		li
-// 			margin-bottom: -1px
-// 			a
-// 				padding-top: 8px
-// 				padding-bottom: 8px
-// 				line-height: $baseLineHeight
-// 				border: 1px solid transparent
-// 				padding-right: 12px
-// 				padding-left: 12px
-// 				margin-right: 2px
-// 				+border-radius(4px 4px 0 0)
-// 				&:hover
-// 					border-color: $grayLighter $grayLighter
-
-// Give the tabs something to sit on
-.nav-tabs
-	border-bottom: 1px solid #ddd
-
-// Make the list-items overlay the bottom border
-.nav-tabs > li
-	margin-bottom: -1px
-
-// Actual tabs (as links)
-.nav-tabs > li > a
-	padding-top: 8px
-	padding-bottom: 8px
-	line-height: $baseLineHeight
-	border: 1px solid transparent
-	+border-radius(4px 4px 0 0)
-	&:hover
-		border-color: $grayLighter $grayLighter #dddddd
-
-// Active state, and it's :hover to override normal :hover
-.nav-tabs > .active,
-.tabs ul.primary li.active
-	& > a,
-	& > a:hover
-		color: $gray
-		background-color: $white
-		border: 1px solid #ddd
-		border-bottom-color: transparent
-		cursor: default
-
-
-
-// PILLS
-// ----------------------------------------------------------------------------
-
-// Links rendered as pills
-.nav-pills > li > a
-	padding-top: 8px
-	padding-bottom: 8px
-	margin-top: 2px
-	margin-bottom: 2px
-	+border-radius(5px)
-
-// Active state
-
-.nav-pills > .active > a,
-.nav-pills > .active > a:hover
-	color: $white
-	background-color: $linkColor
-
-
-
-// STACKED NAV
-// ----------------------------------------------------------------------------
-
-// Stacked tabs and pills
-.nav-stacked > li
-	float: none
-
-.nav-stacked > li > a
-	margin-right: 0
-	// no need for the gap between nav items
-
-// Tabs
-.nav-tabs.nav-stacked
-	border-bottom: 0
-
-.nav-tabs.nav-stacked > li > a
-	border: 1px solid #ddd
-	+border-radius(0)
-
-.nav-tabs.nav-stacked > li:first-child > a
-	+border-radius(4px 4px 0 0)
-
-.nav-tabs.nav-stacked > li:last-child > a
-	+border-radius(0 0 4px 4px)
-
-.nav-tabs.nav-stacked > li > a:hover
-	border-color: #ddd
-	z-index: 2
-
-// Pills
-.nav-pills.nav-stacked > li > a
-	margin-bottom: 3px
-
-.nav-pills.nav-stacked > li:last-child > a
-	margin-bottom: 1px
-	// decrease margin to match sizing of stacked tabs
-
-
-// DROPDOWNS
-// ----------------------------------------------------------------------------
-
-// Position the menu
-
-.nav-tabs .dropdown-menu,
-.nav-pills .dropdown-menu
-	margin-top: 1px
-	border-width: 1px
-
-.nav-pills .dropdown-menu
-	+border-radius(4px)
-
-// Default dropdown links
-// ----------------------------------------------------------------------------
-// Make carets use linkColor to start
-
-.nav-tabs .dropdown-toggle .caret,
-.nav-pills .dropdown-toggle .caret
-	border-top-color: $linkColor
-	border-bottom-color: $linkColor
-	margin-top: 6px
-
-.nav-tabs .dropdown-toggle:hover .caret,
-.nav-pills .dropdown-toggle:hover .caret
-	border-top-color: $linkColorHover
-	border-bottom-color: $linkColorHover
-
-// Active dropdown links
-.nav-tabs .active .dropdown-toggle .caret,
-.nav-pills .active .dropdown-toggle .caret
-	border-top-color: $grayDark
-	border-bottom-color: $grayDark
-
-// Active:hover dropdown links
-.nav > .dropdown.active > a:hover
-	color: $black
-	cursor: pointer
-
-// Open dropdowns
-.nav-tabs .open .dropdown-toggle,
-.nav-pills .open .dropdown-toggle,
-.nav > .open.active > a:hover
-	color: $white
-	background-color: $grayLight
-	border-color: $grayLight
-
-.nav .open .caret,
-.nav .open.active .caret,
-.nav .open a:hover .caret
-	border-top-color: $white
-	border-bottom-color: $white
-	+opacity(100)
-
-// Dropdowns in stacked tabs
-.tabs-stacked .open > a:hover
-	border-color: $grayLight
-
-
-// TABBABLE
-// ----------------------------------------------------------------------------
-
-// COMMON STYLES
-// Clear any floats
-.tabbable
-	+clearfix
-
-.tab-content
-	display: table
-	// prevent content from running below tabs
-	width: 100%
-
-// Remove border on bottom, left, right
-
-.tabs-below .nav-tabs,
-.tabs-right .nav-tabs,
-.tabs-left .nav-tabs
-	border-bottom: 0
-
-// Show/hide tabbable areas
-
-.tab-content > .tab-pane,
-.pill-content > .pill-pane
-	display: none
-
-.tab-content > .active,
-.pill-content > .active
-	display: block
-
-
-// BOTTOM
-// ----------------------------------------------------------------------------
-
-.tabs-below .nav-tabs
-	border-top: 1px solid #ddd
-
-.tabs-below .nav-tabs > li
-	margin-top: -1px
-	margin-bottom: 0
-
-.tabs-below .nav-tabs > li > a
-	+border-radius(0 0 4px 4px)
-	&:hover
-		border-bottom-color: transparent
-		border-top-color: #ddd
-
-.tabs-below .nav-tabs .active > a,
-.tabs-below .nav-tabs .active > a:hover
-	border-color: transparent #ddd #ddd #ddd
-
-
-
-// LEFT & RIGHT
-// ----------------------------------------------------------------------------
-
-// Common styles
-
-.tabs-left .nav-tabs > li,
-.tabs-right .nav-tabs > li
-	float: none
-
-.tabs-left .nav-tabs > li > a,
-.tabs-right .nav-tabs > li > a
-	min-width: 74px
-	margin-right: 0
-	margin-bottom: 3px
-
-// Tabs on the left
-.tabs-left .nav-tabs
-	float: left
-	margin-right: 19px
-	border-right: 1px solid #ddd
-
-.tabs-left .nav-tabs > li > a
-	margin-right: -1px
-	+border-radius(4px 0 0 4px)
-
-.tabs-left .nav-tabs > li > a:hover
-	border-color: $grayLighter #dddddd $grayLighter $grayLighter
-
-.tabs-left .nav-tabs .active > a,
-.tabs-left .nav-tabs .active > a:hover
-	border-color: #ddd transparent #ddd #ddd
-	*border-right-color: $white
-
-// Tabs on the right
-.tabs-right .nav-tabs
-	float: right
-	margin-left: 19px
-	border-left: 1px solid #ddd
-
-.tabs-right .nav-tabs > li > a
-	margin-left: -1px
-	+border-radius(0 4px 4px 0)
-
-.tabs-right .nav-tabs > li > a:hover
-	border-color: $grayLighter $grayLighter $grayLighter #dddddd
-
-.tabs-right .nav-tabs .active > a,
-.tabs-right .nav-tabs .active > a:hover
-	border-color: #ddd #ddd #ddd transparent
-	*border-left-color: $white
-
-
-
-// NAVBAR (FIXED AND STATIC)
-// ----------------------------------------------------------------------------
-
-// COMMON STYLES
-.navbar
-	// Fix for IE7's bad z-indexing so dropdowns don't appear below content that follows the navbar
-	*position: relative
-	*z-index: 2
-	overflow: visible
-	margin-bottom: $baseLineHeight
-
-// Gradient is applied to it's own element because overflow visible is not honored by IE when filter is present
-.navbar-inner
-	padding-left: 20px
-	padding-right: 20px
-	+gradient-vertical($navbarBackgroundHighlight, $navbarBackground)
-	+border-radius(4px)
-	$shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1)
-	+box-shadow($shadow)
-
-// Set width to auto for default container
-// We then reset it for fixed navbars in the #gridSystem mixin
-.navbar .container
-	width: auto
-	padding: 0
-
-// Navbar button for toggling navbar items in responsive layouts
-.btn-navbar
-	display: none
-	float: right
-	padding: 7px 10px
-	margin-left: 5px
-	margin-right: 5px
-	+buttonBackground($navbarBackgroundHighlight, $navbarBackground)
-	$shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075)
-	+box-shadow($shadow)
-
-.btn-navbar .icon-bar
-	display: block
-	width: 18px
-	height: 2px
-	background-color: #f5f5f5
-	+border-radius(1px)
-	+box-shadow(0 1px 0 rgba(0, 0, 0, 0.25))
-
-.btn-navbar .icon-bar + .icon-bar
-	margin-top: 3px
-
-// Override the default collapsed state
-.nav-collapse.collapse
-	height: auto
-
-// Brand, links, text, and buttons
-.navbar
-	color: $navbarText
-	// Hover and active states
-	.brand:hover
-		text-decoration: none
-	// Website or project name
-	.brand
-		float: left
-		display: block
-		padding: 8px 20px 12px
-		margin-left: -20px
-		// negative indent to left-align the text down the page
-		font-size: 20px
-		font-weight: 200
-		line-height: 1
-		color: $white
-	// Plain text in topbar
-	.navbar-text
-		margin-bottom: 0
-		line-height: $navbarHeight
-	// Buttons in navbar
-	.btn,
-	.btn-group
-		+navbarVerticalAlign(30px)
-		// Vertically center in navbar
-	.btn-group .btn
-		margin-top: 0
-		// then undo the margin here so we don't accidentally double it
-
-// Navbar forms
-.navbar-form
-	margin-bottom: 0
-	// remove default bottom margin
-	+clearfix
-	input,
-	select,
-	.radio,
-	.checkbox
-		+navbarVerticalAlign(30px)
-		// Vertically center in navbar
-	input,
-	select
-		display: inline-block
-		margin-bottom: 0
-	input[type="image"],
-	input[type="checkbox"],
-	input[type="radio"]
-		margin-top: 3px
-	.input-append,
-	.input-prepend
-		margin-top: 6px
-		white-space: nowrap
-		// preven two	 items from separating within a .navbar-form that has .pull-left
-		input
-			margin-top: 0
-			// remove the margin on top since it's on the parent
-
-// Navbar search
-.navbar-search
-	position: relative
-	float: left
-	+navbarVerticalAlign(28px)
-	// Vertically center in navbar
-	margin-bottom: 0
-	.search-query
-		padding: 4px 9px
-		+font-sans-serif(13px, normal, 1)
-		color: $white
-		background-color: $navbarSearchBackground
-		border: 1px solid $navbarSearchBorder
-		$shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0px rgba(255, 255, 255, 0.15)
-		+box-shadow($shadow)
-		+transition(none)
-		// Placeholder text gets special styles; can't be a grouped selector
-		&:-moz-placeholder
-			color: $navbarSearchPlaceholderColor
-		&::-webkit-input-placeholder
-			color: $navbarSearchPlaceholderColor
-		// Focus states (we use .focused since IE7-8 and down doesn't support :focus)
-		&:focus,
-		&.focused
-			padding: 5px 10px
-			color: $grayDark
-			text-shadow: 0 1px 0 $white
-			background-color: $navbarSearchBackgroundFocus
-			border: 0
-			+box-shadow(0 0 3px rgba(0, 0, 0, 0.15))
-			outline: 0
-
-
-
-// FIXED NAVBAR
-// ----------------------------------------------------------------------------
-
-// Shared (top/bottom) styles
-.navbar-fixed-top,
-.navbar-fixed-bottom
-	position: fixed
-	right: 0
-	left: 0
-	z-index: $zindexFixedNavbar
-	margin-bottom: 0
-	// remove 18px margin for static navbar
-
-.navbar-fixed-top .navbar-inner,
-.navbar-fixed-bottom .navbar-inner,
-.navbar-top .navbar-inner
-	padding-left: 0
-	padding-right: 0
-	+border-radius(0)
-
-.navbar-fixed-top .container,
-.navbar-fixed-bottom .container
-	+grid-core-span($gridColumns)
-
-// Fixed to top
-.navbar-fixed-top
-	top: 0
-
-// Fixed to bottom
-.navbar-fixed-bottom
-	bottom: 0
-
-
-// TOOLTIP
-// ----------------------------------------------------------------------------
-
-.tooltip
-	position: absolute
-	z-index: $zindexTooltip
-	display: block
-	visibility: visible
-	padding: 5px
-	font-size: 11px
-	@include opacity(0)
-	&.in    
-		+opacity(0.8)
-	&.top 
-		margin-top:  -2px
-	&.right
-		margin-left:  2px
-	&.bottom 
-		margin-top:   2px
-	&.left   
-		margin-left: -2px
-	&.top .tooltip-arrow   
-		@include popoverArrow-top()
-	&.left .tooltip-arrow  
-		@include popoverArrow-left()
-	&.bottom .tooltip-arrow 
-		@include popoverArrow-bottom()
-	&.right .tooltip-arrow  
-		@include popoverArrow-right()
-
-.tooltip-inner 
-	max-width: 200px
-	padding: 3px 8px
-	color: $white
-	text-align: center
-	text-decoration: none
-	background-color: $black
-	@include border-radius(4px)
-
-.tooltip-arrow 
-	position: absolute
-	width: 0
-	height: 0
-
-
-
-// NAVIGATION
-// ----------------------------------------------------------------------------
-.navbar .nav
-	position: relative
-	left: 0
-	display: block
-	float: left
-	margin: 0 10px 0 0
-
-.navbar .nav.pull-right
-	float: right
-	// redeclare due to specificity
-
-.navbar .nav > li
-	display: block
-	float: left
-
-// Links
-.navbar .nav > li > a
-	float: none
-	padding: 10px 15px 11px
-	line-height: 19px
-	color: $navbarLinkColor
-	text-decoration: none
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
-
-// Hover
-.navbar .nav > li > a:hover
-	background-color: $navbarLinkBackgroundHover
-	// "transparent" is default to differentiate :hover from .active
-	color: $navbarLinkColorHover
-	text-decoration: none
-
-// Active nav items
-
-.navbar .nav .active > a,
-.navbar .nav .active > a:hover
-	color: $navbarLinkColorActive
-	text-decoration: none
-	background-color: $navbarLinkBackgroundActive
-
-// Dividers (basically a vertical hr)
-.navbar .divider-vertical
-	height: $navbarHeight
-	width: 1px
-	margin: 0 9px
-	overflow: hidden
-	background-color: $navbarBackground
-	border-right: 1px solid $navbarBackgroundHighlight
-
-// Secondary (floated right) nav in topbar
-.navbar .nav.pull-right
-	margin-left: 10px
-	margin-right: 0
-
-
-
-// Dropdown menus
-// ----------------------------------------------------------------------------
-
-// Menu position and menu carets
-.navbar .dropdown-menu
-	margin-top: 1px
-	+border-radius(4px)
-	&:before
-		content: ''
-		display: inline-block
-		border-left: 7px solid transparent
-		border-right: 7px solid transparent
-		border-bottom: 7px solid #ccc
-		border-bottom-color: $dropdownBorder
-		position: absolute
-		top: -7px
-		left: 9px
-	&:after
-		content: ''
-		display: inline-block
-		border-left: 6px solid transparent
-		border-right: 6px solid transparent
-		border-bottom: 6px solid $dropdownBackground
-		position: absolute
-		top: -6px
-		left: 10px
-
-// Menu position and menu caret support for dropups via extra dropup class
-.navbar-fixed-bottom .dropdown-menu
-	&:before
-		border-top: 7px solid #ccc
-		border-top-color: $dropdownBorder
-		border-bottom: 0
-		bottom: -7px
-		top: auto
-	&:after
-		border-top: 6px solid $dropdownBackground
-		border-bottom: 0
-		bottom: -6px
-		top: auto
-
-// Dropdown toggle caret
-
-.navbar .nav .dropdown-toggle .caret,
-.navbar .nav .open.dropdown .caret
-	border-top-color: $white
-	border-bottom-color: $white
-
-.navbar .nav .active .caret
-	+opacity(100)
-
-// Remove background color from open dropdown
-
-.navbar .nav .open > .dropdown-toggle,
-.navbar .nav .active > .dropdown-toggle,
-.navbar .nav .open.active > .dropdown-toggle
-	background-color: transparent
-
-// Dropdown link on hover
-.navbar .nav .active > .dropdown-toggle:hover
-	color: $white
-
-// Right aligned menus need alt position
-// TODO: rejigger this at some point to simplify the selectors
-
-.navbar .nav.pull-right .dropdown-menu,
-.navbar .nav .dropdown-menu.pull-right
-	left: auto
-	right: 0
-	&:before
-		left: auto
-		right: 12px
-	&:after
-		left: auto
-		right: 13px
-
-
-// DROPDOWN MENUS
-// ----------------------------------------------------------------------------
-
-// Use the .menu class on any <li> element within the topbar or ul.tabs and you'll get some superfancy dropdowns
-.dropdown 
-	position: relative
-
-.dropdown-toggle 
-	// The caret makes the toggle a bit too tall in IE7
-	*margin-bottom: -3px
-
-.dropdown-toggle:active,
-.open .dropdown-toggle 
-	outline: 0
-
-// Dropdown arrow/caret
-// ----------------------------------------------------------------------------
-.caret
-	display: inline-block
-	width: 0
-	height: 0
-	vertical-align: top
-	border-left:  4px solid transparent
-	border-right: 4px solid transparent
-	border-top:   4px solid $black
-	@include opacity(30)
-	content: ""
-
-// Place the caret
-.dropdown .caret 
-	margin-top: 8px
-	margin-left: 2px
-
-.dropdown:hover .caret,
-.open.dropdown .caret 
-	@include opacity(100)
-
-// The dropdown menu (ul)
-// ----------------------------------------------------------------------------
-.dropdown-menu
-	position: absolute
-	top: 100%
-	left: 0
-	z-index: $zindexDropdown
-	float: left
-	display: none // none by default, but block on "open" of the menu
-	min-width: 160px
-	padding: 4px 0
-	margin: 0 // override default ul
-	list-style: none
-	background-color: $dropdownBackground
-	border-color: #ccc
-	border-color: rgba(0,0,0,.2)
-	border-style: solid
-	border-width: 1px
-	@include border-radius(0 0 5px 5px)
-	@include box-shadow(0 5px 10px rgba(0,0,0,.2))
-	-webkit-background-clip: padding-box
-	-moz-background-clip: padding
-	background-clip: padding-box
-	*border-right-width: 2px
-	*border-bottom-width: 2px
-	&.pull-right 
-		right: 0
-		left: auto
-	.divider 
-		@include nav-divider()
-	a 
-		display: block
-		padding: 3px 15px
-		clear: both
-		font-weight: normal
-		line-height: $baseLineHeight
-		color: $dropdownLinkColor
-		white-space: nowrap
-
-// Hover state
-// ----------------------------------------------------------------------------
-.dropdown-menu li > a:hover,
-.dropdown-menu .active > a,
-.dropdown-menu .active > a:hover
-	color: $dropdownLinkColorHover
-	text-decoration: none
-	background-color: $dropdownLinkBackgroundHover
-
-// Open state for the dropdown
-// ----------------------------------------------------------------------------
-.dropdown.open 
-	// IE7's z-index only goes to the nearest positioned ancestor, which would
-	// make the menu appear below buttons that appeared later on the page
-	*z-index: $zindexDropdown
-	.dropdown-toggle 
-		color: $white
-		background: #ccc
-		background: rgba(0,0,0,.3)
-	.dropdown-menu 
-		display: block
-
-// Right aligned dropdowns
-.pull-right .dropdown-menu
-	left: auto
-	right: 0
-
-// Allow for dropdowns to go bottom up (aka, dropup-menu)
-// ----------------------------------------------------------------------------
-// Just add .dropup after the standard .dropdown class and you're set, bro.
-// TODO: abstract this so that the navbar fixed styles are not placed here?
-.dropup,
-.navbar-fixed-bottom .dropdown 
-	// Reverse the caret
-	.caret 
-		border-top: 0
-		border-bottom: 4px solid $black
-		content: "\2191"
-	.dropdown-menu 
-		top: auto
-		bottom: 100%
-		margin-bottom: 1px
-
-// Typeahead
-// ----------------------------------------------------------------------------
-.typeahead 
-	margin-top: 2px // give it some space to breathe
-	@include border-radius(4px)
-
-
-
-// SPRITES
-// Glyphs and icons for buttons, nav, and more
-// ----------------------------------------------------------------------------
-
-// ICONS
-// ----------------------------------------------------------------------------
-
-// All icons receive the styles of the <i> tag with a base class 
-// of .i and are then given a unique class to add width, height, 
-// and background-position. Your resulting HTML will look like
-// <i class="icon-inbox"></i>.
-
-// For the white version of the icons, just add the .icon-white class:
-// <i class="icon-inbox icon-white"></i>
-
-// Sprite icons path
-// ----------------------------------------------------------------------------
-
-[class^="icon-"],
-[class*=" icon-"]
+		float: none
+		width: 1884px
+		margin-left: 0
+	tbody tr,
+		&.success td
+			background-color: #dff0d8
+		&.error td
+			background-color: #f2dede
+		&.warning td
+			background-color: #fcf8e3
+		&.info td
+			background-color: #d9edf7
+
+.table-hover tbody tr
+	&.success:hover td
+		background-color: #d0e9c6
+	&.error:hover td
+		background-color: #ebcccc
+	&.warning:hover td
+		background-color: #faf2cc
+	&.info:hover td
+		background-color: #c4e3f3
+
+[class^="icon-"], [class*=" icon-"]
 	display: inline-block
 	width: 14px
 	height: 14px
+	margin-top: 1px
+	*margin-right: .3em
 	line-height: 14px
 	vertical-align: text-top
-	background-image: url($iconSpritePath)
+	background-image: url("../img/glyphicons-halflings.png")
 	background-position: 14px 14px
 	background-repeat: no-repeat
-	+ie7-restore-right-whitespace
+
+// White icons with optional class, or on hover/active states of certain elements
 
 .icon-white
-	background-image: url($iconWhiteSpritePath)
+	background-image: url("../img/glyphicons-halflings-white.png")
+
+.nav-tabs > .active > a >
+	[class^="icon-"], [class*=" icon-"]
+		background-image: url("../img/glyphicons-halflings-white.png")
+
+.nav-pills > .active > a >
+	[class^="icon-"], [class*=" icon-"]
+		background-image: url("../img/glyphicons-halflings-white.png")
+
+.nav-list > .active > a >
+	[class^="icon-"], [class*=" icon-"]
+		background-image: url("../img/glyphicons-halflings-white.png")
+
+.navbar-inverse .nav > .active > a >
+	[class^="icon-"], [class*=" icon-"]
+		background-image: url("../img/glyphicons-halflings-white.png")
+
+.dropdown-menu >
+	li > a:hover >
+		[class^="icon-"], [class*=" icon-"]
+			background-image: url("../img/glyphicons-halflings-white.png")
+	.active > a >
+		[class^="icon-"], [class*=" icon-"]
+			background-image: url("../img/glyphicons-halflings-white.png")
 
 .icon-glass
 	background-position: 0			0
@@ -3433,7 +1759,6 @@ h2.element-invisible
 .icon-lock
 	background-position: -287px -24px
 
-// 1px off
 .icon-flag
 	background-position: -312px -24px
 
@@ -3461,7 +1786,6 @@ h2.element-invisible
 .icon-tags
 	background-position: -25px -48px
 
-// 1px off
 .icon-book
 	background-position: -48px -48px
 
@@ -3480,7 +1804,6 @@ h2.element-invisible
 .icon-bold
 	background-position: -167px -48px
 
-// 1px off
 .icon-italic
 	background-position: -192px -48px
 
@@ -3616,7 +1939,6 @@ h2.element-invisible
 .icon-arrow-up
 	background-position: -289px -96px
 
-// 1px off
 .icon-arrow-down
 	background-position: -312px -96px
 
@@ -3666,6 +1988,7 @@ h2.element-invisible
 	background-position: -192px -120px
 
 .icon-random
+	width: 16px
 	background-position: -216px -120px
 
 .icon-comment
@@ -3680,7 +2003,6 @@ h2.element-invisible
 .icon-chevron-down
 	background-position: -313px -119px
 
-// 1px off
 .icon-retweet
 	background-position: -336px -120px
 
@@ -3691,6 +2013,7 @@ h2.element-invisible
 	background-position: -384px -120px
 
 .icon-folder-open
+	width: 16px
 	background-position: -408px -120px
 
 .icon-resize-vertical
@@ -3699,26 +2022,2434 @@ h2.element-invisible
 .icon-resize-horizontal
 	background-position: -456px -118px
 
+.icon-hdd
+	background-position: 0 -144px
 
-// UTILITY CLASSES
-// ----------------------------------------------------------------------------
+.icon-bullhorn
+	background-position: -24px -144px
 
-// Quick floats
-.pull-right 
+.icon-bell
+	background-position: -48px -144px
+
+.icon-certificate
+	background-position: -72px -144px
+
+.icon-thumbs-up
+	background-position: -96px -144px
+
+.icon-thumbs-down
+	background-position: -120px -144px
+
+.icon-hand-right
+	background-position: -144px -144px
+
+.icon-hand-left
+	background-position: -168px -144px
+
+.icon-hand-up
+	background-position: -192px -144px
+
+.icon-hand-down
+	background-position: -216px -144px
+
+.icon-circle-arrow-right
+	background-position: -240px -144px
+
+.icon-circle-arrow-left
+	background-position: -264px -144px
+
+.icon-circle-arrow-up
+	background-position: -288px -144px
+
+.icon-circle-arrow-down
+	background-position: -312px -144px
+
+.icon-globe
+	background-position: -336px -144px
+
+.icon-wrench
+	background-position: -360px -144px
+
+.icon-tasks
+	background-position: -384px -144px
+
+.icon-filter
+	background-position: -408px -144px
+
+.icon-briefcase
+	background-position: -432px -144px
+
+.icon-fullscreen
+	background-position: -456px -144px
+
+.dropup, .dropdown
+	position: relative
+
+.dropdown-toggle
+	*margin-bottom: -3px
+	&:active
+		outline: 0
+
+.open .dropdown-toggle
+	outline: 0
+
+.caret
+	display: inline-block
+	width: 0
+	height: 0
+	vertical-align: top
+	border-top: 4px solid #000000
+	border-right: 4px solid transparent
+	border-left: 4px solid transparent
+	content: ""
+
+.dropdown .caret
+	margin-top: 8px
+	margin-left: 2px
+
+.dropdown-menu
+	position: absolute
+	top: 100%
+	left: 0
+	z-index: 1000
+	display: none
+	float: left
+	min-width: 160px
+	padding: 5px 0
+	margin: 2px 0 0
+	list-style: none
+	background-color: #ffffff
+	border: 1px solid #ccc
+	border: 1px solid rgba(0, 0, 0, 0.2)
+	*border-right-width: 2px
+	*border-bottom-width: 2px
+	-webkit-border-radius: 6px
+	-moz-border-radius: 6px
+	border-radius: 6px
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+	-webkit-background-clip: padding-box
+	-moz-background-clip: padding
+	background-clip: padding-box
+	&.pull-right
+		right: 0
+		left: auto
+	.divider
+		*width: 100%
+		height: 1px
+		margin: 9px 1px
+		*margin: -5px 0 5px
+		overflow: hidden
+		background-color: #e5e5e5
+		border-bottom: 1px solid #ffffff
+	a
+		display: block
+		padding: 3px 20px
+		clear: both
+		font-weight: normal
+		line-height: 20px
+		color: #333333
+		white-space: nowrap
+	li > a
+		&:hover, &:focus
+			color: #ffffff
+			text-decoration: none
+			background-color: #0088cc
+			background-color: #0081c2
+			background-image: -moz-linear-gradient(top, #0088cc, #0077b3)
+			background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3))
+			background-image: -webkit-linear-gradient(top, #0088cc, #0077b3)
+			background-image: -o-linear-gradient(top, #0088cc, #0077b3)
+			background-image: linear-gradient(to bottom, #0088cc, #0077b3)
+			background-repeat: repeat-x
+			filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)
+
+.dropdown-submenu:hover > a
+	color: #ffffff
+	text-decoration: none
+	background-color: #0088cc
+	background-color: #0081c2
+	background-image: -moz-linear-gradient(top, #0088cc, #0077b3)
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3))
+	background-image: -webkit-linear-gradient(top, #0088cc, #0077b3)
+	background-image: -o-linear-gradient(top, #0088cc, #0077b3)
+	background-image: linear-gradient(to bottom, #0088cc, #0077b3)
+	background-repeat: repeat-x
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)
+
+.dropdown-menu
+	.active > a
+		color: #ffffff
+		text-decoration: none
+		background-color: #0088cc
+		background-color: #0081c2
+		background-image: linear-gradient(to bottom, #0088cc, #0077b3)
+		background-image: -moz-linear-gradient(top, #0088cc, #0077b3)
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3))
+		background-image: -webkit-linear-gradient(top, #0088cc, #0077b3)
+		background-image: -o-linear-gradient(top, #0088cc, #0077b3)
+		background-repeat: repeat-x
+		outline: 0
+		filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)
+		&:hover
+			color: #ffffff
+			text-decoration: none
+			background-color: #0088cc
+			background-color: #0081c2
+			background-image: linear-gradient(to bottom, #0088cc, #0077b3)
+			background-image: -moz-linear-gradient(top, #0088cc, #0077b3)
+			background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3))
+			background-image: -webkit-linear-gradient(top, #0088cc, #0077b3)
+			background-image: -o-linear-gradient(top, #0088cc, #0077b3)
+			background-repeat: repeat-x
+			outline: 0
+			filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)
+	.disabled > a
+		color: $grayLight
+		&:hover
+			color: $grayLight
+			text-decoration: none
+			cursor: default
+			background-color: transparent
+
+.open
+	*z-index: 1000
+	> .dropdown-menu
+		display: block
+
+.pull-right > .dropdown-menu
+	right: 0
+	left: auto
+
+.dropup .caret, .navbar-fixed-bottom .dropdown .caret
+	border-top: 0
+	border-bottom: 4px solid #000000
+	content: ""
+
+.dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu
+	top: auto
+	bottom: 100%
+	margin-bottom: 1px
+
+.dropdown-submenu
+	position: relative
+	> .dropdown-menu
+		top: 0
+		left: 100%
+		margin-top: -6px
+		margin-left: -1px
+		-webkit-border-radius: 0 6px 6px 6px
+		-moz-border-radius: 0 6px 6px 6px
+		border-radius: 0 6px 6px 6px
+	&:hover
+		> .dropdown-menu
+			display: block
+		> a:after
+			border-left-color: #ffffff
+	> a:after
+		display: block
+		float: right
+		width: 0
+		height: 0
+		margin-top: 5px
+		margin-right: -10px
+		border-color: transparent
+		border-left-color: #cccccc
+		border-style: solid
+		border-width: 5px 0 5px 5px
+		content: " "
+
+.dropdown .dropdown-menu .nav-header
+	padding-right: 20px
+	padding-left: 20px
+
+.typeahead
+	margin-top: 2px
+	-webkit-border-radius: 4px
+	-moz-border-radius: 4px
+	border-radius: 4px
+
+.well
+	min-height: 20px
+	padding: 19px
+	margin-bottom: 20px
+	background-color: #f5f5f5
+	border: 1px solid #e3e3e3
+	-webkit-border-radius: 4px
+	-moz-border-radius: 4px
+	border-radius: 4px
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05)
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05)
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05)
+	blockquote
+		border-color: #ddd
+		border-color: rgba(0, 0, 0, 0.15)
+
+.well-large
+	padding: 24px
+	-webkit-border-radius: 6px
+	-moz-border-radius: 6px
+	border-radius: 6px
+
+.well-small
+	padding: 9px
+	-webkit-border-radius: 3px
+	-moz-border-radius: 3px
+	border-radius: 3px
+
+.fade
+	opacity: 0
+	-webkit-transition: opacity 0.15s linear
+	-moz-transition: opacity 0.15s linear
+	-o-transition: opacity 0.15s linear
+	transition: opacity 0.15s linear
+	&.in
+		opacity: 1
+
+.collapse
+	position: relative
+	height: 0
+	overflow: hidden
+	-webkit-transition: height 0.35s ease
+	-moz-transition: height 0.35s ease
+	-o-transition: height 0.35s ease
+	transition: height 0.35s ease
+	&.in
+		height: auto
+
+.close
 	float: right
+	font-size: 20px
+	font-weight: bold
+	line-height: 20px
+	color: #000000
+	text-shadow: 0 1px 0 #ffffff
+	opacity: 0.2
+	filter: alpha(opacity = 20)
+	&:hover
+		color: #000000
+		text-decoration: none
+		cursor: pointer
+		opacity: 0.4
+		filter: alpha(opacity = 40)
 
-.pull-left 
+button.close
+	padding: 0
+	cursor: pointer
+	background: transparent
+	border: 0
+	-webkit-appearance: none
+
+.btn,
+input[type="submit"]
+	display: inline-block
+	*display: inline
+	padding: 4px 20px
+	margin-bottom: 0
+	*margin-left: .3em
+	margin-right: 10px
+	font-size: 14px
+	line-height: 20px
+	*line-height: 20px
+	color: #333333
+	text-align: center
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75)
+	vertical-align: middle
+	cursor: pointer
+	background-color: #f5f5f5
+	*background-color: #e6e6e6
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e6e6e6))
+	background-image: -webkit-linear-gradient(top, white, #e6e6e6)
+	background-image: -o-linear-gradient(top, white, #e6e6e6)
+	background-image: linear-gradient(to bottom, white, #e6e6e6)
+	background-image: -moz-linear-gradient(top, white, #e6e6e6)
+	background-repeat: repeat-x
+	border: 1px solid #bbbbbb
+	*border: 0
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+	border-color: #e6e6e6 #e6e6e6 #bfbfbf
+	border-bottom-color: #a2a2a2
+	-webkit-border-radius: 15px
+	-moz-border-radius: 15px
+	border-radius: 15px
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0)
+	filter: progid:dximagetransform.microsoft.gradient(enabled=false)
+	*zoom: 1
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+	&:hover, &:active, &.active, &.disabled, &[disabled]
+		color: #333333
+		background-color: #e6e6e6
+		*background-color: #d9d9d9
+	&:active, &.active
+		background-color: #cccccc \9
+	&:first-child
+		*margin-left: 0
+	&:hover
+		color: #333333
+		text-decoration: none
+		background-color: #e6e6e6
+		*background-color: #d9d9d9
+		// Buttons in IE7 don't get borders, so darken on hover
+		background-position: 0 -15px
+		-webkit-transition: background-position 0.1s linear
+		-moz-transition: background-position 0.1s linear
+		-o-transition: background-position 0.1s linear
+		transition: background-position 0.1s linear
+	&:focus
+		outline: thin dotted #333
+		outline: 5px auto -webkit-focus-ring-color
+		outline-offset: -2px
+	&.active, &:active
+		background-color: #e6e6e6
+		background-color: #d9d9d9 \9
+		background-image: none
+		outline: 0
+		-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05)
+		-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05)
+		box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05)
+	&.disabled, &[disabled]
+		cursor: default
+		background-color: #e6e6e6
+		background-image: none
+		opacity: 0.65
+		filter: alpha(opacity = 65)
+		-webkit-box-shadow: none
+		-moz-box-shadow: none
+		box-shadow: none
+
+.btn-large
+	padding: 9px 14px
+	font-size: 16px
+	line-height: normal
+	-webkit-border-radius: 5px
+	-moz-border-radius: 5px
+	border-radius: 5px
+	[class^="icon-"]
+		margin-top: 2px
+
+.btn-small
+	padding: 3px 9px
+	font-size: 12px
+	line-height: 18px
+	[class^="icon-"]
+		margin-top: 0
+
+.btn-mini
+	padding: 2px 6px
+	font-size: 11px
+	line-height: 17px
+
+.btn-block
+	display: block
+	width: 100%
+	padding-right: 0
+	padding-left: 0
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	+ .btn-block
+		margin-top: 5px
+
+input
+	&[type="submit"].btn-block, &[type="reset"].btn-block, &[type="button"].btn-block
+		width: 100%
+
+.btn-primary.active, .btn-warning.active, .btn-danger.active, .btn-success.active, .btn-info.active, .btn-inverse.active, input[value="Save"], form.confirmation input[type="submit"], input[value="Delete"]
+	color: rgba(255, 255, 255, 0.75)
+
+.btn,
+input[type="submit"]
+	border-color: #c5c5c5
+	border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25)
+
+.btn-primary
+	color: #ffffff
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+	background-color: #006dcc
+	*background-color: #0044cc
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc))
+	background-image: -webkit-linear-gradient(top, #0088cc, #0044cc)
+	background-image: -o-linear-gradient(top, #0088cc, #0044cc)
+	background-image: linear-gradient(to bottom, #0088cc, #0044cc)
+	background-image: -moz-linear-gradient(top, #0088cc, #0044cc)
+	background-repeat: repeat-x
+	border-color: #0044cc #0044cc #002a80
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0)
+	filter: progid:dximagetransform.microsoft.gradient(enabled=false)
+	&:hover, &:active, &.active, &.disabled, &[disabled]
+		color: #ffffff
+		background-color: #0044cc
+		*background-color: #003bb3
+	&:active, &.active
+		background-color: #003399 \9
+
+.btn-warning,
+form.confirmation input[type="submit"],
+input[value="Delete"]
+	color: #ffffff
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+	background-color: #faa732
+	*background-color: #f89406
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406))
+	background-image: -webkit-linear-gradient(top, #fbb450, #f89406)
+	background-image: -o-linear-gradient(top, #fbb450, #f89406)
+	background-image: linear-gradient(to bottom, #fbb450, #f89406)
+	background-image: -moz-linear-gradient(top, #fbb450, #f89406)
+	background-repeat: repeat-x
+	border-color: #f89406 #f89406 #ad6704
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0)
+	filter: progid:dximagetransform.microsoft.gradient(enabled=false)
+	&:hover, &:active, &.active, &.disabled, &[disabled]
+		color: #ffffff
+		background-color: #f89406
+		*background-color: #df8505
+	&:active, &.active
+		background-color: #c67605 \9
+
+.btn-danger
+	color: #ffffff
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+	background-color: #da4f49
+	*background-color: #bd362f
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f))
+	background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f)
+	background-image: -o-linear-gradient(top, #ee5f5b, #bd362f)
+	background-image: linear-gradient(to bottom, #ee5f5b, #bd362f)
+	background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f)
+	background-repeat: repeat-x
+	border-color: #bd362f #bd362f #802420
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0)
+	filter: progid:dximagetransform.microsoft.gradient(enabled=false)
+	&:hover, &:active, &.active, &.disabled, &[disabled]
+		color: #ffffff
+		background-color: #bd362f
+		*background-color: #a9302a
+	&:active, &.active
+		background-color: #942a25 \9
+
+.btn-success
+	color: #ffffff
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+	background-color: #5bb75b
+	*background-color: #51a351
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351))
+	background-image: -webkit-linear-gradient(top, #62c462, #51a351)
+	background-image: -o-linear-gradient(top, #62c462, #51a351)
+	background-image: linear-gradient(to bottom, #62c462, #51a351)
+	background-image: -moz-linear-gradient(top, #62c462, #51a351)
+	background-repeat: repeat-x
+	border-color: #51a351 #51a351 #387038
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0)
+	filter: progid:dximagetransform.microsoft.gradient(enabled=false)
+	&:hover, &:active, &.active, &.disabled, &[disabled]
+		color: #ffffff
+		background-color: #51a351
+		*background-color: #499249
+	&:active, &.active
+		background-color: #408140 \9
+
+.btn-info
+	color: #ffffff
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+	background-color: #49afcd
+	*background-color: #2f96b4
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4))
+	background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4)
+	background-image: -o-linear-gradient(top, #5bc0de, #2f96b4)
+	background-image: linear-gradient(to bottom, #5bc0de, #2f96b4)
+	background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4)
+	background-repeat: repeat-x
+	border-color: #2f96b4 #2f96b4 #1f6377
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0)
+	filter: progid:dximagetransform.microsoft.gradient(enabled=false)
+	&:hover, &:active, &.active, &.disabled, &[disabled]
+		color: #ffffff
+		background-color: #2f96b4
+		*background-color: #2a85a0
+	&:active, &.active
+		background-color: #24748c \9
+
+.btn-inverse,
+input[value="Save"]
+	color: #ffffff
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+	background-color: #363636
+	*background-color: #222222
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#222222))
+	background-image: -webkit-linear-gradient(top, #444444, #222222)
+	background-image: -o-linear-gradient(top, #444444, #222222)
+	background-image: linear-gradient(to bottom, #444444, #222222)
+	background-image: -moz-linear-gradient(top, #444444, #222222)
+	background-repeat: repeat-x
+	border-color: #222222 #222222 #000000
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0)
+	filter: progid:dximagetransform.microsoft.gradient(enabled=false)
+	&:hover, &:active, &.active, &.disabled, &[disabled]
+		color: #ffffff
+		background-color: #222222
+		*background-color: #151515
+	&:active, &.active
+		background-color: #080808 \9
+
+button.btn, input[type="submit"].btn
+	*padding-top: 3px
+	*padding-bottom: 3px
+
+button.btn::-moz-focus-inner, input[type="submit"].btn::-moz-focus-inner
+	padding: 0
+	border: 0
+
+button.btn.btn-large, input[type="submit"].btn.btn-large
+	*padding-top: 7px
+	*padding-bottom: 7px
+
+button.btn.btn-small, input[type="submit"].btn.btn-small
+	*padding-top: 3px
+	*padding-bottom: 3px
+
+button.btn.btn-mini, input[type="submit"].btn.btn-mini
+	*padding-top: 1px
+	*padding-bottom: 1px
+
+.btn-link
+	background-color: transparent
+	background-image: none
+	-webkit-box-shadow: none
+	-moz-box-shadow: none
+	box-shadow: none
+	&:active, &[disabled]
+		background-color: transparent
+		background-image: none
+		-webkit-box-shadow: none
+		-moz-box-shadow: none
+		box-shadow: none
+	color: #0088cc
+	cursor: pointer
+	border-color: transparent
+	-webkit-border-radius: 0
+	-moz-border-radius: 0
+	border-radius: 0
+	&:hover
+		color: #005580
+		text-decoration: underline
+		background-color: transparent
+	&[disabled]:hover
+		color: #333333
+		text-decoration: none
+
+.btn-group
+	position: relative
+	*margin-left: .3em
+	font-size: 0
+	white-space: nowrap
+	vertical-align: middle
+	&:first-child
+		*margin-left: 0
+	+ .btn-group
+		margin-left: 5px
+
+.btn-toolbar
+	margin-top: 10px
+	margin-bottom: 10px
+	font-size: 0
+	.btn-group
+		display: inline-block
+		*display: inline
+		// IE7 inline-block hack
+		*zoom: 1
+	.btn + .btn, .btn-group + .btn, .btn + .btn-group
+		margin-left: 5px
+
+.btn-group
+	>
+		.btn
+			position: relative
+			-webkit-border-radius: 0
+			-moz-border-radius: 0
+			border-radius: 0
+			+ .btn
+				margin-left: -1px
+			font-size: 14px
+		.dropdown-menu
+			font-size: 14px
+		.btn-mini
+			font-size: 11px
+		.btn-small
+			font-size: 12px
+		.btn-large
+			font-size: 16px
+		.btn
+			&:first-child
+				margin-left: 0
+				-webkit-border-bottom-left-radius: 4px
+				border-bottom-left-radius: 4px
+				-webkit-border-top-left-radius: 4px
+				border-top-left-radius: 4px
+				-moz-border-radius-bottomleft: 4px
+				-moz-border-radius-topleft: 4px
+			&:last-child
+				-webkit-border-top-right-radius: 4px
+				border-top-right-radius: 4px
+				-webkit-border-bottom-right-radius: 4px
+				border-bottom-right-radius: 4px
+				-moz-border-radius-topright: 4px
+				-moz-border-radius-bottomright: 4px
+		.dropdown-toggle
+			-webkit-border-top-right-radius: 4px
+			border-top-right-radius: 4px
+			-webkit-border-bottom-right-radius: 4px
+			border-bottom-right-radius: 4px
+			-moz-border-radius-topright: 4px
+			-moz-border-radius-bottomright: 4px
+		.btn.large
+			&:first-child
+				margin-left: 0
+				-webkit-border-bottom-left-radius: 6px
+				border-bottom-left-radius: 6px
+				-webkit-border-top-left-radius: 6px
+				border-top-left-radius: 6px
+				-moz-border-radius-bottomleft: 6px
+				-moz-border-radius-topleft: 6px
+			&:last-child
+				-webkit-border-top-right-radius: 6px
+				border-top-right-radius: 6px
+				-webkit-border-bottom-right-radius: 6px
+				border-bottom-right-radius: 6px
+				-moz-border-radius-topright: 6px
+				-moz-border-radius-bottomright: 6px
+		.large.dropdown-toggle
+			-webkit-border-top-right-radius: 6px
+			border-top-right-radius: 6px
+			-webkit-border-bottom-right-radius: 6px
+			border-bottom-right-radius: 6px
+			-moz-border-radius-topright: 6px
+			-moz-border-radius-bottomright: 6px
+		.btn
+			&:hover, &:focus, &:active, &.active
+				z-index: 2
+	.dropdown-toggle:active
+		outline: 0
+	&.open
+		.dropdown-toggle
+			outline: 0
+			background-image: none
+			-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05)
+			-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05)
+			box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05)
+		.btn.dropdown-toggle
+			background-color: #e6e6e6
+		.btn-primary.dropdown-toggle
+			background-color: #0044cc
+		.btn-warning.dropdown-toggle
+			background-color: #f89406
+		.btn-danger.dropdown-toggle
+			background-color: #bd362f
+		.btn-success.dropdown-toggle
+			background-color: #51a351
+		.btn-info.dropdown-toggle
+			background-color: #2f96b4
+		.btn-inverse.dropdown-toggle
+			background-color: #222222
+	>
+		.btn + .dropdown-toggle
+			*padding-top: 5px
+			padding-right: 8px
+			*padding-bottom: 5px
+			padding-left: 8px
+			-webkit-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+			-moz-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+			box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+		.btn-mini + .dropdown-toggle
+			*padding-top: 2px
+			padding-right: 5px
+			*padding-bottom: 2px
+			padding-left: 5px
+		.btn-small + .dropdown-toggle
+			*padding-top: 5px
+			*padding-bottom: 4px
+		.btn-large + .dropdown-toggle
+			*padding-top: 7px
+			padding-right: 12px
+			*padding-bottom: 7px
+			padding-left: 12px
+
+.btn .caret
+	margin-top: 8px
+	margin-left: 0
+
+.btn-mini .caret, .btn-small .caret
+	margin-top: 6px
+
+.btn-large .caret
+	margin-top: 6px
+	border-top-width: 5px
+	border-right-width: 5px
+	border-left-width: 5px
+
+.dropup .btn-large .caret
+	border-top: 0
+	border-bottom: 5px solid #000000
+
+.btn-primary .caret, .btn-warning .caret, .btn-danger .caret, .btn-info .caret, .btn-success .caret, .btn-inverse .caret
+	border-top-color: #ffffff
+	border-bottom-color: #ffffff
+
+.btn-group-vertical
+	display: inline-block
+	*display: inline
+	// IE7 inline-block hack
+	*zoom: 1
+	.btn
+		display: block
+		float: none
+		width: 100%
+		-webkit-border-radius: 0
+		-moz-border-radius: 0
+		border-radius: 0
+		+ .btn
+			margin-top: -1px
+			margin-left: 0
+		&:first-child
+			-webkit-border-radius: 4px 4px 0 0
+			-moz-border-radius: 4px 4px 0 0
+			border-radius: 4px 4px 0 0
+		&:last-child
+			-webkit-border-radius: 0 0 4px 4px
+			-moz-border-radius: 0 0 4px 4px
+			border-radius: 0 0 4px 4px
+	.btn-large
+		&:first-child
+			-webkit-border-radius: 6px 6px 0 0
+			-moz-border-radius: 6px 6px 0 0
+			border-radius: 6px 6px 0 0
+		&:last-child
+			-webkit-border-radius: 0 0 6px 6px
+			-moz-border-radius: 0 0 6px 6px
+			border-radius: 0 0 6px 6px
+
+.alert,
+div.messages
+	padding: 8px 35px 8px 14px
+	margin-bottom: 20px
+	color: $orange
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
+	background-color: #fcf8e3
+	border: 1px solid #fbeed5
+	-webkit-border-radius: 4px
+	-moz-border-radius: 4px
+	border-radius: 4px
+	h4
+		margin: 0
+	.close
+		position: relative
+		top: -2px
+		right: -21px
+		line-height: 20px
+	&.error
+		color: $red
+		background-color: #f2dede
+		border-color: #eed3d7
+		background-image: none
+	&.status
+		color: $green
+		background-color: #dff0d8
+		border-color: #d6e9c6
+		background-image: none
+	&.warning
+		color: $blue
+		background-color: #d9edf7
+		border-color: #bce8f1
+		background-image: none
+		
+.alert-success
+	color: $green
+	background-color: #dff0d8
+	border-color: #d6e9c6
+
+.alert-danger, .alert-error
+	color: $red
+	background-color: #f2dede
+	border-color: #eed3d7
+
+.alert-info
+	color: $blue
+	background-color: #d9edf7
+	border-color: #bce8f1
+
+.alert-block
+	padding-top: 14px
+	padding-bottom: 14px
+	>
+		p, ul
+			margin-bottom: 0
+	p + p
+		margin-top: 5px
+
+.nav
+	margin-bottom: 20px
+	margin-left: 0
+	list-style: none
+	>
+		li > a
+			display: block
+			&:hover
+				text-decoration: none
+				background-color: $grayLighter
+		.pull-right
+			float: right
+
+.nav-header
+	display: block
+	padding: 3px 15px
+	font-size: 11px
+	font-weight: bold
+	line-height: 20px
+	color: $grayLight
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
+	text-transform: uppercase
+
+.nav li + .nav-header
+	margin-top: 9px
+
+.nav-list
+	padding-right: 15px
+	padding-left: 15px
+	margin-bottom: 0
+	> li > a, .nav-header
+		margin-right: -15px
+		margin-left: -15px
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
+	>
+		li > a
+			padding: 3px 15px
+		.active > a
+			color: #ffffff
+			text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2)
+			background-color: #0088cc
+			&:hover
+				color: #ffffff
+				text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2)
+				background-color: #0088cc
+	[class^="icon-"]
+		margin-right: 2px
+	.divider
+		*width: 100%
+		height: 1px
+		margin: 9px 1px
+		*margin: -5px 0 5px
+		overflow: hidden
+		background-color: #e5e5e5
+		border-bottom: 1px solid #ffffff
+
+.nav-tabs, .nav-pills
+	*zoom: 1
+
+.nav-tabs:before, .nav-pills:before, .nav-tabs:after, .nav-pills:after
+	display: table
+	line-height: 0
+	content: ""
+
+.nav-tabs:after, .nav-pills:after
+	clear: both
+
+.nav-tabs > li, .nav-pills > li
 	float: left
 
-// Toggling content
-.hide 
+.nav-tabs > li > a, .nav-pills > li > a
+	padding-right: 12px
+	padding-left: 12px
+	margin-right: 2px
+	line-height: 14px
+
+.nav-tabs
+	border-bottom: 1px solid #ddd
+	>
+		li
+			margin-bottom: -1px
+			> a
+				padding-top: 8px
+				padding-bottom: 8px
+				line-height: 20px
+				border: 1px solid transparent
+				-webkit-border-radius: 4px 4px 0 0
+				-moz-border-radius: 4px 4px 0 0
+				border-radius: 4px 4px 0 0
+				&:hover
+					border-color: $grayLighter $grayLighter #dddddd
+		.active > a
+			color: #555555
+			cursor: default
+			background-color: #ffffff
+			border: 1px solid #ddd
+			border-bottom-color: transparent
+			&:hover
+				color: #555555
+				cursor: default
+				background-color: #ffffff
+				border: 1px solid #ddd
+				border-bottom-color: transparent
+
+.nav-pills >
+	li > a
+		padding-top: 8px
+		padding-bottom: 8px
+		margin-top: 2px
+		margin-bottom: 2px
+		-webkit-border-radius: 5px
+		-moz-border-radius: 5px
+		border-radius: 5px
+	.active > a
+		color: #ffffff
+		background-color: #0088cc
+		&:hover
+			color: #ffffff
+			background-color: #0088cc
+
+.nav-stacked > li
+	float: none
+	> a
+		margin-right: 0
+
+.nav-tabs.nav-stacked
+	border-bottom: 0
+	> li
+		> a
+			border: 1px solid #ddd
+			-webkit-border-radius: 0
+			-moz-border-radius: 0
+			border-radius: 0
+		&:first-child > a
+			-webkit-border-top-right-radius: 4px
+			border-top-right-radius: 4px
+			-webkit-border-top-left-radius: 4px
+			border-top-left-radius: 4px
+			-moz-border-radius-topright: 4px
+			-moz-border-radius-topleft: 4px
+		&:last-child > a
+			-webkit-border-bottom-right-radius: 4px
+			border-bottom-right-radius: 4px
+			-webkit-border-bottom-left-radius: 4px
+			border-bottom-left-radius: 4px
+			-moz-border-radius-bottomright: 4px
+			-moz-border-radius-bottomleft: 4px
+		> a:hover
+			z-index: 2
+			border-color: #ddd
+
+.nav-pills.nav-stacked > li
+	> a
+		margin-bottom: 3px
+	&:last-child > a
+		margin-bottom: 1px
+
+.nav-tabs .dropdown-menu
+	-webkit-border-radius: 0 0 6px 6px
+	-moz-border-radius: 0 0 6px 6px
+	border-radius: 0 0 6px 6px
+
+.nav-pills .dropdown-menu
+	-webkit-border-radius: 6px
+	-moz-border-radius: 6px
+	border-radius: 6px
+
+.nav .dropdown-toggle
+	.caret
+		margin-top: 6px
+		border-top-color: #0088cc
+		border-bottom-color: #0088cc
+	&:hover .caret
+		border-top-color: #005580
+		border-bottom-color: #005580
+
+// move down carets for tabs
+
+.nav-tabs .dropdown-toggle .caret
+	margin-top: 8px
+
+.nav .active .dropdown-toggle .caret
+	border-top-color: #fff
+	border-bottom-color: #fff
+
+.nav-tabs .active .dropdown-toggle .caret
+	border-top-color: #555555
+	border-bottom-color: #555555
+
+.nav > .dropdown.active > a:hover
+	cursor: pointer
+
+.nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle
+	color: #ffffff
+	background-color: $grayLight
+	border-color: $grayLight
+
+.nav
+	> li.dropdown.open.active > a:hover
+		color: #ffffff
+		background-color: $grayLight
+		border-color: $grayLight
+	li.dropdown.open
+		.caret, &.active .caret, a:hover .caret
+			border-top-color: #ffffff
+			border-bottom-color: #ffffff
+			opacity: 1
+			filter: alpha(opacity = 100)
+
+.tabs-stacked .open > a:hover
+	border-color: $grayLight
+
+.tabbable
+	*zoom: 1
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
+
+.tab-content
+	overflow: auto
+
+.tabs-below > .nav-tabs, .tabs-right > .nav-tabs, .tabs-left > .nav-tabs
+	border-bottom: 0
+
+.tab-content > .tab-pane, .pill-content > .pill-pane
 	display: none
 
-.show 
+.tab-content > .active, .pill-content > .active
 	display: block
 
-// Visibility
-.invisible 
+.tabs-below > .nav-tabs
+	border-top: 1px solid #ddd
+	>
+		li
+			margin-top: -1px
+			margin-bottom: 0
+			> a
+				-webkit-border-radius: 0 0 4px 4px
+				-moz-border-radius: 0 0 4px 4px
+				border-radius: 0 0 4px 4px
+				&:hover
+					border-top-color: #ddd
+					border-bottom-color: transparent
+		.active > a
+			border-color: transparent #ddd #ddd #ddd
+			&:hover
+				border-color: transparent #ddd #ddd #ddd
+
+.tabs-left > .nav-tabs > li, .tabs-right > .nav-tabs > li
+	float: none
+
+.tabs-left > .nav-tabs > li > a, .tabs-right > .nav-tabs > li > a
+	min-width: 74px
+	margin-right: 0
+	margin-bottom: 3px
+
+.tabs-left > .nav-tabs
+	float: left
+	margin-right: 19px
+	border-right: 1px solid #ddd
+	> li > a
+		margin-right: -1px
+		-webkit-border-radius: 4px 0 0 4px
+		-moz-border-radius: 4px 0 0 4px
+		border-radius: 4px 0 0 4px
+		&:hover
+			border-color: $grayLighter #dddddd $grayLighter $grayLighter
+	.active > a
+		border-color: #ddd transparent #ddd #ddd
+		*border-right-color: #ffffff
+		&:hover
+			border-color: #ddd transparent #ddd #ddd
+			*border-right-color: #ffffff
+
+.tabs-right > .nav-tabs
+	float: right
+	margin-left: 19px
+	border-left: 1px solid #ddd
+	> li > a
+		margin-left: -1px
+		-webkit-border-radius: 0 4px 4px 0
+		-moz-border-radius: 0 4px 4px 0
+		border-radius: 0 4px 4px 0
+		&:hover
+			border-color: $grayLighter $grayLighter $grayLighter #dddddd
+	.active > a
+		border-color: #ddd #ddd #ddd transparent
+		*border-left-color: #ffffff
+		&:hover
+			border-color: #ddd #ddd #ddd transparent
+			*border-left-color: #ffffff
+
+.nav > .disabled > a
+	color: $grayLight
+	&:hover
+		text-decoration: none
+		cursor: default
+		background-color: transparent
+
+.navbar
+	*position: relative
+	*z-index: 2
+	margin-bottom: 20px
+	overflow: visible
+	color: $grayLight
+
+.navbar-inner
+	min-height: 40px
+	padding-right: 20px
+	padding-left: 20px
+	border: 1px solid #d4d4d4
+	background: $grayLighter
+	*zoom: 1
+	+box-shadow(0 1px 4px rgba(0, 0, 0, 0.065))
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
+
+.navbar .container
+	width: auto
+
+.nav-collapse.collapse
+	height: auto
+
+.navbar .brand
+	display: block
+	float: left
+	padding: 10px 20px 10px
+	margin-left: -20px
+	font-size: 20px
+	font-weight: 200
+	color: #777777
+	text-shadow: 0 1px 0 #ffffff
+	&:hover
+		text-decoration: none
+
+.navbar-text
+	margin-bottom: 0
+	line-height: 40px
+
+.navbar-link
+	color: #777777
+	&:hover
+		color: #333333
+
+.navbar
+	.divider-vertical
+		height: 40px
+		margin: 0 9px
+		border-right: 1px solid #ffffff
+		border-left: 1px solid #f2f2f2
+	.btn
+		margin-top: 5px
+	.btn-group
+		margin-top: 5px
+		.btn
+			margin-top: 0
+	.input-prepend .btn, .input-append .btn
+		margin-top: 0
+
+.navbar-form
+	margin-bottom: 0
+	*zoom: 1
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
+	input, select, .radio, .checkbox
+		margin-top: 5px
+	input, select, .btn
+		display: inline-block
+		margin-bottom: 0
+	input
+		&[type="image"], &[type="checkbox"], &[type="radio"]
+			margin-top: 3px
+	.input-append, .input-prepend
+		margin-top: 6px
+		white-space: nowrap
+	.input-append input, .input-prepend input
+		margin-top: 0
+
+.navbar-search
+	position: relative
+	float: left
+	margin-top: 5px
+	margin-bottom: 0
+	.search-query
+		padding: 4px 14px
+		margin-bottom: 0
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+		font-size: 13px
+		font-weight: normal
+		line-height: 1
+		+border-radius(15px)
+
+.navbar-static-top
+	position: static
+	width: 100%
+	margin-bottom: 0
+	.navbar-inner
+		+border-radius(0)
+
+
+.navbar-fixed-top, .navbar-fixed-bottom
+	position: fixed
+	right: 0
+	left: 0
+	z-index: 1030
+	margin-bottom: 0
+
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner
+	border-width: 0 0 1px
+
+.navbar-fixed-bottom .navbar-inner
+	border-width: 1px 0 0
+
+.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner
+	padding-right: 0
+	padding-left: 0
+	+border-radius(0)
+
+.navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container
+	width: 940px
+
+.navbar-fixed-top
+	top: 0
+	.navbar-inner
+		-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1)
+		-moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1)
+		box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1)
+
+.navbar-static-top .navbar-inner
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1)
+	-moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1)
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1)
+
+.navbar-fixed-bottom
+	bottom: 0
+	.navbar-inner
+		-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 -1px 10px rgba(0, 0, 0, 0.1)
+		-moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 -1px 10px rgba(0, 0, 0, 0.1)
+		box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 -1px 10px rgba(0, 0, 0, 0.1)
+
+.navbar
+	.nav
+		position: relative
+		left: 0
+		display: block
+		float: left
+		margin: 0 10px 0 0
+		&.pull-right
+			float: right
+			margin-right: 0
+		> li
+			float: left
+			> a
+				float: none
+				padding: 10px 15px 10px
+				color: #777777
+				text-decoration: none
+				text-shadow: 0 1px 0 #ffffff
+		.dropdown-toggle .caret
+			margin-top: 8px
+		>
+			li > a
+				&:focus, &:hover
+					color: #333333
+					text-decoration: none
+					background-color: transparent
+			.active > a
+				color: #555555
+				text-decoration: none
+				background-color: #e5e5e5
+				-webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125)
+				-moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125)
+				box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125)
+				&:hover, &:focus
+					color: #555555
+					text-decoration: none
+					background-color: #e5e5e5
+					-webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125)
+					-moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125)
+					box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125)
+	.btn-navbar
+		display: none
+		float: right
+		padding: 7px 10px
+		margin-right: 5px
+		margin-left: 5px
+		color: #ffffff
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+		background-color: #ededed
+		*background-color: #e5e5e5
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e5e5e5))
+		background-image: -webkit-linear-gradient(top, #f2f2f2, #e5e5e5)
+		background-image: -o-linear-gradient(top, #f2f2f2, #e5e5e5)
+		background-image: linear-gradient(to bottom, #f2f2f2, #e5e5e5)
+		background-image: -moz-linear-gradient(top, #f2f2f2, #e5e5e5)
+		background-repeat: repeat-x
+		border-color: #e5e5e5 #e5e5e5 #bfbfbf
+		border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+		filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffe5e5e5', GradientType=0)
+		filter: progid:dximagetransform.microsoft.gradient(enabled=false)
+		-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075)
+		-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075)
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075)
+		&:hover, &:active, &.active, &.disabled, &[disabled]
+			color: #ffffff
+			background-color: #e5e5e5
+			*background-color: #d9d9d9
+		&:active, &.active
+			background-color: #cccccc \9
+		.icon-bar
+			display: block
+			width: 18px
+			height: 2px
+			background-color: #f5f5f5
+			+border-radius(1px)
+			-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25)
+			-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25)
+			box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25)
+
+.btn-navbar .icon-bar + .icon-bar
+	margin-top: 3px
+
+.navbar .nav > li > .dropdown-menu
+	&:before
+		position: absolute
+		top: -7px
+		left: 9px
+		display: inline-block
+		border-right: 7px solid transparent
+		border-bottom: 7px solid #ccc
+		border-left: 7px solid transparent
+		border-bottom-color: rgba(0, 0, 0, 0.2)
+		content: ''
+	&:after
+		position: absolute
+		top: -6px
+		left: 10px
+		display: inline-block
+		border-right: 6px solid transparent
+		border-bottom: 6px solid #ffffff
+		border-left: 6px solid transparent
+		content: ''
+
+.navbar-fixed-bottom .nav > li > .dropdown-menu
+	&:before
+		top: auto
+		bottom: -7px
+		border-top: 7px solid #ccc
+		border-bottom: 0
+		border-top-color: rgba(0, 0, 0, 0.2)
+	&:after
+		top: auto
+		bottom: -6px
+		border-top: 6px solid #ffffff
+		border-bottom: 0
+
+.navbar
+	.nav li.dropdown
+		&.open > .dropdown-toggle, &.active > .dropdown-toggle
+			color: #555555
+			background-color: #e5e5e5
+		&.open
+			&.active > .dropdown-toggle
+				color: #555555
+				background-color: #e5e5e5
+			> .dropdown-toggle .caret
+				border-top-color: #555555
+				border-bottom-color: #555555
+		> .dropdown-toggle .caret
+			border-top-color: #777777
+			border-bottom-color: #777777
+		&.active > .dropdown-toggle .caret, &.open.active > .dropdown-toggle .caret
+			border-top-color: #555555
+			border-bottom-color: #555555
+	.pull-right > li > .dropdown-menu, .nav > li > .dropdown-menu.pull-right
+		right: 0
+		left: auto
+	.pull-right > li > .dropdown-menu:before, .nav > li > .dropdown-menu.pull-right:before
+		right: 12px
+		left: auto
+	.pull-right > li > .dropdown-menu:after, .nav > li > .dropdown-menu.pull-right:after
+		right: 13px
+		left: auto
+	.pull-right > li > .dropdown-menu .dropdown-menu, .nav > li > .dropdown-menu.pull-right .dropdown-menu
+		right: 100%
+		left: auto
+		margin-right: -1px
+		margin-left: 0
+		-webkit-border-radius: 6px 0 6px 6px
+		-moz-border-radius: 6px 0 6px 6px
+		border-radius: 6px 0 6px 6px
+
+.navbar-inverse
+	color: $grayLight
+	.navbar-inner
+		background-color: #1b1b1b
+		background-image: -moz-linear-gradient(top, #222222, #111111)
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111))
+		background-image: -webkit-linear-gradient(top, #222222, #111111)
+		background-image: -o-linear-gradient(top, #222222, #111111)
+		background-image: linear-gradient(to bottom, #222222, #111111)
+		background-repeat: repeat-x
+		border-color: #252525
+		filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0)
+	.brand, .nav > li > a
+		color: $grayLight
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+	.brand:hover
+		color: #ffffff
+	.nav
+		> li > a
+			&:hover
+				color: #ffffff
+			&:focus, &:hover
+				color: #ffffff
+				background-color: transparent
+		.active > a
+			color: #ffffff
+			background-color: #111111
+			&:hover, &:focus
+				color: #ffffff
+				background-color: #111111
+	.navbar-link
+		color: $grayLight
+		&:hover
+			color: #ffffff
+	.divider-vertical
+		border-right-color: #222222
+		border-left-color: #111111
+	.nav li.dropdown
+		&.open > .dropdown-toggle, &.active > .dropdown-toggle
+			color: #ffffff
+			background-color: #111111
+		&.open
+			&.active > .dropdown-toggle
+				color: #ffffff
+				background-color: #111111
+			> .dropdown-toggle .caret
+				border-top-color: #ffffff
+				border-bottom-color: #ffffff
+		> .dropdown-toggle .caret
+			border-top-color: $grayLight
+			border-bottom-color: $grayLight
+		&.active > .dropdown-toggle .caret, &.open.active > .dropdown-toggle .caret
+			border-top-color: #ffffff
+			border-bottom-color: #ffffff
+	.navbar-search .search-query
+		color: #ffffff
+		background-color: #515151
+		border-color: #111111
+		-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15)
+		-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15)
+		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15)
+		-webkit-transition: none
+		-moz-transition: none
+		-o-transition: none
+		transition: none
+		&:-moz-placeholder, &:-ms-input-placeholder, &::-webkit-input-placeholder
+			color: #cccccc
+		&:focus, &.focused
+			padding: 5px 15px
+			color: #333333
+			text-shadow: 0 1px 0 #ffffff
+			background-color: #ffffff
+			border: 0
+			outline: 0
+			-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15)
+			-moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15)
+			box-shadow: 0 0 3px rgba(0, 0, 0, 0.15)
+	.btn-navbar
+		color: #ffffff
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+		background-color: #0e0e0e
+		*background-color: #040404
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#151515), to(#040404))
+		background-image: -webkit-linear-gradient(top, #151515, #040404)
+		background-image: -o-linear-gradient(top, #151515, #040404)
+		background-image: linear-gradient(to bottom, #151515, #040404)
+		background-image: -moz-linear-gradient(top, #151515, #040404)
+		background-repeat: repeat-x
+		border-color: #040404 #040404 #000000
+		border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+		filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff151515', endColorstr='#ff040404', GradientType=0)
+		filter: progid:dximagetransform.microsoft.gradient(enabled=false)
+		&:hover, &:active, &.active, &.disabled, &[disabled]
+			color: #ffffff
+			background-color: #040404
+			*background-color: #000000
+		&:active, &.active
+			background-color: #000000 \9
+
+.breadcrumb
+	margin: 0
+	list-style: none
+	font-weight: 300
+	li
+		display: inline-block
+		*display: inline
+		text-shadow: 0 1px 0 #ffffff
+		*zoom: 1
+	.divider
+		padding: 0 5px
+		color: #ccc
+	.active
+		color: $grayLight
+	a
+		color: $textColor
+		margin: 0 5px
+		&:first-child
+			margin-left: 0
+	
+
+.pagination
+	height: 40px
+	margin: 20px 0
+	ul
+		display: inline-block
+		*display: inline
+		margin-bottom: 0
+		margin-left: 0
+		-webkit-border-radius: 3px
+		-moz-border-radius: 3px
+		border-radius: 3px
+		*zoom: 1
+		-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05)
+		-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05)
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05)
+		>
+			li
+				display: inline
+				>
+					a, span
+						float: left
+						padding: 0 14px
+						line-height: 38px
+						text-decoration: none
+						background-color: #ffffff
+						border: 1px solid #dddddd
+						border-left-width: 0
+					a:hover
+						background-color: #f5f5f5
+			.active >
+				a, span
+					background-color: #f5f5f5
+				a, span
+					color: $grayLight
+					cursor: default
+			.disabled >
+				span
+					color: $grayLight
+					cursor: default
+					background-color: transparent
+				a
+					color: $grayLight
+					cursor: default
+					background-color: transparent
+					&:hover
+						color: $grayLight
+						cursor: default
+						background-color: transparent
+			li
+				&:first-child >
+					a, span
+						border-left-width: 1px
+						-webkit-border-radius: 3px 0 0 3px
+						-moz-border-radius: 3px 0 0 3px
+						border-radius: 3px 0 0 3px
+				&:last-child >
+					a, span
+						-webkit-border-radius: 0 3px 3px 0
+						-moz-border-radius: 0 3px 3px 0
+						border-radius: 0 3px 3px 0
+
+.pagination-centered
+	text-align: center
+
+.pagination-right
+	text-align: right
+
+.pager
+	margin: 20px 0
+	text-align: center
+	list-style: none
+	*zoom: 1
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
+	li
+		display: inline
+	a, span
+		display: inline-block
+		padding: 5px 14px
+		background-color: #fff
+		border: 1px solid #ddd
+		-webkit-border-radius: 15px
+		-moz-border-radius: 15px
+		border-radius: 15px
+	a:hover
+		text-decoration: none
+		background-color: #f5f5f5
+	.next
+		a, span
+			float: right
+	.previous a
+		float: left
+	.disabled
+		a
+			color: $grayLight
+			cursor: default
+			background-color: #fff
+			&:hover
+				color: $grayLight
+				cursor: default
+				background-color: #fff
+		span
+			color: $grayLight
+			cursor: default
+			background-color: #fff
+
+.modal-open .modal
+	.dropdown-menu
+		z-index: 2050
+	.dropdown.open
+		*z-index: 2050
+	.popover
+		z-index: 2060
+	.tooltip
+		z-index: 2080
+
+.modal-backdrop
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 1040
+	background-color: #000000
+	&.fade
+		opacity: 0
+		&.in
+			opacity: 0.8
+			filter: alpha(opacity = 80)
+	opacity: 0.8
+	filter: alpha(opacity = 80)
+
+.modal
+	position: fixed
+	top: 50%
+	left: 50%
+	z-index: 1050
+	width: 560px
+	margin: -250px 0 0 -280px
+	overflow: auto
+	background-color: #ffffff
+	border: 1px solid #999
+	border: 1px solid rgba(0, 0, 0, 0.3)
+	*border: 1px solid #999
+	-webkit-border-radius: 6px
+	-moz-border-radius: 6px
+	border-radius: 6px
+	-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3)
+	-moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3)
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3)
+	-webkit-background-clip: padding-box
+	-moz-background-clip: padding-box
+	background-clip: padding-box
+	&.fade
+		top: -25%
+		-webkit-transition: opacity 0.3s linear, top 0.3s ease-out
+		-moz-transition: opacity 0.3s linear, top 0.3s ease-out
+		-o-transition: opacity 0.3s linear, top 0.3s ease-out
+		transition: opacity 0.3s linear, top 0.3s ease-out
+		&.in
+			top: 50%
+
+.modal-header
+	padding: 9px 15px
+	border-bottom: 1px solid #eee
+	.close
+		margin-top: 2px
+	h3
+		margin: 0
+		line-height: 30px
+
+.modal-body
+	max-height: 400px
+	padding: 15px
+	overflow-y: auto
+
+.modal-form
+	margin-bottom: 0
+
+.modal-footer
+	padding: 14px 15px 15px
+	margin-bottom: 0
+	text-align: right
+	background-color: #f5f5f5
+	border-top: 1px solid #ddd
+	-webkit-border-radius: 0 0 6px 6px
+	-moz-border-radius: 0 0 6px 6px
+	border-radius: 0 0 6px 6px
+	*zoom: 1
+	-webkit-box-shadow: inset 0 1px 0 #ffffff
+	-moz-box-shadow: inset 0 1px 0 #ffffff
+	box-shadow: inset 0 1px 0 #ffffff
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
+	.btn + .btn
+		margin-bottom: 0
+		margin-left: 5px
+	.btn-group .btn + .btn
+		margin-left: -1px
+
+.tooltip
+	position: absolute
+	z-index: 1030
+	display: block
+	padding: 5px
+	font-size: 11px
+	opacity: 0
+	filter: alpha(opacity = 0)
+	visibility: visible
+	&.in
+		opacity: 0.8
+		filter: alpha(opacity = 80)
+	&.top
+		margin-top: -3px
+	&.right
+		margin-left: 3px
+	&.bottom
+		margin-top: 3px
+	&.left
+		margin-left: -3px
+
+.tooltip-inner
+	max-width: 200px
+	padding: 3px 8px
+	color: #ffffff
+	text-align: center
+	text-decoration: none
+	background-color: #000000
+	-webkit-border-radius: 4px
+	-moz-border-radius: 4px
+	border-radius: 4px
+
+.tooltip-arrow
+	position: absolute
+	width: 0
+	height: 0
+	border-color: transparent
+	border-style: solid
+
+.tooltip
+	&.top .tooltip-arrow
+		bottom: 0
+		left: 50%
+		margin-left: -5px
+		border-top-color: #000000
+		border-width: 5px 5px 0
+	&.right .tooltip-arrow
+		top: 50%
+		left: 0
+		margin-top: -5px
+		border-right-color: #000000
+		border-width: 5px 5px 5px 0
+	&.left .tooltip-arrow
+		top: 50%
+		right: 0
+		margin-top: -5px
+		border-left-color: #000000
+		border-width: 5px 0 5px 5px
+	&.bottom .tooltip-arrow
+		top: 0
+		left: 50%
+		margin-left: -5px
+		border-bottom-color: #000000
+		border-width: 0 5px 5px
+
+.popover
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 1010
+	display: none
+	width: 236px
+	padding: 1px
+	background-color: #ffffff
+	border: 1px solid #ccc
+	border: 1px solid rgba(0, 0, 0, 0.2)
+	-webkit-border-radius: 6px
+	-moz-border-radius: 6px
+	border-radius: 6px
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+	-webkit-background-clip: padding-box
+	-moz-background-clip: padding
+	background-clip: padding-box
+	&.top
+		margin-bottom: 10px
+	&.right
+		margin-left: 10px
+	&.bottom
+		margin-top: 10px
+	&.left
+		margin-right: 10px
+
+.popover-title
+	padding: 8px 14px
+	margin: 0
+	font-size: 14px
+	font-weight: normal
+	line-height: 18px
+	background-color: #f7f7f7
+	border-bottom: 1px solid #ebebeb
+	-webkit-border-radius: 5px 5px 0 0
+	-moz-border-radius: 5px 5px 0 0
+	border-radius: 5px 5px 0 0
+
+.popover-content
+	padding: 9px 14px
+	p, ul, ol
+		margin-bottom: 0
+
+.popover
+	.arrow
+		position: absolute
+		display: inline-block
+		width: 0
+		height: 0
+		border-color: transparent
+		border-style: solid
+		&:after
+			position: absolute
+			display: inline-block
+			width: 0
+			height: 0
+			border-color: transparent
+			border-style: solid
+			z-index: -1
+			content: ""
+	&.top .arrow
+		bottom: -10px
+		left: 50%
+		margin-left: -10px
+		border-top-color: #ffffff
+		border-width: 10px 10px 0
+		&:after
+			bottom: -1px
+			left: -11px
+			border-top-color: rgba(0, 0, 0, 0.25)
+			border-width: 11px 11px 0
+	&.right .arrow
+		top: 50%
+		left: -10px
+		margin-top: -10px
+		border-right-color: #ffffff
+		border-width: 10px 10px 10px 0
+		&:after
+			bottom: -11px
+			left: -1px
+			border-right-color: rgba(0, 0, 0, 0.25)
+			border-width: 11px 11px 11px 0
+	&.bottom .arrow
+		top: -10px
+		left: 50%
+		margin-left: -10px
+		border-bottom-color: #ffffff
+		border-width: 0 10px 10px
+		&:after
+			top: -1px
+			left: -11px
+			border-bottom-color: rgba(0, 0, 0, 0.25)
+			border-width: 0 11px 11px
+	&.left .arrow
+		top: 50%
+		right: -10px
+		margin-top: -10px
+		border-left-color: #ffffff
+		border-width: 10px 0 10px 10px
+		&:after
+			right: -1px
+			bottom: -11px
+			border-left-color: rgba(0, 0, 0, 0.25)
+			border-width: 11px 0 11px 11px
+
+.thumbnails
+	margin-left: -20px
+	list-style: none
+	*zoom: 1
+	&:before
+		display: table
+		line-height: 0
+		content: ""
+	&:after
+		display: table
+		line-height: 0
+		content: ""
+		clear: both
+
+.row-fluid .thumbnails
+	margin-left: 0
+
+.thumbnails > li
+	float: left
+	margin-bottom: 20px
+	margin-left: 20px
+
+.thumbnail
+	display: block
+	padding: 4px
+	line-height: 20px
+	border: 1px solid #ddd
+	-webkit-border-radius: 4px
+	-moz-border-radius: 4px
+	border-radius: 4px
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055)
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055)
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055)
+	-webkit-transition: all 0.2s ease-in-out
+	-moz-transition: all 0.2s ease-in-out
+	-o-transition: all 0.2s ease-in-out
+	transition: all 0.2s ease-in-out
+
+a.thumbnail:hover
+	border-color: #0088cc
+	-webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25)
+	-moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25)
+	box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25)
+
+.thumbnail
+	> img
+		display: block
+		max-width: 100%
+		margin-right: auto
+		margin-left: auto
+	.caption
+		padding: 9px
+		color: #555555
+
+.label, .badge
+	font-size: 11.844px
+	font-weight: bold
+	line-height: 14px
+	color: #ffffff
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+	white-space: nowrap
+	vertical-align: baseline
+	background-color: $grayLight
+
+.label
+	padding: 1px 4px 2px
+	-webkit-border-radius: 3px
+	-moz-border-radius: 3px
+	border-radius: 3px
+
+.badge
+	padding: 1px 9px 2px
+	-webkit-border-radius: 9px
+	-moz-border-radius: 9px
+	border-radius: 9px
+
+a
+	&.label:hover, &.badge:hover
+		color: #ffffff
+		text-decoration: none
+		cursor: pointer
+
+.label-important, .badge-important
+	background-color: $red
+
+.label-important[href], .badge-important[href]
+	background-color: #953b39
+
+.label-warning, .badge-warning
+	background-color: #f89406
+
+.label-warning[href], .badge-warning[href]
+	background-color: #c67605
+
+.label-success, .badge-success
+	background-color: $green
+
+.label-success[href], .badge-success[href]
+	background-color: #356635
+
+.label-info, .badge-info
+	background-color: $blue
+
+.label-info[href], .badge-info[href]
+	background-color: #2d6987
+
+.label-inverse, .badge-inverse
+	background-color: #333333
+
+.label-inverse[href], .badge-inverse[href]
+	background-color: #1a1a1a
+
+.btn
+	.label, .badge
+		position: relative
+		top: -1px
+
+.btn-mini
+	.label, .badge
+		top: 0
+
+@-webkit-keyframes progress-bar-stripes
+	from
+		background-position: 40px 0
+	to
+		background-position: 0 0
+
+
+@-moz-keyframes progress-bar-stripes
+	from
+		background-position: 40px 0
+	to
+		background-position: 0 0
+
+
+@-ms-keyframes progress-bar-stripes
+	from
+		background-position: 40px 0
+	to
+		background-position: 0 0
+
+
+@-o-keyframes progress-bar-stripes
+	from
+		background-position: 0 0
+	to
+		background-position: 40px 0
+
+
+@keyframes progress-bar-stripes
+	from
+		background-position: 40px 0
+	to
+		background-position: 0 0
+
+
+.progress
+	height: 20px
+	margin-bottom: 20px
+	overflow: hidden
+	background-color: #f7f7f7
+	background-image: -moz-linear-gradient(top, $grayLight, #f9f9f9)
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from($grayLight), to(#f9f9f9))
+	background-image: -webkit-linear-gradient(top, $grayLight, #f9f9f9)
+	background-image: -o-linear-gradient(top, $grayLight, #f9f9f9)
+	background-image: linear-gradient(to bottom, $grayLight, #f9f9f9)
+	background-repeat: repeat-x
+	-webkit-border-radius: 4px
+	-moz-border-radius: 4px
+	border-radius: 4px
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#fff9f9f9', GradientType=0)
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1)
+	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1)
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1)
+	.bar
+		float: left
+		width: 0
+		height: 100%
+		font-size: 12px
+		color: #ffffff
+		text-align: center
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+		background-color: #0e90d2
+		background-image: -moz-linear-gradient(top, #149bdf, #0480be)
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#149bdf), to(#0480be))
+		background-image: -webkit-linear-gradient(top, #149bdf, #0480be)
+		background-image: -o-linear-gradient(top, #149bdf, #0480be)
+		background-image: linear-gradient(to bottom, #149bdf, #0480be)
+		background-repeat: repeat-x
+		filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff149bdf', endColorstr='#ff0480be', GradientType=0)
+		-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15)
+		-moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15)
+		box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15)
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+		-webkit-transition: width 0.6s ease
+		-moz-transition: width 0.6s ease
+		-o-transition: width 0.6s ease
+		transition: width 0.6s ease
+		+ .bar
+			-webkit-box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.15)
+			-moz-box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.15)
+			box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.15)
+
+.progress-striped .bar
+	background-color: #149bdf
+	background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent))
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	-webkit-background-size: 40px 40px
+	-moz-background-size: 40px 40px
+	-o-background-size: 40px 40px
+	background-size: 40px 40px
+
+.progress.active .bar
+	-webkit-animation: progress-bar-stripes 2s linear infinite
+	-moz-animation: progress-bar-stripes 2s linear infinite
+	-ms-animation: progress-bar-stripes 2s linear infinite
+	-o-animation: progress-bar-stripes 2s linear infinite
+	animation: progress-bar-stripes 2s linear infinite
+
+.progress-danger .bar, .progress .bar-danger
+	background-color: #dd514c
+	background-image: -moz-linear-gradient(top, #ee5f5b, #c43c35)
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#c43c35))
+	background-image: -webkit-linear-gradient(top, #ee5f5b, #c43c35)
+	background-image: -o-linear-gradient(top, #ee5f5b, #c43c35)
+	background-image: linear-gradient(to bottom, #ee5f5b, #c43c35)
+	background-repeat: repeat-x
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffc43c35', GradientType=0)
+
+.progress-danger.progress-striped .bar, .progress-striped .bar-danger
+	background-color: #ee5f5b
+	background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent))
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+
+.progress-success .bar, .progress .bar-success
+	background-color: #5eb95e
+	background-image: -moz-linear-gradient(top, #62c462, #57a957)
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#57a957))
+	background-image: -webkit-linear-gradient(top, #62c462, #57a957)
+	background-image: -o-linear-gradient(top, #62c462, #57a957)
+	background-image: linear-gradient(to bottom, #62c462, #57a957)
+	background-repeat: repeat-x
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff57a957', GradientType=0)
+
+.progress-success.progress-striped .bar, .progress-striped .bar-success
+	background-color: #62c462
+	background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent))
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+
+.progress-info .bar, .progress .bar-info
+	background-color: #4bb1cf
+	background-image: -moz-linear-gradient(top, #5bc0de, #339bb9)
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#339bb9))
+	background-image: -webkit-linear-gradient(top, #5bc0de, #339bb9)
+	background-image: -o-linear-gradient(top, #5bc0de, #339bb9)
+	background-image: linear-gradient(to bottom, #5bc0de, #339bb9)
+	background-repeat: repeat-x
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff339bb9', GradientType=0)
+
+.progress-info.progress-striped .bar, .progress-striped .bar-info
+	background-color: #5bc0de
+	background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent))
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+
+.progress-warning .bar, .progress .bar-warning
+	background-color: #faa732
+	background-image: -moz-linear-gradient(top, #fbb450, #f89406)
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406))
+	background-image: -webkit-linear-gradient(top, #fbb450, #f89406)
+	background-image: -o-linear-gradient(top, #fbb450, #f89406)
+	background-image: linear-gradient(to bottom, #fbb450, #f89406)
+	background-repeat: repeat-x
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0)
+
+.progress-warning.progress-striped .bar, .progress-striped .bar-warning
+	background-color: #fbb450
+	background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent))
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+
+.accordion
+	margin-bottom: 20px
+
+.accordion-group
+	margin-bottom: 2px
+	border: 1px solid #e5e5e5
+	-webkit-border-radius: 4px
+	-moz-border-radius: 4px
+	border-radius: 4px
+
+.accordion-heading
+	border-bottom: 0
+	.accordion-toggle
+		display: block
+		padding: 8px 15px
+
+.accordion-toggle
+	cursor: pointer
+
+.accordion-inner
+	padding: 9px 15px
+	border-top: 1px solid #e5e5e5
+
+.carousel
+	position: relative
+	margin-bottom: 20px
+	line-height: 1
+
+.carousel-inner
+	position: relative
+	width: 100%
+	overflow: hidden
+
+.carousel
+	.item
+		position: relative
+		display: none
+		-webkit-transition: 0.6s ease-in-out left
+		-moz-transition: 0.6s ease-in-out left
+		-o-transition: 0.6s ease-in-out left
+		transition: 0.6s ease-in-out left
+		> img
+			display: block
+			line-height: 1
+	.active, .next, .prev
+		display: block
+	.active
+		left: 0
+	.next, .prev
+		position: absolute
+		top: 0
+		width: 100%
+	.next
+		left: 100%
+	.prev
+		left: -100%
+	.next.left, .prev.right
+		left: 0
+	.active
+		&.left
+			left: -100%
+		&.right
+			left: 100%
+
+.carousel-control
+	position: absolute
+	top: 40%
+	left: 15px
+	width: 40px
+	height: 40px
+	margin-top: -20px
+	font-size: 60px
+	font-weight: 100
+	line-height: 30px
+	color: #ffffff
+	text-align: center
+	background: #222222
+	border: 3px solid #ffffff
+	-webkit-border-radius: 23px
+	-moz-border-radius: 23px
+	border-radius: 23px
+	opacity: 0.5
+	filter: alpha(opacity = 50)
+	&.right
+		right: 15px
+		left: auto
+	&:hover
+		color: #ffffff
+		text-decoration: none
+		opacity: 0.9
+		filter: alpha(opacity = 90)
+
+.carousel-caption
+	position: absolute
+	right: 0
+	bottom: 0
+	left: 0
+	padding: 15px
+	background: #333333
+	background: rgba(0, 0, 0, 0.75)
+	h4, p
+		line-height: 20px
+		color: #ffffff
+	h4
+		margin: 0 0 5px
+	p
+		margin-bottom: 0
+
+.hero-unit
+	padding: 60px
+	margin-bottom: 30px
+	background-color: $grayLighter
+	-webkit-border-radius: 6px
+	-moz-border-radius: 6px
+	border-radius: 6px
+	h1
+		margin-bottom: 0
+		font-size: 60px
+		line-height: 1
+		letter-spacing: -1px
+		color: inherit
+	p
+		font-size: 18px
+		font-weight: 200
+		line-height: 30px
+		color: inherit
+
+.pull-right
+	float: right
+
+.pull-left
+	float: left
+
+.hide
+	display: none
+
+.show
+	display: block
+
+.invisible
 	visibility: hidden
 
-
+.affix
+	position: fixed

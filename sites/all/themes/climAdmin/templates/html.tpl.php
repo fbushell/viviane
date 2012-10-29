@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php print $head; ?>
-  <link rel="shortcut icon" href="http://claro.loc/sites/all/themes/climAdmin/images/favicon.ico" type="image/vnd.microsoft.icon">
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <?php print $scripts; ?>
