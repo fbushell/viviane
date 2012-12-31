@@ -58,6 +58,23 @@
 		width: 10px
 		background: url(../images/loading_small.gif) no-repeat center center
 
+html
+	height: 100%
+	width: 100%
+	overflow: hidden
+
+#loader
+	position: fixed
+	height: 100%
+	top: 0
+	left: 0
+	right: 0
+	z-index: 420
+	overflow: hidden
+	background: url(/sites/default/files/loading_gif/loader.gif) no-repeat center center white
+
+.wrap
+	margin: 0 40px
 
 //  Drupal Overrides
 // ----------------------------------------------------------------------------
@@ -75,8 +92,41 @@
 	#forgot
 		font-size: 12px
 		font-weight: 300
+
+.element-invisible
+	display: none
 		
 		
 		
 //  Purrrdy Stuff
 // ----------------------------------------------------------------------------
+
+#logo
+	letter-spacing: 0.1em
+	font-size: 18px
+	margin: 30px 0 100px 0
+
+#timeline-wrap
+	overflow: hidden
+	padding-bottom: 15px
+	border-bottom: 1px solid
+	.year
+		position: relative
+		float: left
+		width: 75px
+		text-align: center
+		.year-line
+			position: absolute
+			width: 1px
+			height: 12px
+			background: black
+			left: 50%
+			margin-left: 4px
+			bottom: -16px
+
+
+.event
+	position: absolute
+	height: 50px
+	background: black
+	+opacity(40)

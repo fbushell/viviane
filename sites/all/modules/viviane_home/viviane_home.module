@@ -1,0 +1,29 @@
+<?php
+
+/**
+* @file
+*
+* Homepage load
+*
+*/
+
+/**
+*	Implements hook_menu()
+*/
+function viviane_home_menu(){
+
+	$items = array();
+	
+	// Homepage
+	$items['homepage'] = array(
+		'title' => t('Berkeley Supply'),
+		'page callback' => 'viviane_home_page_build',
+		'file' => 'viviane_home_page_build.inc',
+		'access arguments' => array('access content'),
+		'type' => MENU_CALLBACK,
+	);
+	
+	return $items;
+	
+}
+
