@@ -1,5 +1,7 @@
 ;(function( $, window, document, undefined ){
-    
+   
+	'use strict';
+
 	// Init vars
 	var $window   = $(window),
 			$document = $(document),
@@ -13,13 +15,15 @@
 		init: function(){
 
 			var self = this;
-			self.$nav         = $("#nav a");
+			self.$nav = $("#nav a");
+			self.$eventHover = $(".event");
 
 			self.timelineWidth();
+			self.collectWorks();
 
 			// Attach click handlers
 			self.$nav.on("click", self.scrollTo);
-			self.googleMap();
+			self.$eventHover.hover(self.eventHover, self.eventHoverLeave);
 
 	},
 
@@ -30,23 +34,78 @@
 
 			var self = this;
 
-			$timelime = $("#timeline-wrap");
-			$year = $(".year");
-			$yearWidth = $year.outerWidth( true	 );
-			$yearTotal = $year.length;
+			var $timelime = $("#timeline-wrap"),
+					$year = $(".year"),
+					$yearWidth = $year.outerWidth( true	 ),
+					$yearTotal = $year.length,
+					$yearLength;
 
-			console.log($yearTotal);
-
+			//window.cirro = { $year: $year };
 
 			$yearLength = $yearWidth * $yearTotal;
 
 			$timelime.css("width", $yearLength);
 
+		},
 
 
+		//
+		// Collects the events to be stored in the object
+		//
+		collectWorks: function() {
+
+			var self = this;
+			
+			var $works = $('.event');
+
+			self.works = [];
+
+			$works.each(function(index) {
+
+				var $this = $( this );
+
+				var work = {
+					width: $this.width(),
+					$: $this,
+					row: null
+				};
+
+				self.works.push( work );
+
+				// Last iteration
+				if ( index === $works.length - 1 ) {
+
+					self.rowPlacer();
+
+				}
+
+				self.row1 = false;
+
+			});
 
 		},
 
+
+		rowPlacer: function() {
+
+			var self = this;
+
+			$document.on('viviane.year', function() {
+
+				// Loop through the events
+
+			});
+
+			// Loop through all pixels in the width of the timeline
+			for (var i = 1; i <= 4000; i += 75) {
+
+				self.year = i;
+
+				$document.trigger('viviane.year');
+
+			}
+
+		},
 
 
 		//
@@ -101,6 +160,30 @@
 			  map.mapTypes.set('map_style', styledMap);
 			  map.setMapTypeId('map_style');
 
+		},
+
+
+		//
+		// Calculate the width of the timeline
+		//
+		eventHover: function(event){ 
+
+			var self = viviane;
+			var $tlEvent = $(this);
+			var img = $tlEvent.find("img.event-img").attr("src");
+
+			//console.log(img);
+
+			$html.addClass("img-hovered").css("background-image", 'url(' + img + ')');
+
+		},
+
+		eventHoverLeave: function(event){ 
+
+			var self = viviane;
+			var $tlEvent = $(this);
+
+			$html.removeClass("img-hovered").css("background-image", 'none');
 		},
 
 
@@ -204,7 +287,7 @@
 
 		})
 
-
+		window.viviane = viviane;
 
 }( jQuery, window, document));
 

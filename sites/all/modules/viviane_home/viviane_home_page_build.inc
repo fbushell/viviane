@@ -13,7 +13,6 @@ function viviane_home_page_build(){
 	$year_width = 75;
 	$works = array();
 	$timeline_build = timeline_build();
-	//$work_build = timeline(2006, 2000);
 	$work_events = '';
 
 	// Adding javascript
@@ -50,16 +49,7 @@ function viviane_home_page_build(){
   // Loop through works
   foreach ( $works as $work ) {
 
-  	$start_yr = $work->field_starting_year['und'][0]['value'];
-
-  	if ( isset($work->field_ending_year['und'][0]['value']) ) { 
-
-  			$end_yr = $work->field_ending_year['und'][0]['value']; 
-
-  	};
-
-  	$work_events .= timeline($end_yr, $start_yr, $work);
-
+  	$work_events .= timeline($work);
 
   }
 
@@ -67,7 +57,9 @@ function viviane_home_page_build(){
 		<div id=\"timeline-wrap\">
 			$timeline_build
 		</div>
-		$work_events
+		<div id=\"event-wrap\">
+			$work_events
+		</div>
 		<div id=\"loader\"></div>
 	";
 
@@ -134,14 +126,20 @@ function timeline_build() {
 * Calculate the widths of the timeline and return the lengths
 *
 */
-function timeline($end_yr = NULL, $start_yr = NULL, $work) {
+function timeline($work) {
 
 	// Init
 	$current_year = date("Y");
 	$yr_length = 75;
+	$yr_length_px = $yr_length . 'px';
+	$img_uri = $work->field_images['und'][0]['uri'];
+	$img =  file_create_url($img_uri);
+	$styles = '';
 	$html = '';
 
 	// Beginning and End points
+	$end_yr = $work->field_ending_year['und'][0]['value'];
+	$start_yr = $work->field_starting_year['und'][0]['value'];
 	$finish_yr = $current_year - $end_yr;
 	$end_pos = ($finish_yr + 1) * $yr_length  . 'px';
 	$beg_yr = $end_yr - $start_yr;
@@ -149,12 +147,39 @@ function timeline($end_yr = NULL, $start_yr = NULL, $work) {
 
 	// Other Info
 	$title = $work->title;
+	$nid = ($work->nid);
 
-	$html = "
-		<div class=\"event\" style=\"left: $end_pos; width: $beg_pos;\">
+	//dsm($work);
+
+	// If it is a single year
+	if ( $start_yr === $end_yr ) { 
+
+		$single_yr = $current_year - $start_yr;
+		$single_pos = (($single_yr) * $yr_length) . 'px';
+
+		$styles = "
+			style=\"left:$single_pos; width:$yr_length_px;\"
+		";
+
+	}
+
+	// If there is a start and end date
+	if ( $start_yr !== $end_yr  ) {
+
+		$styles = "
+			style=\"left:$end_pos; width:$beg_pos; top:$nid;\"
+		";
+
+	}
+
+	$event_markup = "
+		<div class=\"event\" $styles>
 			$title
+			<img src=\"$img\" class=\"event-img\" />
 		</div>
 	";
+
+	$html = l($event_markup, 'node/'. $nid, array('html' => TRUE));
 
 	return $html;
 

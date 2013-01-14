@@ -987,3 +987,14 @@ div.add-or-remove-shortcuts {
   -webkit-border-radius: 8px;
   border-radius: 8px;
 }
+
+/* -------------------------- */
+
+#edit-field-starting-year {
+  float: left;
+  margin-right: 30px;
+}
+
+#edit-field-progress-und {
+  float: left;
+}
