@@ -1,119 +1,46 @@
-// Grays
+// Colors
 // ----------------------------------------------------------------------------
-$grayDarker: #222222 !default
-$grayDark: #333333 !default
-$gray: #555555 !default
-$grayLight: #999999 !default
-$grayLighter: #eeeeee !default
-$bg: #EDEDEF 
-$blue: #006DCC
-$lightBlue: #49AFCD
-$green: #1FB173
-$red: #EE2B2E
-$orange: #ED5B25
+$black: #111
+$bgGray: #bababa
+$gray: #D6D2CF
+$grayDark: #757682
+$grayLight: #EDECE6
+$lightBlue: #E4F6F4
+$green: #03B19D
+$red: #FF325D
+$cream: #F6F7ED
+$yellow: #D7FF23
+$purple: #512993
+$pink: #FCF0F1
 
 
-
-// Scaffolding
+// Base
 // ----------------------------------------------------------------------------
-$bodyBackground: white !default
-$textColor: $grayDark !default
-$containerPadding: 20px 0 80px 0
-$fluidContainerPadding: 0 20px
+$primaryColor: $purple
+$bodyBackground: $bgGray
+$textColor: $black
+$hrColor: $red
+$borderColor: $grayDark
 
+$linkColor: $black !default
+$linkColorHover: $gray !default
 
+$loaderBG: $bgGray
 
-// Links
-// ----------------------------------------------------------------------------
-$linkColor: $blue !default
-$linkColorHover: darken($linkColor, 15) !default
-
-
-
-// Underline
-// ----------------------------------------------------------------------------
-$underlineStyle: 1px solid
-
+// Header
+$headerHeight: 45px
 
 // Typography
 // ----------------------------------------------------------------------------
-$baseFontSize: 13px !default
-$baseFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif !default
-$baseLineHeight: 18px !default
-$altFontFamily: Georgia, "Times New Roman", Times, serif !default
-$headingsFontFamily: inherit !default
-$headingsFontWeight: bold !default
-$headingsColor: inherit !default
-$headingsSmallColor: $grayLight
+$baseFontSize: 15px !default
+//$baseFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif !default
+$baseFontFamily: "Gotham Book", sans-serif
+$baseLineHeight: 1.6em !default
+$baseFontWeight: 400
 
+$altFontFamily: Georgia, "Times New Roman", Times, serif 
+$monospaceFontFamily: "Courier New", monospace
 
-
-// Tables
-// ----------------------------------------------------------------------------
-$tableBackground: white !default
-// overall background-color
-$tableBackground: white !default
-// for striping
-$tableStriping: #f9f9f9 !default
-// for hover
-$tableBackgroundHover: #f5f5f5 !default
-$tableBorder: #ccc !default
-
-
-
-// Forms
-// ----------------------------------------------------------------------------
-$inputBackground: white !default
-$inputBorder: #cccccc !default
-$inputDisabledBackground: $grayLighter !default
-
-
-
-
-// COMPONENT VARIABLES
-// ----------------------------------------------------------------------------
-$placeholderText: $grayLight !default
-$hrBorder: $grayLighter !default
-
-
-
-// Navbar
-// ----------------------------------------------------------------------------
-$navbarHeight: 80px !default
-$navbarBackground: white !default
-$navbarBackgroundHighlight: white !default
-$navbarText: $grayLight !default
-$navbarLinkColor: $grayLight !default
-$navbarLinkColorHover: white !default
-$navbarLinkColorActive: $navbarLinkColorHover !default
-$navbarLinkBackgroundHover: transparent !default
-$navbarLinkBackgroundActive: $navbarBackground !default
-$navbarSearchBackground: lighten($navbarBackground, 25%) !default
-$navbarSearchBackgroundFocus: white !default
-$navbarSearchBorder: darken($navbarSearchBackground, 30%) !default
-$navbarSearchPlaceholderColor: #cccccc !default
-
-
-
-// Hero unit
-// ----------------------------------------------------------------------------
-$heroUnitBackground: $grayLighter !default
-$heroUnitHeadingColor: inherit !default
-$heroUnitLeadColor: inherit !default
-
-
-
-// Form states and alerts
-// ----------------------------------------------------------------------------
-$warningText: #c09853 !default
-$warningBackground: #fcf8e3 !default
-$warningBorder: darken(adjust-hue($warningBackground, -10), 3%) !default
-$errorText: #b94a48 !default
-$errorBackground: #f2dede !default
-$errorBorder: darken(adjust-hue($errorBackground, -10), 3%) !default
-$successText: #468847 !default
-$successBackground: #dff0d8 !default
-$successBorder: darken(adjust-hue($successBackground, -10), 5%) !default
-$infoText: #3a87ad !default
-$infoBackground: #d9edf7 !default
-$infoBorder: darken(adjust-hue($infoBackground, -10), 7%) !default
+$headingsFontFamily: "Gotham Bold", sans-serif
+$headingsFontWeight: 500 !default
+$headingsColor: $black

@@ -1,0 +1,27 @@
+<?php
+
+/**
+* @file
+*
+* Work page load
+*
+*/
+
+/**
+*	Implements hook_menu()
+*/
+function viviane_work_menu(){
+	
+	// Work Pages
+	$items['work/%'] = array(
+		'title' => t('working!'),
+		'page callback' => 'viviane_work_page_build',
+		'file' => 'viviane_work_page_build.inc',
+		'access arguments' => array('access content'),
+		'type' => MENU_CALLBACK,
+	);
+	
+	return $items;
+	
+}
+

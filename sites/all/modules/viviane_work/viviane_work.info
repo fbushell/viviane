@@ -1,0 +1,4 @@
+name = Work Pages
+description = Module to build the work pages
+core = 7.x
+package = Viviane Le Courtois

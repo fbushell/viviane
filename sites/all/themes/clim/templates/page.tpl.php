@@ -1,7 +1,7 @@
 <header id="header">
   <div class="wrap">
     <div id="logo">
-      Viviane Le Courtois
+      <a href="/">Viviane Le Courtois</a>
     </div>
     <nav id="nav">
       <?php //include 'menu.inc'; ?>
