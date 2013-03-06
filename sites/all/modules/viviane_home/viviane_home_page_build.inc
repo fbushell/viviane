@@ -52,6 +52,7 @@ function viviane_home_page_build(){
   	//dsm($value->field_images['und']);
   	// Vars
   	$title = $value->title;
+  	$nid = $value->nid;
   	$uri = $value->field_images['und'][0]['uri'];
 				
 		// Load image vars with image style
@@ -72,16 +73,39 @@ function viviane_home_page_build(){
 	  ";
 
   	$work_events .= "
-  		<div class=\"item\">
-  			$img_final
-  		</div>
+  		<div class=\"item col sm\">
+	  		<a href=\"/work/$nid\">
+		  		<div class=\"item-img\">
+		  			$img_final
+		  		</div>
+		  		<div class=\"item-title\">
+		  			$title
+		  		</div>
+		  	</a>
+		  </div>
   	";
   }
+
+  $categories = "
+  	<ul>
+  		<li>walking</li>
+  		<li>eating</li>
+  		<li>growing</li>
+  		<li>fossilizing</li>
+  		<li>pickling</li>
+  		<li>observing</li>
+  		<li>transforming</li>
+  		<li>breathing</li>
+  		<li>collecting</li>
+  		<li>sharing</li>
+  	</ul>
+  ";
 
 	$html = "
 		<div id=\"iso-container\">
 			$work_events
 		</div>
+		$categories
 		<div id=\"loader\"></div>
 	";
 

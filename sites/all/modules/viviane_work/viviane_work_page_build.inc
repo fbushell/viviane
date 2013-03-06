@@ -11,6 +11,11 @@ function viviane_work_page_build(){
 	// Init vars
 	$module_path  = drupal_get_path('module','viviane_work');
 
+	$js_path = "$module_path/js/jquery.flexslider-min.js";
+	drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 2));
+	$js_path = "$module_path/js/init.js";
+	drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 3));
+
 	// Grab node id from url
 	$nid = arg(1);
 
@@ -43,27 +48,38 @@ function viviane_work_page_build(){
 	// Loop through images
 	foreach ($imgs as $key => $value) {
 
-		$img_url = file_create_url($value['uri']);
+		$uri = $value['uri'];
+				
+		// Load image vars with image style
+	  $img_vars = array(
+	  	'style_name' => 'work_slider',
+	  	'path' => $uri,
+	  	'alt' => '',
+	  	'title' => '',
+	  	'width' => '',
+	  	'height' => '',
+	  );
+	  
+	  // Theme image
+	  $img_styled =  theme_image_style($img_vars);
 
 		$images .= "
-			<div class=\"img-wrap\">
-				<img src=\"$img_url\" />
-			</div>
+			<li>
+				$img_styled
+			</li>
 		";
 
 	}
 
 	// Gimme that beautiful markup
 	$html = "
-		<h3>$title</h3>
-		<div class=\"work-body\">
-			$body
-		</div>
-		<div class=\"work-yr\">
-			$range
-		</div>
-		<div class=\"work-imgs-wrap\">
-			$images
+		<h3>$title | $range</h3>
+		<div class=\"work-slider-wrap\">
+			<div class=\"flexslider\">
+				<ul class=\"slides\">
+					$images
+				</ul>
+			</div>
 		</div>
 	";
 
