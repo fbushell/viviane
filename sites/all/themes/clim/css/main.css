@@ -165,8 +165,6 @@ textarea { overflow: auto; vertical-align: top; }
 .container:before { display: table; line-height: 0; content: ""; }
 .container:after { display: table; line-height: 0; content: ""; clear: both; }
 
-.front .container-fluid { padding: 0 5px; }
-
 .container-fluid { padding: 0 20px; *zoom: 1; }
 .container-fluid:before { display: table; line-height: 0; content: ""; }
 .container-fluid:after { display: table; line-height: 0; content: ""; clear: both; }
@@ -348,11 +346,13 @@ a.label:hover, a.badge:hover { color: white; text-decoration: none; cursor: poin
 #name-splash { position: absolute; top: 50%; left: 50%; margin-left: -130px; margin-top: -23px; }
 #name-splash h1 { margin: 0; padding: 0; }
 
+.front .container-fluid { padding: 0 10px; }
+
 #header { padding: 100px 0; text-align: center; }
 
 .item { float: left; position: relative; }
 .item.sm { width: 24.9%; }
-.item.lg { width: 49.5%; }
+.item.lg { width: 50%; }
 .item .item-inner { margin: 5px; }
 .item .item-inner .title-wrap { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: 5px; background: rgba(56, 55, 51, 0.8); *background: #383733; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
 .item .item-inner .title-wrap:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
