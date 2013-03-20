@@ -5,34 +5,55 @@
 	position: absolute
 	top: 50%
 	left: 50%
-	margin-left: -201px
+	margin-left: -130px
 	margin-top: -23px
 	h1
 		margin: 0
 		padding: 0
 
 #header
-	padding: 35px
+	padding: 100px 0
+	text-align: center
 
 .item
-	width: 320px
-	margin: 10px
 	float: left
 	position: relative
-	.item-title
-		position: absolute
-		top: 0
-		bottom: 0
-		left: 0
-		right: 0 
-		background: rgba(0,0,0,0.7)
-		color: white
-		text-align: center
-		+opacity(0)
-		&:hover
-			+opacity(1)
+	&.sm
+		width: 24.9%
+	&.lg
+		width: 49.5%
+	.item-inner
+		margin: 5px
+		.title-wrap
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0 
+			margin: 5px
+			background: rgba(56, 55, 51, 0.8)
+			*background: #383733
+			+opacity(0)
+			&:hover
+				+opacity(1)
+			.item-title
+				color: white
+				position: absolute
+				width: 100%
+				top: 50%
+				margin-top: -15px
+				text-align: center
+		img
+			width: 100%
+
+.work-wrap
+	margin: 40px 4%
+	.work-header
+		margin-bottom: 30px
+		overflow: hidden
+		.work-title
+			float: left
+		.work-date
+			float: right
 	img
 		width: 100%
-
-.work-slider-wrap
-	margin: 40px 4%

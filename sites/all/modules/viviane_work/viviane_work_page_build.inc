@@ -64,22 +64,19 @@ function viviane_work_page_build(){
 	  $img_styled =  theme_image_style($img_vars);
 
 		$images .= "
-			<li>
-				$img_styled
-			</li>
+			$img_styled
 		";
 
 	}
 
 	// Gimme that beautiful markup
 	$html = "
-		<h3>$title | $range</h3>
-		<div class=\"work-slider-wrap\">
-			<div class=\"flexslider\">
-				<ul class=\"slides\">
-					$images
-				</ul>
-			</div>
+		<div class=\"work-wrap\">
+			<header class=\"work-header\">
+				<div class=\"work-title\">$title</div> 
+				<div class=\"work-date\">$range</div>
+			</header>
+			$images
 		</div>
 	";
 

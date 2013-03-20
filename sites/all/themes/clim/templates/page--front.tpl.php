@@ -17,5 +17,5 @@
 </div>
 
 <div id="loader">
-  <div id="name-splash"><h1>Viviane Le Courtois</h1></div>
+  <div id="name-splash"><h4>Viviane Le Courtois</h4></div>
 </div>

@@ -16,8 +16,10 @@ function viviane_home_page_build(){
 	// Adding javascript
 	$js_path = "$module_path/js/jquery.easing.1.3.js";
 	drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 1));
-	$js_path = "$module_path/js/jquery.isotope.min.js";
+	$js_path = "$module_path/js/jquery.imagesloaded.min.js";
 	drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 2));
+	$js_path = "$module_path/js/jquery.masonry.min.js";
+	drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 3));
 	$js_path = "$module_path/js/homepage.js";
 	drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 10));
 	
@@ -51,39 +53,87 @@ function viviane_home_page_build(){
 
   	//dsm($value->field_images['und']);
   	// Vars
-  	$title = $value->title;
-  	$nid = $value->nid;
-  	$uri = $value->field_images['und'][0]['uri'];
-				
-		// Load image vars with image style
-	  $img_vars = array(
-	  	'style_name' => 'work_sm',
-	  	'path' => $uri,
-	  	'alt' => '',
-	  	'title' => '',
-	  	'width' => '',
-	  	'height' => '',
-	  );
-	  
-	  // Theme image
-	  $img_styled =  theme_image_style($img_vars);
-	  
-	  $img_final = "
-	  	$img_styled
-	  ";
+		$title = $value->title;
+		$nid   = $value->nid;
+		$uri   = $value->field_images['und'][0]['uri'];
 
-  	$work_events .= "
-  		<div class=\"item col sm\">
-	  		<a href=\"/work/$nid\">
-		  		<div class=\"item-img\">
-		  			$img_final
-		  		</div>
-		  		<div class=\"item-title\">
-		  			$title
-		  		</div>
-		  	</a>
+		if ( isset($value->field_featured['und'][0]['value']) ) {
+			$featured = $value->field_featured['und'][0]['value'];
+		} else {
+			$featured = 0;
+		};
+
+  	if ( $featured === '1' ) {
+
+  	// Load image vars with image style
+		  $img_vars = array(
+		  	'style_name' => 'work_lg',
+		  	'path' => $uri,
+		  	'alt' => '',
+		  	'title' => '',
+		  	'width' => '',
+		  	'height' => '',
+		  );
+		  
+		  // Theme image
+		  $img_styled =  theme_image_style($img_vars);
+		  
+		  $img_final = "
+		  	$img_styled
+		  ";
+
+		  $work_events .= "
+  		<div class=\"item col lg\">
+  			<div class=\"item-inner\">
+		  		<a href=\"/work/$nid\">
+			  		<div class=\"item-img\">
+			  			$img_final
+			  		</div>
+			  		<div class=\"title-wrap\">
+			  			<div class=\"item-title\">
+			  				$title
+			  			</div>
+			  		</div>
+			  	</a>
+			  </div>
 		  </div>
   	";
+  	} else {
+  		// Load image vars with image style
+		  $img_vars = array(
+		  	'style_name' => 'work_sm',
+		  	'path' => $uri,
+		  	'alt' => '',
+		  	'title' => '',
+		  	'width' => '',
+		  	'height' => '',
+		  );
+		  
+		  // Theme image
+		  $img_styled =  theme_image_style($img_vars);
+		  
+		  $img_final = "
+		  	$img_styled
+		  ";
+
+		  $work_events .= "
+  		<div class=\"item col sm\">
+  			<div class=\"item-inner\">
+		  		<a href=\"/work/$nid\">
+			  		<div class=\"item-img\">
+			  			$img_final
+			  		</div>
+			  		<div class=\"title-wrap\">
+			  			<div class=\"item-title\">
+			  				$title
+			  			</div>
+			  		</div>
+			  	</a>
+			  </div>
+		  </div>
+  	";
+  	};
+
   }
 
   $categories = "
