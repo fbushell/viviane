@@ -11,7 +11,7 @@ function viviane_work_page_build(){
 	// Init vars
 	$module_path  = drupal_get_path('module','viviane_work');
 
-	$js_path = "$module_path/js/jquery.flexslider-min.js";
+	$js_path = "$module_path/js/jquery.fitvids.min.js";
 	drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 2));
 	$js_path = "$module_path/js/init.js";
 	drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 3));
@@ -25,25 +25,54 @@ function viviane_work_page_build(){
 	//dsm($work_node);
 
 	// Init
-	$title = $work_node->title;
-	$body = $work_node->body['und'][0]['value'];
-	$start_yr = $work_node->field_starting_year['und'][0]['value'];
-	$end_yr = $work_node->field_ending_year['und'][0]['value'];
-	$imgs = $work_node->field_images['und'];
-	$images = '';
-	$range = '';
-	$html = '';
+	$title     = $work_node->title;
+	$body      = $work_node->body['und'][0]['value'];
+	$start_yr  = '';
+	$end_yr    = '';
+	$work_yr   = '';
+	$work_type = '';
+	$video  = '';
+	if ( isset($work_node->field_video['und'][0]['value']) ) {
 
-	// Check to what the year range is
-	if ( $start_yr === $end_yr ) { 
+		$video_link = $work_node->field_video['und'][0]['value'];
 
-		$range = $start_yr;
+		$video = "
+			<div class=\"work-video\">
+				<iframe src=\"http://player.vimeo.com/video/$video_link?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff\" 
+					width=\"1068\" 
+					height=\"600\" 
+					frameborder=\"0\" 
+					webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+				</iframe>
+			</div>
+		";
+	}
+	// Setup the work years
+	if ( isset($work_node->field_starting_year['und'][0]['value']) ) {
+		$start_yr = $work_node->field_starting_year['und'][0]['value'];
+	}
 
-	} else {
+	if ( isset($work_node->field_ending_year['und'][0]['value']) ) {
+		$end_yr = '—' . $work_node->field_ending_year['und'][0]['value'];
+	}
 
-	 	$range = $start_yr . ' — ' . $end_yr;
+	$work_yr = $start_yr . $end_yr; 
+
+	// Work Types
+	if ( isset($work_node->field_type['und'][0]) ) {
+
+		$work_type = '';
+
+		foreach ( $work_node->field_type['und'] as $key => $type ) {
+
+			$work_type .= "<span class=\"types\">{$type['value']}</span>";
+
+		}
 
 	}
+	$imgs = $work_node->field_images['und'];
+	$images = '';
+	$html = '';
 
 	// Loop through images
 	foreach ($imgs as $key => $value) {
@@ -64,7 +93,9 @@ function viviane_work_page_build(){
 	  $img_styled =  theme_image_style($img_vars);
 
 		$images .= "
-			$img_styled
+			<div class=\"work-img\">
+				$img_styled
+			</div>
 		";
 
 	}
@@ -73,10 +104,12 @@ function viviane_work_page_build(){
 	$html = "
 		<div class=\"work-wrap\">
 			<header class=\"work-header\">
-				<div class=\"work-title\">$title</div> 
-				<div class=\"work-date\">$range</div>
+				<div class=\"work-title\"><h5>$title</h5></div> 
+				<div class=\"work-date\">$work_yr</div>
+				<div class=\"work-body\">$body</div>
 			</header>
 			$images
+			$video
 		</div>
 	";
 

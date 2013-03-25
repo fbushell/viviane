@@ -13,8 +13,17 @@
 		init: function(){
 
 			var self = this;
-			self.$slider = $(".flexslider");
-			self.flexslider();
+			//self.$slider = $(".flexslider");
+			//self.flexslider();
+			self.vid();
+
+		},
+
+		vid: function() {
+			var self = this;
+			var $vidWrap = $('.work-video');
+
+			$vidWrap.fitVids();
 
 		},
 

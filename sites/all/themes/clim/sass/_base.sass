@@ -26,7 +26,8 @@ figure
 	margin: 0
 
 html
-	font-size: 100%
+	font: $font-properties
+	font-weight: $fontWeight
 	height: 100%
 	width: 100%
 	-webkit-text-size-adjust: 100%
@@ -34,13 +35,16 @@ html
 
 body
 	margin: 0
-	font-family: $baseFontFamily
-	font-size: $baseFontSize
-	font-weight: $baseFontWeight
-	line-height: $baseLineHeight
 	color: $textColor
 	background-color: $bodyBackground
-	border: 20px solid white
+	-webkit-hyphens: auto
+	-moz-hyphens: auto
+	-ms-hyphens: auto
+	hyphens: auto
+	word-wrap: break-word
+	text-rendering: optimizeLegibility
+	-webkit-font-smoothing: antialiased
+	font-smoothing: antialiased
 	//padding-top: $headerHeight
 
 
@@ -430,7 +434,10 @@ textarea
 	src: url("../fonts/Gotham_Bold.woff") format("woff")
 
 p
-	margin: 0 0 10px
+	margin: 0 0 1.5em
+	+ p
+		text-indent: 1.5em
+		margin-top: -1.5em
 
 .lead
 	margin-bottom: 20px
@@ -465,28 +472,67 @@ cite
 .text-success
 	color: $green
 
+
 h1, h2, h3, h4, h5, h6
-	margin: 0 0 10px 0
 	font-family: $headingsFontFamily
 	font-weight: $headingsFontWeight
-	line-height: 1.4
+	letter-spacing: .3em
 	text-transform: uppercase
-	text-rendering: optimizelegibility
+	text-rendering: optimizeLegibility
+	line-height: 1
+	margin-top: 0
+	-webkit-font-smoothing: auto
+	font-smoothing: auto
+
+.tera
+	font-size: 117px
+	font-size: 6.5rem
+	margin-bottom: 0.25385rem
+
+.giga
+	font-size: 90px
+	font-size: 5rem
+	margin-bottom: 0.33rem
+
+.mega
+	font-size: 72px
+	font-size: 4rem
+	margin-bottom: 0.4125rem
 
 h1
-	font-size: 34px
+	font-size: 60px
+	font-size: 3.33333rem
+	margin-bottom: 0.495rem
 
-h2
-	font-size: 28px
+h2,
+	font-size: 48px
+	font-size: 2.66667rem
+	margin-bottom: 0.61875rem
 
 h3
-	font-size: 22px
+	font-size: 36px
+	font-size: 2rem
+	margin-bottom: 0.825rem
 
 h4
-	font-size: 18px
+	font-size: 24px
+	font-size: 1.33333rem
+	margin-bottom: 1.2375rem
 
 h5
 	font-size: 14px
+	font-size: 1rem
+	margin-bottom: 1.65rem
+// h5
+// 	font-size: 21px
+// 	font-size: 1.16667rem
+// 	margin-bottom: 1.41429rem
+
+h6
+	font-size: 14px
+	font-size: .7rem
+	margin-bottom: 1.65rem
+
 
 ul, ol
 	padding: 0

@@ -10,6 +10,7 @@ $lightBlue: #E4F6F4
 $green: #03B19D
 $red: #FF325D
 $cream: #F6F7ED
+$lightBrown: #d0c7c2
 $yellow: #D7FF23
 $purple: #512993
 $pink: #FCF0F1
@@ -33,15 +34,22 @@ $headerHeight: 45px
 
 // Typography
 // ----------------------------------------------------------------------------
-$baseFontSize: 15px !default
+$weight: normal
+$line-height: 1.4
+$line-height: 1.65
+$font-size: 100%
+//$font-size: 112.5%
+$fontWeight: 400
+$font-family: "adobe-caslon-pro", serif 
+$font-family-sans: sans-serif
+$font-properties: $weight #{$font-size}/#{$line-height} $font-family
 //$baseFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif !default
 $baseFontFamily: "Gotham Book", sans-serif
-$baseLineHeight: 1.6em !default
-$baseFontWeight: 400
+$baseFontFamily: $baseFontFamily
 
 $altFontFamily: Georgia, "Times New Roman", Times, serif 
 $monospaceFontFamily: "Courier New", monospace
 
-$headingsFontFamily: "Gotham Bold", sans-serif
+$headingsFontFamily: "brandon-grotesque", sans-serif
 $headingsFontWeight: 500 !default
 $headingsColor: $black

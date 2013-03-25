@@ -9,8 +9,8 @@
 function viviane_home_page_build(){
 
 	// Init vars
-	$module_path  = drupal_get_path('module','viviane_home');
-	$works = array();
+	$module_path = drupal_get_path('module','viviane_home');
+	$works       = array();
 	$work_events = '';
 
 	// Adding javascript
@@ -46,7 +46,7 @@ function viviane_home_page_build(){
 
   }
 
-  //dsm($works);
+  dsm($works);
 
   // Loop through works
   foreach ( $works as $work => $value ) {
@@ -56,12 +56,43 @@ function viviane_home_page_build(){
 		$title = $value->title;
 		$nid   = $value->nid;
 		$uri   = $value->field_images['und'][0]['uri'];
+		$start_yr    = '';
+		$ending_yr   = '';
+		$work_type   = '';
 
+
+		// Setup the work years
+		if ( isset($value->field_starting_year['und'][0]['value']) ) {
+			$start_yr = $value->field_starting_year['und'][0]['value'];
+		}
+
+		if ( isset($value->field_ending_year['und'][0]['value']) ) {
+			$ending_yr = '—' . $value->field_ending_year['und'][0]['value'];
+		}
+
+		$work_yr = $start_yr . $ending_yr; 
+
+		// Work Types
+		if ( isset($value->field_type['und'][0]) ) {
+
+			$work_type = '';
+
+			foreach ( $value->field_type['und'] as $key => $type ) {
+
+				$work_type .= "<span class=\"types\">{$type['value']}</span>";
+
+			}
+
+		}
+
+
+
+		// Featured works
 		if ( isset($value->field_featured['und'][0]['value']) ) {
 			$featured = $value->field_featured['und'][0]['value'];
 		} else {
 			$featured = 0;
-		};
+		}
 
   	if ( $featured === '1' ) {
 
@@ -82,22 +113,26 @@ function viviane_home_page_build(){
 		  	$img_styled
 		  ";
 
+		  // Build each work item
 		  $work_events .= "
-  		<div class=\"item col lg\">
-  			<div class=\"item-inner\">
-		  		<a href=\"/work/$nid\">
-			  		<div class=\"item-img\">
-			  			$img_final
-			  		</div>
-			  		<div class=\"title-wrap\">
-			  			<div class=\"item-title\">
-			  				$title
-			  			</div>
-			  		</div>
-			  	</a>
+	  		<div class=\"item col lg\">
+	  			<div class=\"item-inner\">
+			  		<a href=\"/work/$nid\">
+				  		<div class=\"item-img\">
+				  			$img_final
+				  		</div>
+				  		<div class=\"title-wrap\">
+				  			<div class=\"item-title\">
+				  				<h6>$title</h6>
+				  				<div class=\"item-type\">
+					  				$work_type
+					  			</div>
+				  			</div>
+				  		</div>
+				  	</a>
+				  </div>
 			  </div>
-		  </div>
-  	";
+	  	";
   	} else {
   		// Load image vars with image style
 		  $img_vars = array(
@@ -125,37 +160,24 @@ function viviane_home_page_build(){
 			  		</div>
 			  		<div class=\"title-wrap\">
 			  			<div class=\"item-title\">
-			  				$title
+			  				<h6>$title</h6>
+			  				<div class=\"item-type\">
+				  				$work_type
+				  			</div>
 			  			</div>
 			  		</div>
 			  	</a>
 			  </div>
 		  </div>
   	";
-  	};
+  	}
 
   }
-
-  $categories = "
-  	<ul>
-  		<li>walking</li>
-  		<li>eating</li>
-  		<li>growing</li>
-  		<li>fossilizing</li>
-  		<li>pickling</li>
-  		<li>observing</li>
-  		<li>transforming</li>
-  		<li>breathing</li>
-  		<li>collecting</li>
-  		<li>sharing</li>
-  	</ul>
-  ";
 
 	$html = "
 		<div id=\"iso-container\">
 			$work_events
 		</div>
-		$categories
 		<div id=\"loader\"></div>
 	";
 

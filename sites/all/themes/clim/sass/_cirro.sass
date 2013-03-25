@@ -3,20 +3,47 @@
 
 #name-splash
 	position: absolute
-	top: 50%
-	left: 50%
-	margin-left: -130px
-	margin-top: -23px
-	h1
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	background-image: url(/sites/all/themes/clim/images/viviane_loading.gif)
+	background-position: center
+	background-color: white
+	background-repeat: no-repeat
+
+#header
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	background: white
+	text-align: center
+	border-bottom: 1px solid #ddd
+	z-index: 1000
+	h5
 		margin: 0
-		padding: 0
+	#logo
+		padding: 10px 0
+		a:hover
+			text-decoration: none
+
+#wrapper
+	padding: 36px 0 50px 0
+
+#intro
+	width: 90%
+	max-width: 800px
+	margin: 0 auto
+	#statement
+		font-size: 19px
+		font-style: italic
 
 .front .container-fluid
 	padding: 0 10px
 
-#header
-	padding: 100px 0
-	text-align: center
+#iso-container
+	margin: 0 3%
 
 .item
 	float: left
@@ -24,7 +51,10 @@
 	&.sm
 		width: 24.9%
 	&.lg
-		width: 50%
+		width: 49.9%
+	&:hover
+		.item-inner .title-wrap
+			+opacity(1)
 	.item-inner
 		margin: 5px
 		.title-wrap
@@ -37,8 +67,6 @@
 			background: rgba(56, 55, 51, 0.8)
 			*background: #383733
 			+opacity(0)
-			&:hover
-				+opacity(1)
 			.item-title
 				color: white
 				position: absolute
@@ -46,17 +74,34 @@
 				top: 50%
 				margin-top: -15px
 				text-align: center
+				h6
+					margin-bottom: 5px
+			.item-type
+				font-size: 14px
+				font-style: italic
+				.types
+					margin: 0 5px
 		img
 			width: 100%
 
 .work-wrap
-	margin: 40px 4%
+	width: 90%
+	margin: 7em auto 3em auto
 	.work-header
 		margin-bottom: 30px
 		overflow: hidden
-		.work-title
-			float: left
 		.work-date
-			float: right
-	img
-		width: 100%
+			margin-bottom: 1rem
+		.work-type
+			font-style: italic
+			margin-bottom: 1rem
+			.types
+				margin-right: 12px
+		.work-body
+			max-width: 600px
+			padding-top: 1rem
+			border-top: 1px solid #999
+	.work-img
+		margin-bottom: 10px
+		img
+			width: 100%

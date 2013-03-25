@@ -19,12 +19,44 @@
 			var self = this;
 			self.$nav = $("#nav a");
 
+			self.intro();
 			self.grid();
 
 			// Attach click handlers
 			self.$nav.on("click", self.scrollTo);
 
 			//self.setColumns();
+
+	},
+
+	intro: function(){
+		var self   = viviane;
+		var $intro = $('div#intro');
+		var $txt   = $('#statement');
+
+		var winH   = $window.height();
+		var txtH   = $txt.outerHeight();
+		var centerCalc = (winH - txtH) / 2;
+
+		if ( centerCalc > 50 ) {
+
+			$txt.css('margin-top', centerCalc);
+
+		} else {
+
+			$txt.css('margin-top', '50px');
+
+		}
+
+		// Ensure height of intro in small window
+		if ( txtH > winH ) {
+
+			$intro.css('height', txtH);
+
+		} else {
+
+			$intro.css('height', winH);
+		}
 
 	},
 
@@ -62,7 +94,7 @@
               gutterWidth: 0,
               columnWidth: function (e) {
               		var e = e;
-              		console.log(e);
+              		//console.log(e);
                   var t = $window.width();
                   if (t <= 960) {
                       var n = 12
@@ -92,7 +124,7 @@
 				$html.css('overflow', 'auto');
 				$loader.fadeOut();
 
-			}, 1000)
+			}, 3000)
 
 			viviane.init();
 
@@ -101,6 +133,7 @@
 		.resize(function(){
 			//var winWidth = $window.width();
 			//viviane.setColumns(winWidth);
+			viviane.intro();
 		})
 
 		.scroll(function(){
