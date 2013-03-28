@@ -1,16 +1,20 @@
 //  CIRRO CUSTOM SASS
 // ----------------------------------------------------------------------------
 
-#name-splash
-	position: absolute
+#loader
+	position: fixed
 	top: 0
 	bottom: 0
 	left: 0
 	right: 0
-	background-image: url(/sites/all/themes/clim/images/viviane_loading.gif)
-	background-position: center
-	background-color: white
-	background-repeat: no-repeat
+	background: white
+	#name-splash
+		height: 100%
+		width: 100%
+		background-image: url(/sites/all/themes/clim/images/viviane_loading.gif)
+		background-position: center
+		background-color: white
+		background-repeat: no-repeat
 
 #header
 	position: fixed
@@ -34,7 +38,7 @@
 #intro
 	width: 90%
 	max-width: 800px
-	margin: 0 auto
+	margin: 75px auto
 	#statement
 		font-size: 19px
 		font-style: italic
@@ -43,7 +47,7 @@
 	padding: 0 10px
 
 #iso-container
-	margin: 0 3%
+	margin: 0 0 100px 0
 
 .item
 	float: left
@@ -64,7 +68,8 @@
 			left: 0
 			right: 0 
 			margin: 5px
-			background: rgba(56, 55, 51, 0.8)
+			background: rgba(0,0,0,0.6)
+			//background: rgba(56, 55, 51, 0.8)
 			*background: #383733
 			+opacity(0)
 			.item-title
@@ -105,3 +110,38 @@
 		margin-bottom: 10px
 		img
 			width: 100%
+
+.list-container
+	margin: 75px 0
+	.list-item
+		padding: 20px 2% 15px 2%
+		overflow: hidden
+		&:hover
+			background: rgba(0,0,0,0.1)
+		.list-yr
+			float: left
+			width: 90px
+			margin-right: 1%
+		.list-title
+			float: left
+		.list-type
+			font-size: 14px
+			font-style: italic
+			.types
+				margin-right: 10px
+		h6
+			margin-bottom: 5px
+
+
+.footer
+	width: 100%
+	padding: 8%
+	background: $black
+	color: white
+	text-align: center
+	a
+		color: white
+		&:hover
+			text-decoration: none
+	.year
+		margin-top: 1.65em

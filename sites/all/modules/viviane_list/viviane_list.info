@@ -1,0 +1,4 @@
+name = List
+description = Module to build the list page
+core = 7.x
+package = Viviane Le Courtois

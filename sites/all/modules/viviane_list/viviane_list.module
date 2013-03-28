@@ -10,15 +10,15 @@
 /**
 *	Implements hook_menu()
 */
-function viviane_home_menu(){
+function viviane_list_menu(){
 
 	$items = array();
 	
 	// Homepage
-	$items['homepage'] = array(
-		'title' => t('VIVIANE LE COURTOIS'),
-		'page callback' => 'viviane_home_page_build',
-		'file' => 'viviane_home_page_build.inc',
+	$items['list'] = array(
+		'title' => t('Works List'),
+		'page callback' => 'viviane_list_page_build',
+		'file' => 'viviane_list_page_build.inc',
 		'access arguments' => array('access content'),
 		'type' => MENU_CALLBACK,
 	);

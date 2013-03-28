@@ -14,8 +14,8 @@ function viviane_home_page_build(){
 	$work_events = '';
 
 	// Adding javascript
-	$js_path = "$module_path/js/jquery.easing.1.3.js";
-	drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 1));
+	// $js_path = "$module_path/js/jquery.easing.1.3.js";
+	// drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 1));
 	$js_path = "$module_path/js/jquery.imagesloaded.min.js";
 	drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 2));
 	$js_path = "$module_path/js/jquery.masonry.min.js";

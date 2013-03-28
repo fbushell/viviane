@@ -32,6 +32,16 @@ My art is a series of experiments, chance discoveries and reflections on everyda
   </div>
 </div>
 
+<footer class="footer">
+  <div class="contact">
+    <h6>Viviane Le Courtois</h6>
+    <a href="mailto:vivianelecourtois@gmail.com">vivianelecourtois@gmail.com</a>
+    <div class="year">
+      <h6><?php echo date("Y"); ?></h6>
+    </div>
+  </div>
+</footer>
+
 <div id="loader">
   <div id="name-splash"></div>
 </div>
