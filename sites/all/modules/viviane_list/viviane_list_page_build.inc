@@ -100,8 +100,8 @@ function viviane_list_page_build(){
 	  	<a href=\"/work/$nid\">
 				<div class=\"list-item\">
   				<span class=\"list-yr\"><h6>$start_yr</h6></span>
-  				<span class=\"list-title\"><h6>$title</h6>
-  					
+  				<span class=\"list-title\"><h6>$title</h6></span>
+  				<div class=\"list-img hidden\">$img_final</div>
   				</span>
 			  </div>
 	   	</a>
