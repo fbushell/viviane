@@ -151,3 +151,33 @@
 			text-decoration: none
 	.year
 		margin-top: 1.65em
+
+.btn, input[type="submit"]
+	padding: 15px 60px
+	margin-top: 20px
+	background: $black
+	color: white
+	font-family: $headingsFontFamily
+	font-weight: 500
+	font-size: 11px
+	letter-spacing: 0.3em
+	text-transform: uppercase
+	border: none
+	+border-radius(2px)
+	&:hover
+		background: $purple
+	&:active
+		background: pink
+
+input
+	padding: 15px
+	border: none
+	margin: 5px 0
+
+.page-user
+	label,
+	.description
+		display: none
+
+iframe body.cke_show_borders
+	background: white

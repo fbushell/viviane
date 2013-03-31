@@ -1,12 +1,24 @@
 //  CIRRO CUSTOM SASS
 //
 
+.page-node-edit.node-type-work,
+.page-node-add
+	.form-checkboxes .form-item, .form-radios .form-item,
+	.form-type-checkbox
+		display: inline
+		margin-right: 10px
+
+label
+	text-transform: uppercase
+	font-weight: 700
+
 
 //  Stuff to hide
 // ----------------------------------------------------------------------------
 .filter-help,
 .tips,
-.grippie
+.grippie,
+.tabledrag-toggle-weight-wrapper
 	display: none
 
 // Dashboard
@@ -167,6 +179,9 @@ ul.admin-list
 
 .tabledrag-toggle-weight-wrapper
 	text-align: left
+
+.warning.tabledrag-changed
+	display: none
 
 .form-item .description
 	line-height: 1.3em

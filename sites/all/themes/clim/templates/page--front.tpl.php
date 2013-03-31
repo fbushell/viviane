@@ -1,3 +1,33 @@
+<?php 
+  $home_query_string = "
+    SELECT entity_id, body_value
+    FROM field_data_body
+    WHERE entity_id = 13
+  ";
+
+  $home_query = db_query( $home_query_string );
+  $home_node = $home_query->fetchAll();
+  $node_home = node_load(13);
+
+  dsm($node_home);
+
+  $intro_quote = "
+    <div class=\"intro-quote\">
+      <p>
+        I obsessively accumulate and transform conceptually 
+        interesting, useless but precious objects. Many of 
+        my works indirectly criticize global contemporary 
+        society including wastefulness, environmental negligence, 
+        digital invasion, pharmaceutical foods or lack 
+        of observation. 
+      </p>
+    </div>
+  ";
+
+  $statement = $node_home->body['und'][0]['value'];
+
+?>
+
 <header id="header">
     <div id="logo">
       <h5><a href="/">Viviane Le Courtois</a></h5>
@@ -9,21 +39,10 @@
 
 <div id="wrapper">
   <div id="intro">
+      <?php print $intro_quote; ?>
       <div id="statement">
-        <p>
-          I select or invent processes and materials to fit each concept from multimedia installations to sculptures and original etching processes. Intrigue and curiosity call visitors to explore new environments, traces and collections. Installations sometimes recall displays in science or anthropology museums. Process based pieces include series of sculptures created by the movements of everyday life including an ongoing series of worn minimalist shoes (130 pairs since 1991). I obsessively accumulate and transform conceptually interesting, useless but precious objects.
-<br>
-<br>
-Many of my works indirectly criticize global contemporary society including wastefulness, environmental negligence, digital invasion, pharmaceutical foods or lack of observation. Addictions, collections or obsessive attachments to useless things such as food residues, single socks, empty pickle jars, junk food, weeds, plastic bags or junk mail fascinate me. In recent projects with weed roots, dryer lint and single socks, I collect useless objects from my Facebook friends to refer to changes of priorities in contemporary society. Collaborations and interactions with others are an essential part of the process.
-<br>
-<br>
-My art is a series of experiments, chance discoveries and reflections on everyday life. For me, if people remember what they see, it is art.
-<br>
-<br>
-— Viviane        
-        </p>
+        <p><?php print $statement; ?></p>
       </div>
-
   </div>
 
   <div class="container-fluid <?php print $classes; ?>"<?php print $attributes; ?>>

@@ -1,4 +1,4 @@
-/ Input
+// Input
 // ----------------------------------------------------------------------------
 
 input
@@ -249,7 +249,7 @@ input.span1, textarea.span1, .uneditable-input.span1
 
 input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly]
 	cursor: not-allowed
-	background-color: $grayLighter
+	background-color: gray
 
 input
 	&[type="radio"][disabled], &[type="checkbox"][disabled], &[type="radio"][readonly], &[type="checkbox"][readonly]
@@ -258,9 +258,9 @@ input
 .control-group
 	&.warning
 		> label, .help-block, .help-inline, .checkbox, .radio, input, select, textarea
-			color: $orange
+			color: red
 		input, select, textarea
-			border-color: $orange
+			border-color: red
 			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
 			-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
 			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
@@ -270,9 +270,9 @@ input
 			-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e
 			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e
 		.input-prepend .add-on, .input-append .add-on
-			color: $orange
+			color: red
 			background-color: #fcf8e3
-			border-color: $orange
+			border-color: red
 	&.error
 		> label, .help-block, .help-inline, .checkbox, .radio, input, select, textarea
 			color: $red
@@ -398,7 +398,7 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 	line-height: 20px
 	text-align: center
 	text-shadow: 0 1px 0 #ffffff
-	background-color: $grayLighter
+	background-color: gray
 	border: 1px solid #ccc
 
 .input-append .add-on, .input-prepend .add-on, .input-append .btn, .input-prepend .btn

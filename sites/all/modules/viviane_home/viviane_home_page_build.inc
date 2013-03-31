@@ -46,7 +46,7 @@ function viviane_home_page_build(){
 
   }
 
-  dsm($works);
+  //dsm($works);
 
   // Loop through works
   foreach ( $works as $work => $value ) {

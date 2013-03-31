@@ -176,7 +176,6 @@ textarea { overflow: auto; vertical-align: top; }
 @font-face { font-family: "Gotham Bold"; src: url("../fonts/Gotham_Bold.woff") format("woff"); }
 
 p { margin: 0 0 1.5em; }
-p + p { text-indent: 1.5em; margin-top: -1.5em; }
 
 .lead { margin-bottom: 20px; font-size: 21px; font-weight: 200; line-height: 30px; }
 
@@ -404,3 +403,13 @@ a.label:hover, a.badge:hover { color: white; text-decoration: none; cursor: poin
 .footer a { color: white; }
 .footer a:hover { text-decoration: none; }
 .footer .year { margin-top: 1.65em; }
+
+.btn, input[type="submit"] { padding: 15px 60px; margin-top: 20px; background: #111111; color: white; font-family: "brandon-grotesque", sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; border: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px; border-radius: 2px; }
+.btn:hover, input[type="submit"]:hover { background: #512993; }
+.btn:active, input[type="submit"]:active { background: pink; }
+
+input { padding: 15px; border: none; margin: 5px 0; }
+
+.page-user label, .page-user .description { display: none; }
+
+iframe body.cke_show_borders { background: white; }
