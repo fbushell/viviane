@@ -48,18 +48,34 @@ function viviane_home_page_build(){
 
   //dsm($works);
 
+  $i = 0;
+
   // Loop through works
   foreach ( $works as $work => $value ) {
 
-  	//dsm($value->field_images['und']);
-  	// Vars
+  	$blank_event = '';
+		$work_array  =  array(1,8,9,19,22,27);
+
+		// Random generator for blank cells
+		// if ( in_array($i, $work_array)) {
+
+	 //  	$blank_event = "
+	 //  		<div class=\"item col sm hidden-mobile\">
+	 //  			<div class=\"item-inner\">
+  // 					<img src=\"/sites/default/files/blank.png\" />
+  // 				</div>
+	 //  		</div>
+	 //  	";
+
+	 //  }
+
+		// Vars
 		$title = $value->title;
 		$nid   = $value->nid;
 		$uri   = $value->field_images['und'][0]['uri'];
 		$start_yr    = '';
 		$ending_yr   = '';
 		$work_type   = '';
-
 
 		// Setup the work years
 		if ( isset($value->field_starting_year['und'][0]['value']) ) {
@@ -74,18 +90,11 @@ function viviane_home_page_build(){
 
 		// Work Types
 		if ( isset($value->field_type['und'][0]) ) {
-
 			$work_type = '';
-
 			foreach ( $value->field_type['und'] as $key => $type ) {
-
 				$work_type .= "<span class=\"types\">{$type['value']}</span>";
-
 			}
-
 		}
-
-
 
 		// Featured works
 		if ( isset($value->field_featured['und'][0]['value']) ) {
@@ -94,9 +103,11 @@ function viviane_home_page_build(){
 			$featured = 0;
 		}
 
+		// Determine if the item is featured or not
   	if ( $featured === '1' ) {
+  		$img_class = 'lg';
 
-  	// Load image vars with image style
+	  	// Load image vars with image style
 		  $img_vars = array(
 		  	'style_name' => 'work_lg',
 		  	'path' => $uri,
@@ -113,27 +124,10 @@ function viviane_home_page_build(){
 		  	$img_styled
 		  ";
 
-		  // Build each work item
-		  $work_events .= "
-	  		<div class=\"item col lg\">
-	  			<div class=\"item-inner\">
-			  		<a href=\"/work/$nid\">
-				  		<div class=\"item-img\">
-				  			$img_final
-				  		</div>
-				  		<div class=\"title-wrap\">
-				  			<div class=\"item-title\">
-				  				<h6>$title</h6>
-				  				<div class=\"item-type\">
-					  				$work_type
-					  			</div>
-				  			</div>
-				  		</div>
-				  	</a>
-				  </div>
-			  </div>
-	  	";
   	} else {
+
+  		$img_class = 'sm';
+
   		// Load image vars with image style
 		  $img_vars = array(
 		  	'style_name' => 'work_sm',
@@ -150,10 +144,13 @@ function viviane_home_page_build(){
 		  $img_final = "
 		  	$img_styled
 		  ";
+		}
 
-		  $work_events .= "
-  		<div class=\"item col sm\">
-  			<div class=\"item-inner\">
+		// Build the items
+	  $work_events .= "
+	  	$blank_event
+			<div class=\"item col $img_class\">
+				<div class=\"item-inner\">
 		  		<a href=\"/work/$nid\">
 			  		<div class=\"item-img\">
 			  			$img_final
@@ -170,7 +167,8 @@ function viviane_home_page_build(){
 			  </div>
 		  </div>
   	";
-  	}
+  	
+	  $i++;	
 
   }
 

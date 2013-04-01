@@ -9,20 +9,20 @@
   $home_node = $home_query->fetchAll();
   $node_home = node_load(13);
 
-  dsm($node_home);
+  //dsm($node_home);
 
-  $intro_quote = "
-    <div class=\"intro-quote\">
-      <p>
-        I obsessively accumulate and transform conceptually 
-        interesting, useless but precious objects. Many of 
-        my works indirectly criticize global contemporary 
-        society including wastefulness, environmental negligence, 
-        digital invasion, pharmaceutical foods or lack 
-        of observation. 
-      </p>
-    </div>
-  ";
+  // $intro_quote = "
+  //   <div class=\"intro-quote\">
+  //     <p>
+  //       I obsessively accumulate and transform conceptually 
+  //       interesting, useless but precious objects. Many of 
+  //       my works indirectly criticize global contemporary 
+  //       society including wastefulness, environmental negligence, 
+  //       digital invasion, pharmaceutical foods or lack 
+  //       of observation. 
+  //     </p>
+  //   </div>
+  // ";
 
   $statement = $node_home->body['und'][0]['value'];
 

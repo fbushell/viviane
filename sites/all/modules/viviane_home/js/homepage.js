@@ -20,7 +20,7 @@
 			var self = this;
 			self.$nav = $("#nav a");
 
-			self.intro();
+			//self.intro();
 			self.grid();
 
 			// Attach click handlers
@@ -28,64 +28,64 @@
 
 			//self.setColumns();
 
-	},
+		},
 
-	intro: function(){
-		var self   = viviane;
-		var $intro = $('div#intro');
-		var $txt   = $('#statement');
+		intro: function(){
+			var self   = viviane;
+			var $intro = $('div#intro');
+			var $txt   = $('#statement');
 
-		var winH   = $window.height();
-		var txtH   = $txt.outerHeight();
-		var centerCalc = (winH - txtH) / 2;
+			var winH   = $window.height();
+			var txtH   = $txt.outerHeight();
+			var centerCalc = (winH - txtH) / 2;
 
-		if ( centerCalc > 50 ) {
+			if ( centerCalc > 50 ) {
 
-			$txt.css('margin-top', centerCalc);
+				$txt.css('margin-top', centerCalc);
 
-		} else {
+			} else {
 
-			$txt.css('margin-top', '50px');
+				$txt.css('margin-top', '50px');
 
-		}
+			}
 
-		// Ensure height of intro in small window
-		if ( txtH > winH ) {
+			// Ensure height of intro in small window
+			if ( txtH > winH ) {
 
-			$intro.css('height', txtH);
+				$intro.css('height', txtH);
 
-		} else {
+			} else {
 
-			$intro.css('height', winH);
-		}
-
-	},
-
-	//
-	// Ohhhhhh baby that is some smooth scrolling
-	//
-	scrollTo: function(event){
-
-		var self = viviane;
-
-		// Init
-		var $link = $(this);
-
-		// Scroll to href of clicked link
-		$("html, body").stop().animate({
-
-      scrollTop: $($link.attr("href")).offset().top + 30
-
-    }, 1500,'easeInOutExpo');
-
-		event.preventDefault();
+				$intro.css('height', winH);
+			}
 
 		},
 
-    // setColumns: function(e) { 
-    // 	var resize = e;
-    // 	var columns = ($window.width() > 640) ? 3 : $window.width() > 320 ? 2 : 1; 
-    // },
+		//
+		// Ohhhhhh baby that is some smooth scrolling
+		//
+		scrollTo: function(event){
+
+			var self = viviane;
+
+			// Init
+			var $link = $(this);
+
+			// Scroll to href of clicked link
+			$("html, body").stop().animate({
+
+	      scrollTop: $($link.attr("href")).offset().top - 100
+
+	    }, 1500);
+
+			event.preventDefault();
+
+			},
+
+	    // setColumns: function(e) { 
+	    // 	var resize = e;
+	    // 	var columns = ($window.width() > 640) ? 3 : $window.width() > 320 ? 2 : 1; 
+	    // },
 
 		grid: function() {
 
@@ -137,7 +137,7 @@
 		.resize(function(){
 			//var winWidth = $window.width();
 			//viviane.setColumns(winWidth);
-			viviane.intro();
+			//viviane.intro();
 		})
 
 		.scroll(function(){

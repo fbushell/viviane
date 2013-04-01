@@ -362,6 +362,8 @@ a.label:hover, a.badge:hover { color: white; text-decoration: none; cursor: poin
 #wrapper { padding: 36px 0 50px 0; }
 
 #intro { width: 90%; max-width: 800px; margin: 75px auto; }
+#intro img { width: 100%; }
+#intro .intro-quote { font-size: 27px; font-style: italic; }
 #intro #statement { font-size: 19px; font-style: italic; }
 
 .front .container-fluid { padding: 0 10px; }
