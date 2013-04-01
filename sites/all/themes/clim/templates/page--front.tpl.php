@@ -39,7 +39,7 @@
 
 <div id="wrapper">
   <div id="intro">
-      <?php print $intro_quote; ?>
+      <?php //print $intro_quote; ?>
       <div id="statement">
         <p><?php print $statement; ?></p>
       </div>
