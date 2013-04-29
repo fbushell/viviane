@@ -41,7 +41,7 @@
   <div id="intro">
       <?php //print $intro_quote; ?>
       <div id="statement">
-        <p><?php print $statement; ?></p>
+        <p><?php //print $statement; ?></p>
       </div>
   </div>
 
