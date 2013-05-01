@@ -91,7 +91,7 @@
 					$loader.fadeOut('slow');
 				}, 500)
 
-			}, 3000)
+			}, 1000)
 
 			viviane.init();
 

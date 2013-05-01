@@ -45,7 +45,7 @@
       </div>
   </div>
 
-  <div class="container-fluid <?php print $classes; ?>"<?php print $attributes; ?>>
+  <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
     <?php print $messages; ?>
     <?php print render($page['content']) ?>
   </div>

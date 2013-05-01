@@ -392,6 +392,7 @@ a.label:hover, a.badge:hover { color: white; text-decoration: none; cursor: poin
 .work-wrap .work-img img { width: 100%; }
 
 .list-container { margin: 75px 0; }
+.list-container a:hover { color: #111111; }
 .list-container .list-item { position: relative; padding: 20px 2% 15px 2%; height: 51px; width: 100%; }
 .list-container .list-item:hover { background: rgba(0, 0, 0, 0.1); }
 .list-container .list-item .list-yr { float: left; width: 90px; margin-right: 1%; }
