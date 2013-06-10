@@ -9,7 +9,7 @@
 			$loader    = $("div#loader"),
 			$splash    = $('#name-splash'),
 			$html      = $("html"),
-			$container = $('div#iso-container')
+			$container = $('div#iso-container');
 
 	// viviane
 	var viviane = {
@@ -17,14 +17,50 @@
 		init: function(){
 
 			var self = this;
-			self.$nav = $("#nav a");
+			self.$nav         = $("#nav a");
+			self.$infoClick   = $('.information');
+			self.$infoClose   = $('.information-close');
+			self.$infoSection = $('.info-section');
+			self.$content     = $('.info-content');
+			self.winH         = $window.height();
+			self.$header      = $('#header');
+			self.headerH      = self.$header.outerHeight();
+			self.$wrapper     = $('#wrapper');
+			self.scrollH      = self.winH - self.headerH;
 
 			// Attach click handlers
-			self.$nav.on("click", self.scrollTo);
-
+			//self.$nav.on("click", self.scrollTo);
+			self.$infoClick.on('click', self.informationOpen);
+			self.$infoClose.on('click', self.informationClose);
+			self.winH = $(window).height();
 			self.listHover();
 			self.randomPosition();
+			self.locationHashChanged();
 
+		},
+
+	  locationHashChanged: function() {
+	  	var self = viviane;
+	  	var $statement = $('div.statement');
+	  	var $contact = $('div.contact');
+
+	  	switch (location.hash) {
+	  		case '#contact':
+	  			$statement.fadeOut();
+	    		$contact.fadeIn();
+	    		break;
+	    	case '#statement':
+	    		$statement.fadeIn();
+	    		$contact.fadeOut();
+	    		break;
+	  	}
+
+	    // if (location.hash === "#contact") {
+	    // 		$statement.fadeOut();
+	    // 		$contact.fadeIn();
+	    //     // Logic for when someone navigates directly to the contact section
+	    //     //self.informationOpen();
+	    // }
 		},
 
 		listHover: function(){
@@ -68,11 +104,44 @@
 				var posx		= Math.floor(Math.random() * (winwidth - 800));
 				var posy		= Math.floor(Math.random() * 250) + -250;
 
-				console.log(winwidth);
+				//console.log(winwidth);
 
 				$item.css({top:posy, right:posx});
-			}
+			},
 
+			//
+			// Information section
+			//
+			informationOpen: function(event) {
+				var self = viviane;
+				var $trigger     = $(this);
+				var $other       = $('.information-close');
+
+				$trigger.hide();
+				$other.show();
+				self.$header.animate({'top': self.scrollH}, 500);
+				self.$wrapper.animate({'top': self.scrollH}, 500).css('overflow', 'hidden');;
+				self.$infoSection
+					.stop()
+					.animate({'height': self.scrollH}, 500, function() {
+						self.$content.css('opacity', 100);
+					}
+					);	
+			},
+
+			informationClose: function(event) {
+				var self = viviane;
+				var $trigger     = $(this);
+				var $other       = $('.information');
+				
+				$trigger.hide();
+				$other.show();
+				$html.css('overflow', 'auto');
+				self.$content.css('opacity', 0);
+				self.$header.stop().animate({'top': 0}, 500);
+				self.$wrapper.animate({'top': 0}, 500);
+				self.$infoSection.stop().animate({'height': 0}, 500);				
+			}
 
 	}
 
@@ -102,10 +171,11 @@
 		})
 
 		.scroll(function(){
-
 			//console.log('scrolling');
 
 		})
+
+		window.onhashchange = viviane.locationHashChanged;
 
 		window.viviane = viviane;
 

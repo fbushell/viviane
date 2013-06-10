@@ -49,7 +49,9 @@ function viviane_home_page_build(){
   	// Vars
 		$title = $value->title;
 		$nid   = $value->nid;
-		$uri   = $value->field_images['und'][0]['uri'];
+		if ( isset($value->field_images['und'][0]['uri'])) {
+			$uri = $value->field_images['und'][0]['uri'];
+		}
 		$start_yr    = '';
 		$ending_yr   = '';
 		$work_type   = '';
