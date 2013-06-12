@@ -1,6 +1,9 @@
 //  CIRRO CUSTOM SASS
 // ----------------------------------------------------------------------------
 
+#toolbar
+	z-index: 9999999
+
 #loader
 	position: fixed
 	top: 0
@@ -152,7 +155,9 @@
 		width: 100%
 		&:hover
 			border-bottom: 1px solid
-			//background: rgba(0,0,0,0.1)
+		&:active
+			.list-img
+				+box-shadow(-10px -10px $bgGray, -11px -11px $black, -11px -9px $black, -9px -11px $black)
 		.list-yr
 			float: left
 			width: 90px

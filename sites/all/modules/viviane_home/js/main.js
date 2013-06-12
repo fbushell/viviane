@@ -22,20 +22,25 @@
 			self.$infoClose   = $('.information-close');
 			self.$infoSection = $('.info-section');
 			self.$content     = $('.info-content');
-			self.winH         = $window.height();
 			self.$header      = $('#header');
 			self.headerH      = self.$header.outerHeight();
 			self.$wrapper     = $('#wrapper');
-			self.scrollH      = self.winH - self.headerH;
 
 			// Attach click handlers
 			//self.$nav.on("click", self.scrollTo);
 			self.$infoClick.on('click', self.informationOpen);
 			self.$infoClose.on('click', self.informationClose);
-			self.winH = $(window).height();
 			self.listHover();
 			self.randomPosition();
 			self.locationHashChanged();
+			self.setDimensions();
+
+		},
+
+		setDimensions: function() {
+			var self = this;
+			self.winH = $window.height();
+			self.scrollH = self.winH - self.headerH;
 
 		},
 
@@ -167,7 +172,7 @@
 		})
 
 		.resize(function(){
-
+			viviane.setDimensions();
 		})
 
 		.scroll(function(){

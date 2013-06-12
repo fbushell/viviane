@@ -231,6 +231,8 @@ a.label:hover, a.badge:hover { color: white; text-decoration: none; cursor: poin
 
 .loading { background: url(../img/loading.gif) no-repeat center center; }
 
+#toolbar { z-index: 9999999; }
+
 #loader { position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: white; }
 #loader #name-splash { height: 100%; width: 100%; background-image: url(/sites/all/themes/clim/images/viviane_loading.gif); background-position: center; background-color: white; background-repeat: no-repeat; }
 
@@ -280,6 +282,7 @@ a.label:hover, a.badge:hover { color: white; text-decoration: none; cursor: poin
 .list-container a:hover { color: #111111; }
 .list-container .list-item { position: relative; padding: 20px 2% 15px 2%; height: 51px; width: 100%; }
 .list-container .list-item:hover { border-bottom: 1px solid; }
+.list-container .list-item:active .list-img { -webkit-box-shadow: -10px -10px #ecebe7, -11px -11px #111111, -11px -9px #111111, -9px -11px #111111; -moz-box-shadow: -10px -10px #ecebe7, -11px -11px #111111, -11px -9px #111111, -9px -11px #111111; box-shadow: -10px -10px #ecebe7, -11px -11px #111111, -11px -9px #111111, -9px -11px #111111; }
 .list-container .list-item .list-yr { float: left; width: 90px; margin-right: 1%; }
 .list-container .list-item .list-title { float: left; }
 .list-container .list-item .list-type { font-size: 14px; font-style: italic; }
