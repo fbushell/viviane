@@ -28,14 +28,36 @@
 	height: 0
 	border-bottom: 1px solid $black
 	z-index: 1000
-	overflow: scroll
+	overflow: scroll !important
+	#info-nav 
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		padding: 30px 50px 20px
+		background: $lightBlue
+		background: rgba(228, 246, 244, 0.8)
+		z-index: 10
+		& > a
+			font-family: $headingsFontFamily
+			font-size: 14px
+			letter-spacing: 0.2em
+			text-transform: uppercase
+			margin-right: 30px
+			text-decoration: none
+			&:hover
+				text-decoration: none
+			&.active
+				padding-bottom: 3px
+				border-bottom: 1px solid
 	.info-content
 		overflow: scroll
 		padding: 50px
-		+transition(2s)
 		opacity: 0
-		.contact
+		.info-tab
+			margin-top: 50px
 			display: none
+			max-width: 800px
 
 #header
 	position: fixed
@@ -48,21 +70,31 @@
 	font-family: $headingsFontFamily
 	font-weight: $headingsFontWeight
 	text-transform: uppercase
-	font-size: 13px
+	font-size: 14px
 	letter-spacing: 0.2em
+	& > a
+		text-decoration: none
+		&:hover
+			text-decoration: none
 	#logo
 		float: left
 		margin-left: 40%
-		a:hover
+		a
 			text-decoration: none
+			&:hover
+				text-decoration: none
 	#nav
 		float: right
+		margin-right: 20px
 		cursor: pointer
+		a
+			text-decoration: none
 		.information-close
 			display: none
 
 #wrapper
 	position: relative
+	z-index: 500
 	padding: 36px 0 50px 0
 
 #intro
@@ -124,12 +156,11 @@
 
 .work-wrap
 	width: 90%
-	margin: 7em auto 3em auto
+	margin: 150px auto 100px auto
 	.work-header
-		margin-bottom: 30px
+		margin: 0 0 100px 13%
 		overflow: hidden
 		.work-date
-			margin-bottom: 1rem
 		.work-type
 			font-style: italic
 			margin-bottom: 1rem
@@ -138,7 +169,6 @@
 		.work-body
 			max-width: 600px
 			padding-top: 1rem
-			border-top: 1px solid #999
 	.work-img
 		margin-bottom: 20px
 		img

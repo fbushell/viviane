@@ -10,10 +10,11 @@ function viviane_work_page_build(){
 
 	// Init vars
 	$module_path  = drupal_get_path('module','viviane_work');
+	$home_path  = drupal_get_path('module','viviane_home');
 
 	$js_path = "$module_path/js/jquery.fitvids.min.js";
 	drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 2));
-	$js_path = "$module_path/js/init.js";
+	$js_path = "$home_path/js/main.js";
 	drupal_add_js($js_path, array('scope' => 'footer', 'weight' => 3));
 
 	// Grab node id from url
@@ -104,8 +105,8 @@ function viviane_work_page_build(){
 	$html = "
 		<div class=\"work-wrap\">
 			<header class=\"work-header\">
-				<div class=\"work-title\"><h5>$title</h5></div> 
-				<div class=\"work-date\">$work_yr</div>
+				<div class=\"work-title\"><h6>$title</h6></div> 
+				<div class=\"work-date\"><h6>$work_yr</h6></div>
 				<div class=\"work-body\">$body</div>
 			</header>
 			$images

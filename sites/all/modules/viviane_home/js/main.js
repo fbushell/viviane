@@ -8,8 +8,7 @@
 			$html      = $("html"),
 			$loader    = $("div#loader"),
 			$splash    = $('#name-splash'),
-			$html      = $("html"),
-			$container = $('div#iso-container');
+			$html      = $("html");
 
 	// viviane
 	var viviane = {
@@ -34,6 +33,15 @@
 			self.randomPosition();
 			self.locationHashChanged();
 			self.setDimensions();
+			self.vid();
+
+		},
+
+		vid: function() {
+			var self = this;
+			var $vidWrap = $('.work-video');
+
+			$vidWrap.fitVids();
 
 		},
 
@@ -48,15 +56,26 @@
 	  	var self = viviane;
 	  	var $statement = $('div.statement');
 	  	var $contact = $('div.contact');
+	  	var $resume = $('div.resume');
+	  	var $biography = $('div.biography');
+	  	var $allTabs = $('div.info-tab');
 
 	  	switch (location.hash) {
 	  		case '#contact':
-	  			$statement.fadeOut();
-	    		$contact.fadeIn();
+	  			$allTabs.fadeOut(700).removeClass('active');
+	    		setTimeout(function(){$contact.fadeIn('slow').addClass('active')},500);
 	    		break;
 	    	case '#statement':
-	    		$statement.fadeIn();
-	    		$contact.fadeOut();
+	    		$allTabs.fadeOut(700).removeClass('active');
+	    		setTimeout(function(){$statement.fadeIn('slow').addClass('active')},500);
+	    		break;
+	    	case '#resume':
+	    		$allTabs.fadeOut(700).removeClass('active');
+	    		setTimeout(function(){$resume.fadeIn('slow').addClass('active')},500);
+	    		break;
+	    	case '#biography':
+	    		$allTabs.fadeOut(700).removeClass('active');
+	    		setTimeout(function(){$biography.fadeIn('slow').addClass('active')},500);
 	    		break;
 	  	}
 
@@ -120,12 +139,15 @@
 			informationOpen: function(event) {
 				var self = viviane;
 				var $trigger     = $(this);
+				var $info        = $('.information');
 				var $other       = $('.information-close');
 
 				$trigger.hide();
+				$info.hide();
 				$other.show();
 				self.$header.animate({'top': self.scrollH}, 500);
-				self.$wrapper.animate({'top': self.scrollH}, 500).css('overflow', 'hidden');;
+				self.$wrapper.animate({'top': self.scrollH}, 500).css('overflow', 'scroll');
+				$html.css('overflow', 'hidden');
 				self.$infoSection
 					.stop()
 					.animate({'height': self.scrollH}, 500, function() {
@@ -137,15 +159,19 @@
 			informationClose: function(event) {
 				var self = viviane;
 				var $trigger     = $(this);
+				var $close       = $('.information-close');
 				var $other       = $('.information');
+				var $allTabs     = $('div.info-tab');
 				
 				$trigger.hide();
+				$close.hide();
 				$other.show();
 				$html.css('overflow', 'auto');
-				self.$content.css('opacity', 0);
+				self.$content.css('opacity', 0)	;
 				self.$header.stop().animate({'top': 0}, 500);
 				self.$wrapper.animate({'top': 0}, 500);
-				self.$infoSection.stop().animate({'height': 0}, 500);				
+				self.$infoSection.stop().animate({'height': 0}, 500);		
+				$allTabs.fadeOut(700);		
 			}
 
 	}
@@ -179,6 +205,12 @@
 			//console.log('scrolling');
 
 		})
+
+		$document.keyup(function(e) {
+			// esc to close drawer
+		  if (e.keyCode == 27 || e.keyCode == 38) { viviane.informationClose(); } 
+		  if (e.keyCode == 40 ) { e.preventDefault(); viviane.informationOpen(); }
+		});
 
 		window.onhashchange = viviane.locationHashChanged;
 
