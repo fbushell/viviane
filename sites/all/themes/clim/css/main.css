@@ -488,12 +488,12 @@ select, textarea { display: inline-block; height: 20px; padding: 4px 6px; margin
 .item .item-inner .title-wrap .item-type .types { margin: 0 5px; }
 .item .item-inner img { width: 100%; }
 
-.work-wrap { width: 90%; margin: 150px auto 100px auto; }
+.work-wrap { width: 95%; max-width: 1200px; margin: 150px auto 100px auto; }
 .work-wrap .work-header { margin: 0 0 100px 13%; overflow: hidden; }
 .work-wrap .work-header .work-type { font-style: italic; margin-bottom: 1rem; }
 .work-wrap .work-header .work-type .types { margin-right: 12px; }
 .work-wrap .work-header .work-body { max-width: 600px; padding-top: 1rem; }
-.work-wrap .work-img { margin-bottom: 20px; }
+.work-wrap .work-img { margin-bottom: 50px; }
 .work-wrap .work-img img { width: 100%; }
 
 .list-container { margin: 75px 0; }
