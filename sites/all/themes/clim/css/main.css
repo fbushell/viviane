@@ -444,7 +444,7 @@ select, textarea { display: inline-block; height: 20px; padding: 4px 6px; margin
 #loader { position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: white; }
 #loader #name-splash { height: 100%; width: 100%; background-image: url(/sites/all/themes/clim/images/viviane_loading.gif); background-position: center; background-color: white; background-repeat: no-repeat; }
 
-.info-section { position: fixed; top: -1px; left: 0; right: 0; background: #e4f6f4; height: 0; border-bottom: 1px solid #111111; z-index: 1000; overflow: scroll !important; }
+.info-section { position: fixed; top: -1px; left: 0; right: 0; background: #ffcda8; height: 0; border-bottom: 1px solid #111111; z-index: 1000; overflow: scroll !important; }
 .info-section #info-nav { position: fixed; top: 0; left: 0; right: 0; padding: 30px 50px 20px; background: #e4f6f4; background: rgba(228, 246, 244, 0.8); z-index: 10; }
 .info-section #info-nav > a { font-family: "brandon-grotesque", sans-serif; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; margin-right: 30px; text-decoration: none; }
 .info-section #info-nav > a:hover { text-decoration: none; }
