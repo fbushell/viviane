@@ -24,7 +24,6 @@
       self.$header      = $('#header');
       self.headerH      = self.$header.outerHeight();
       self.$wrapper     = $('#wrapper');
-      self.$vids        = $('.work-video');
 
       // Attach click handlers
       //self.$nav.on("click", self.scrollTo);
@@ -42,6 +41,7 @@
       var self = this;
       self.winH = $window.height();
       self.scrollH = self.winH - self.headerH;
+
     },
 
     locationHashChanged: function() {
@@ -129,8 +129,6 @@
       // Information section
       //
       informationOpen: function(event) {
-
-      	console.log('clicked');
         var self = viviane;
         var $trigger     = $(this);
         var $info        = $('.information');
@@ -166,12 +164,6 @@
         self.$wrapper.animate({'top': 0}, 500);
         self.$infoSection.stop().animate({'height': 0}, 500);   
         $allTabs.fadeOut(700);    
-      },
-
-      vid: function() {
-        if ( document.location.href.indexOf('work') > -1 ) {
-            viviane.$vids.fitVids();
-        }
       }
 
   }

@@ -60,7 +60,7 @@
 			max-width: 800px
 
 #header
-	position: fixed
+	position: absolute
 	top: 0
 	left: 0
 	right: 0
@@ -68,9 +68,9 @@
 	overflow: hidden
 	padding: 30px 10px 27px
 	font-family: $headingsFontFamily
-	font-weight: $headingsFontWeight
+	font-weight: 500
 	text-transform: uppercase
-	font-size: 14px
+	font-size: 13px
 	letter-spacing: 0.2em
 	& > a
 		text-decoration: none
@@ -84,9 +84,13 @@
 			&:hover
 				text-decoration: none
 	#nav
-		float: right
-		margin-right: 20px
+		position: absolute
+		right: 20px
 		cursor: pointer
+		font-size: 20px
+		+transition(0.3s)
+		&:hover
+			+transform(scale(1.4))
 		a
 			text-decoration: none
 		.information-close
@@ -96,6 +100,11 @@
 	position: relative
 	z-index: 500
 	padding: 36px 0 50px 0
+
+#wrapper-front
+	position: relative
+	z-index: 500
+	padding: 200px 0
 
 #intro
 	height: 20px
@@ -123,7 +132,7 @@
 		width: 49.9%
 	&:hover
 		.item-inner .title-wrap
-			+opacity(1)
+			opacity: 100
 	.item-inner
 		margin: 5px
 		.title-wrap
@@ -136,7 +145,7 @@
 			background: rgba(0,0,0,0.6)
 			//background: rgba(56, 55, 51, 0.8)
 			*background: #383733
-			+opacity(0)
+			opacity: 0
 			.item-title
 				color: white
 				position: absolute
@@ -160,7 +169,6 @@
 	.work-header
 		margin: 0 0 100px 13%
 		overflow: hidden
-		.work-date
 		.work-type
 			font-style: italic
 			margin-bottom: 1rem
@@ -180,17 +188,17 @@
 		color: $black
 	.list-item
 		position: relative
-		padding: 20px 2% 15px 2%
+		padding: 20px 2% 15px 4%
 		height: 51px
 		width: 100%
 		&:hover
 			border-bottom: 1px solid
 		&:active
 			.list-img
-				+box-shadow(-10px -10px $bgGray, -11px -11px $black, -11px -9px $black, -9px -11px $black)
+				box-shadow: -10px -10px $bgGray, -11px -11px $black, -11px -9px $black, -9px -11px $black
 		.list-yr
 			float: left
-			width: 90px
+			width: 130px
 			margin-right: 1%
 		.list-title
 			float: left
@@ -204,7 +212,7 @@
 			right: 20px
 			top: -70px
 			border: 1px solid $black
-			+box-shadow(-5px -5px $bgGray, -6px -6px $black, -6px -4px $black, -4px -6px $black)
+			box-shadow: -5px -5px $bgGray, -6px -6px $black, -6px -4px $black, -4px -6px $black
 		h6
 			margin-bottom: 5px
 
@@ -233,7 +241,7 @@
 	letter-spacing: 0.3em
 	text-transform: uppercase
 	border: none
-	+border-radius(2px)
+	border-radius: 2px
 	&:hover
 		background: $purple
 	&:active
