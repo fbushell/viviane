@@ -9,7 +9,7 @@ figure { margin: 0; }
 
 html { height: 100%; width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-body { font-family: "adobe-caslon-pro", serif; font-size: 16px; font-weight: 400; margin: 0; color: #111111; background-color: #ecebe7; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; word-wrap: break-word; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; }
+body { font-family: "adobe-caslon-pro", serif; font-size: 16px; font-weight: 400; margin: 0; color: #111111; background-color: #fefff4; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; word-wrap: break-word; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; }
 
 a { color: inherit; text-decoration: underline; }
 a:hover { color: inherit; text-decoration: underline; }
@@ -17,9 +17,9 @@ a:focus { outline: none; }
 a:visited { color: #111111; }
 a img { border: none; }
 
-::selection { background: #d7ff23; }
+::selection { background: white; color: #d8f5c7; }
 
-::-moz-selection { background: #d7ff23; }
+::-moz-selection { background: white; color: #d8f5c7; }
 
 .left { float: left; }
 
@@ -444,8 +444,8 @@ select, textarea { display: inline-block; height: 20px; padding: 4px 6px; margin
 #loader { position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: white; }
 #loader #name-splash { height: 100%; width: 100%; background-image: url(/sites/all/themes/clim/images/viviane_loading.gif); background-position: center; background-color: white; background-repeat: no-repeat; }
 
-.info-section { position: fixed; top: -1px; left: 0; right: 0; background: #ffcda8; height: 0; border-bottom: 1px solid #111111; z-index: 1000; overflow: scroll !important; }
-.info-section #info-nav { position: fixed; top: 0; left: 0; right: 0; padding: 30px 50px 20px; background: #e4f6f4; background: rgba(228, 246, 244, 0.8); z-index: 10; }
+.info-section { position: fixed; top: -1px; left: 0; right: 0; background: #d8f5c7; height: 0; border-bottom: 1px solid #111111; z-index: 1000; overflow: scroll !important; }
+.info-section #info-nav { position: fixed; top: 0; left: 0; right: 0; padding: 30px 50px 20px; background: #d8f5c7; background: rgba(216, 245, 199, 0.8); z-index: 10; }
 .info-section #info-nav > a { font-family: "brandon-grotesque", sans-serif; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; margin-right: 30px; text-decoration: none; }
 .info-section #info-nav > a:hover { text-decoration: none; }
 .info-section #info-nav > a.active { padding-bottom: 3px; border-bottom: 1px solid; }
@@ -458,7 +458,7 @@ select, textarea { display: inline-block; height: 20px; padding: 4px 6px; margin
 #header #logo { float: left; margin-left: 40%; }
 #header #logo a { text-decoration: none; }
 #header #logo a:hover { text-decoration: none; }
-#header #nav { position: absolute; right: 20px; cursor: pointer; font-size: 20px; -webkit-transition: 0.3s; -moz-transition: 0.3s; transition: 0.3s; }
+#header #nav { position: absolute; right: 20px; cursor: pointer; font-size: 20px; -webkit-transition: 0.3s; -moz-transition: 0.3s; transition: 0.3s; -webkit-backface-visibility: hidden; }
 #header #nav:hover { -webkit-transform: scale(1.4); -moz-transform: scale(1.4); -ms-transform: scale(1.4); -o-transform: scale(1.4); transform: scale(1.4); }
 #header #nav a { text-decoration: none; }
 #header #nav .information-close { display: none; }
@@ -488,7 +488,7 @@ select, textarea { display: inline-block; height: 20px; padding: 4px 6px; margin
 .item .item-inner .title-wrap .item-type .types { margin: 0 5px; }
 .item .item-inner img { width: 100%; }
 
-.work-wrap { width: 95%; max-width: 1200px; margin: 150px auto 100px auto; }
+.work-wrap { width: 100%; max-width: 1200px; margin: 150px auto 100px auto; }
 .work-wrap .work-header { margin: 0 0 100px 13%; overflow: hidden; }
 .work-wrap .work-header .work-type { font-style: italic; margin-bottom: 1rem; }
 .work-wrap .work-header .work-type .types { margin-right: 12px; }
