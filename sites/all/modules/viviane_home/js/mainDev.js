@@ -61,19 +61,19 @@
       switch (location.hash) {
         case '#contact':
           $allTabs.fadeOut(700).removeClass('active');
-          setTimeout(function(){$contact.fadeIn('slow').addClass('active')},500);
+          setTimeout(function(){$contact.fadeIn(700).addClass('active')},800);
           break;
         case '#statement':
           $allTabs.fadeOut(700).removeClass('active');
-          setTimeout(function(){$statement.fadeIn('slow').addClass('active')},500);
+          setTimeout(function(){$statement.fadeIn(700).addClass('active')},800);
           break;
         case '#resume':
           $allTabs.fadeOut(700).removeClass('active');
-          setTimeout(function(){$resume.fadeIn('slow').addClass('active')},500);
+          setTimeout(function(){$resume.fadeIn(700).addClass('active')},800);
           break;
         case '#biography':
           $allTabs.fadeOut(700).removeClass('active');
-          setTimeout(function(){$biography.fadeIn('slow').addClass('active')},500);
+          setTimeout(function(){$biography.fadeIn(700).addClass('active')},800);
           break;
       }
 
@@ -141,7 +141,7 @@
       //
       informationOpen: function(event) {
 
-        console.log('clicked');
+        //console.log('clicked');
         var self = viviane;
         var $trigger     = $(this);
         var $info        = $('.information');
@@ -193,6 +193,8 @@
   //
   $window
     .load(function(){
+
+      var url = window.location.hash;
 
       setTimeout(function() {
 
