@@ -1,6 +1,41 @@
 //  CIRRO CUSTOM SASS
 // ----------------------------------------------------------------------------
 
+
+body.page-user
+	background: #f6f6f6
+	border: 30px solid white
+	height: 100%
+	&.logged-in
+		border: none
+	#main
+		width: 90%
+		margin: 0 auto
+		h5
+			margin-bottom: 50px
+		ul
+			list-style: none
+			margin: 0
+			li
+				margin-bottom: 15px
+	.login-wrap
+		width: 90%
+		padding: 3%
+		background: white
+		max-width: 400px
+		margin: 50px auto
+		text-align: center
+	input, .btn
+		width: 80%
+	.btn, input[type="submit"]
+		+transition(0.3s)
+		border: 1px solid $textColor
+		&:hover
+			background: #e6f0ff
+			color: $textColor
+			border: 1px solid $textColor
+
+
 #toolbar
 	z-index: 9999999
 
