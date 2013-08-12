@@ -30,7 +30,10 @@
       //self.$nav.on("click", self.scrollTo);
       self.$infoClick.on('click', self.informationOpen);
       self.$infoClose.on('click', self.informationClose);
-      self.listHover();
+      if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+       self.listHover();
+      }
+      //self.listHover();
       self.randomPosition();
       self.locationHashChanged();
       self.setDimensions();

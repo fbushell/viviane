@@ -24,12 +24,12 @@
 	top: -1px
 	left: 0
 	right: 0
-	background: #d8f5c7
+	background: #e6f0ff
 	height: 0
 	border-bottom: 1px solid $black
 	z-index: 1000
 	overflow: scroll !important
-	-webkit-transform:translate3d(0,0,0)
+	-webkit-transform: translate3d(0,0,0)
 	#info-nav 
 		position: fixed
 		top: 0
@@ -37,7 +37,7 @@
 		right: 0
 		padding: 30px 50px 20px
 		background: #d8f5c7
-		background: rgba(216, 245, 199, 0.8)
+		background: rgba(230, 240, 255, 0.8)
 		z-index: 10
 		& > a
 			font-family: $headingsFontFamily
@@ -87,6 +87,7 @@
 	#nav
 		position: absolute
 		right: 20px
+		top: 25px
 		cursor: pointer
 		font-size: 20px
 		+transition(0.3s)
@@ -178,7 +179,7 @@
 			.types
 				margin-right: 12px
 		.work-body
-			max-width: 600px
+			max-width: 450px
 			padding-top: 1rem
 	.work-img
 		margin-bottom: 50px
@@ -198,7 +199,7 @@
 			border-bottom: 1px solid
 		&:active
 			.list-img
-				box-shadow: -10px -10px $bgGray, -11px -11px $black, -11px -9px $black, -9px -11px $black
+				box-shadow: -10px -10px #fefff4, -11px -11px $black, -11px -9px $black, -9px -11px $black
 		.list-yr
 			float: left
 			width: 130px
@@ -215,7 +216,8 @@
 			right: 20px
 			top: -70px
 			border: 1px solid $black
-			box-shadow: -5px -5px $bgGray, -6px -6px $black, -6px -4px $black, -4px -6px $black
+			box-shadow: -5px -5px #fefff4, -6px -6px $black, -6px -4px $black, -4px -6px $black
+			+transition(0.3)
 		h6
 			margin-bottom: 5px
 

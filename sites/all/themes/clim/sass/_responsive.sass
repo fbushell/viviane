@@ -1,7 +1,10 @@
 // REPEAT VARIABLES & MIXINS
 // ----------------------------------------------------------------------------
+// Required since we compile the responsive stuff separately
 
 @import "variables"
+
+// Modify this for custom colors, font-sizes, etc
 @import "mixins"
 
 .clearfix
@@ -16,6 +19,13 @@
 		content: ""
 		clear: both
 
+.hide-text
+	font: 0 / 0 a
+	color: transparent
+	text-shadow: none
+	background-color: transparent
+	border: 0
+
 .input-block-level
 	display: block
 	width: 100%
@@ -23,6 +33,10 @@
 	-webkit-box-sizing: border-box
 	-moz-box-sizing: border-box
 	box-sizing: border-box
+
+.hidden
+	display: none
+	visibility: hidden
 
 .visible-phone, .visible-tablet, .hidden-desktop
 	display: none !important
@@ -53,8 +67,41 @@
 @media (min-width: 1200px)
 
 
+@media (min-width: 768px) and (max-width: 979px)
 
 
-	
+@media (max-width: 767px)
+	#header 
+		#logo
+			margin-left: 0
+		#nav
+			right: 10px
+	#wrapper-front
+		padding: 70px 0
+	.list-container .list-item .list-yr
+		width: 50px
+	.work-wrap
+		margin: 70px 0
+		.work-header
+			margin: 0 4% 70px 4%
+		.work-img
+			margin-bottom: 20px
+	#loader #name-splash
+		background-size: 95% auto
+		-moz-background-size: 95% auto
+		-webkit-background-size: 95% auto
+	.info-section .info-content
+		padding: 10px
+	.info-section 
+		#info-nav
+			padding: 10px  
+			& > a
+				display: inline-block
+				width: 48%
+				margin-right: 0
+				margin-bottom: 13px
+
+
+
 @media (max-width: 480px)
 
