@@ -22,12 +22,15 @@
       self.$infoSection = $('.info-section');
       self.$content     = $('.info-content');
       self.$header      = $('#header');
+      self.$mainWrap    = $('.lord-of-the-wrap');
       self.headerH      = self.$header.outerHeight();
       self.$wrapper     = $('#wrapper');
       self.$vids        = $('.work-video');
+      self.$up          = $('.up');
 
       // Attach click handlers
       //self.$nav.on("click", self.scrollTo);
+      self.$up.on('click', self.scrollTop);
       self.$infoClick.on('click', self.informationOpen);
       self.$infoClose.on('click', self.informationClose);
       if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
@@ -128,6 +131,11 @@
         $item.css({top:posy, right:posx});
       },
 
+      scrollTop: function() {
+        $('html,body').animate({scrollTop:0},0);
+      },
+
+
       //
       // Information section
       //
@@ -142,8 +150,8 @@
         $trigger.hide();
         $info.hide();
         $other.show();
-        self.$header.animate({'top': self.scrollH}, 500);
-        self.$wrapper.animate({'top': self.scrollH}, 500).css('overflow', 'scroll');
+        self.$mainWrap.animate({'top': self.scrollH}, 500);
+        self.$wrapper.css('overflow', 'scroll');
         $html.css('overflow', 'hidden');
         self.$infoSection
           .stop()
@@ -165,7 +173,7 @@
         $other.show();
         $html.css('overflow', 'auto');
         self.$content.css('opacity', 0) ;
-        self.$header.stop().animate({'top': 0}, 500);
+        self.$mainWrap.stop().animate({'top': 0}, 500);
         self.$wrapper.animate({'top': 0}, 500);
         self.$infoSection.stop().animate({'height': 0}, 500);   
         $allTabs.fadeOut(700);    
@@ -211,8 +219,9 @@
 
     $document.keyup(function(e) {
       // esc to close drawer
-      if (e.keyCode == 27 || e.keyCode == 38) { viviane.informationClose(); } 
-      if (e.keyCode == 40 ) { e.preventDefault(); viviane.informationOpen(); }
+      if (e.keyCode == 27) { event.preventDefault(); viviane.informationClose(); } 
+      //if (e.keyCode == 27 || e.keyCode == 38) { event.preventDefault(); viviane.informationClose(); } 
+      //if (e.keyCode == 40 ) { event.preventDefault(); viviane.informationOpen(); }
     });
 
     window.onhashchange = viviane.locationHashChanged;
