@@ -1,6 +1,7 @@
 <?php include "info.inc"; ?>
 <div class="lord-of-the-wrap">
   <header id="header">
+    <div class="back"><a href="/">←</a></div>
     <div id="logo">
       <a href="/">Viviane Le Courtois</a>
     </div>

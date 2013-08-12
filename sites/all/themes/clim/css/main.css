@@ -459,6 +459,8 @@ select, textarea { display: inline-block; height: 20px; padding: 4px 6px; margin
 #header { position: absolute; top: 0; left: 0; right: 0; z-index: 1000; overflow: hidden; padding: 30px 10px 27px; font-family: "brandon-grotesque", sans-serif; font-weight: 500; text-transform: uppercase; font-size: 13px; letter-spacing: 0.2em; }
 #header > a { text-decoration: none; }
 #header > a:hover { text-decoration: none; }
+#header .back { position: absolute; left: 20px; top: 25px; font-size: 17px; cursor: pointer; }
+#header .back a { text-decoration: none; }
 #header #logo { float: left; margin-left: 40%; }
 #header #logo a { text-decoration: none; }
 #header #logo a:hover { text-decoration: none; }
@@ -564,4 +566,5 @@ iframe body.cke_show_borders { background: white; }
   .info-section .info-content { padding: 10px; }
   .info-section #info-nav { padding: 10px; }
   .info-section #info-nav > a { display: inline-block; width: 48%; margin-right: 0; margin-bottom: 13px; }
-  .info-section .info-content .info-tab { margin-top: 100px; } }
+  .info-section .info-content .info-tab { margin-top: 100px; }
+  #header .back { left: 80%; } }
